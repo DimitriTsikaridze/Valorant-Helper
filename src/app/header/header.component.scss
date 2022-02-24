@@ -16,6 +16,7 @@ header {
   &-image {
     width: 3.5rem;
     height: 3.5rem;
+    cursor: pointer;
   }
   &-title {
     font-family: "valorant";
@@ -42,10 +43,10 @@ a {
     &::after {
       content: "";
       position: absolute;
-      width: calc(100% + 10px);
+      width: calc(100% + 6px);
       height: 3px;
       bottom: -5px;
-      left: -5px;
+      left: -2px;
       background-color: $light-red;
     }
   }

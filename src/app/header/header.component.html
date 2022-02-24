@@ -1,6 +1,11 @@
 <header>
   <div class="logo">
-    <img class="logo-image" src="../../assets/images/logo.svg" alt="logo" />
+    <img
+      routerLink="/"
+      class="logo-image"
+      src="../../assets/images/logo.svg"
+      alt="logo"
+    />
     <h2 class="logo-title">
       VALORANT <br />
       HELPER
@@ -9,11 +14,13 @@
 
   <nav>
     <ul>
-      <li><a routerLinkActive="active" routerLink="/">HOME</a></li>
-      <li><a routerLinkActive="active" routerLink="/">AGENTS</a></li>
-      <li><a routerLinkActive="active" routerLink="/">CROSSHAIR</a></li>
-      <li><a routerLinkActive="active" routerLink="/">LINE-UPS</a></li>
-      <li><a routerLinkActive="active" routerLink="/">ABOUT</a></li>
+      <li><a routerLinkActive="active" routerLink="/home">HOME</a></li>
+      <li><a routerLinkActive="active" routerLink="/agents">AGENTS</a></li>
+      <li>
+        <a routerLinkActive="active" routerLink="/crosshairs">CROSSHAIRS</a>
+      </li>
+      <li><a routerLinkActive="active" routerLink="/line-ups">LINE-UPS</a></li>
+      <li><a routerLinkActive="active" routerLink="/about">ABOUT</a></li>
     </ul>
   </nav>
 </header>

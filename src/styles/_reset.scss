@@ -8,6 +8,9 @@
 }
 a {
   text-decoration: none;
+  &:visited {
+    color: unset;
+  }
 }
 
 li {

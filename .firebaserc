@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "valorant-helper-fca81": {
+      "hosting": {
+        "valorant-helper": [
+          "valorant-helper-fca81"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "valorant-helper-fca81"
+  }
+}

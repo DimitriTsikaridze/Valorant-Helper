@@ -1,0 +1,21 @@
+div {
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  text-align: center;
+  position: relative;
+  display: inline-block;
+}
+
+h1:after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  bottom: -10px;
+  left: -10%;
+  height: 5px;
+  border-radius: 5px;
+  width: 120%;
+}

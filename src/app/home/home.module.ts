@@ -5,17 +5,14 @@ import { HomeRoutingModule } from './home-routing.module';
 import { ContainerComponent } from './container/container.component';
 import { IntroductionComponent } from './container/introduction/introduction.component';
 import { AgentPreviewComponent } from './container/agent-preview/agent-preview.component';
-
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
     ContainerComponent,
     IntroductionComponent,
-    AgentPreviewComponent
+    AgentPreviewComponent,
   ],
-  imports: [
-    CommonModule,
-    HomeRoutingModule
-  ]
+  imports: [CommonModule, HomeRoutingModule, SharedModule],
 })
-export class HomeModule { }
+export class HomeModule {}

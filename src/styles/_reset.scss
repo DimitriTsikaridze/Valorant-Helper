@@ -13,14 +13,11 @@ a {
 li {
   list-style: none;
 }
-li,
-button {
-  cursor: pointer;
-}
 
 button {
   outline: none;
   border: none;
+  cursor: pointer;
 }
 
 img {

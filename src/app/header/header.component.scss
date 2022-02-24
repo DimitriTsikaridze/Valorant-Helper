@@ -1,5 +1,5 @@
-@use "/src/styles/_palette" as *;
-@use "/src/styles/fonts" as *;
+@use "/src/styles/index.scss" as *;
+
 header {
   background-color: $primary-dark;
   color: white;
@@ -29,7 +29,24 @@ ul {
   display: flex;
   gap: 1.2rem;
 }
+
 li {
   font-family: "oswald";
+  font-size: 1.1rem;
   font-weight: 600;
+  position: relative;
+}
+a {
+  &.active {
+    color: $light-red;
+    &::after {
+      content: "";
+      position: absolute;
+      width: calc(100% + 10px);
+      height: 3px;
+      bottom: -5px;
+      left: -5px;
+      background-color: $light-red;
+    }
+  }
 }

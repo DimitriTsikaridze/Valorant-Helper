@@ -6,9 +6,11 @@
   background-size: cover;
   background-position: center;
   position: relative;
-  color: white;
   z-index: 1;
   min-height: calc(100% - 92px);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   &::before {
     content: "";
     position: absolute;
@@ -21,6 +23,16 @@
 
 article {
   max-width: 30rem;
+}
+
+aside {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  .apple-download {
+    justify-self: flex-end;
+    margin-right: 2rem;
+  }
 }
 
 h1 {

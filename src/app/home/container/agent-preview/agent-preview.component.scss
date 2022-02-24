@@ -1,0 +1,6 @@
+@use "../../../../styles/palette" as *;
+
+.container {
+  background-color: $primary-dark;
+  min-height: 100%;
+}

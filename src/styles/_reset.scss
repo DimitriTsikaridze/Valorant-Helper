@@ -6,6 +6,15 @@
     box-sizing: border-box;
   }
 }
+
+body {
+  font-family: "oswald";
+}
+
+body,
+html {
+  height: 100%;
+}
 a {
   text-decoration: none;
   &:visited {

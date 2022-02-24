@@ -1,0 +1,37 @@
+@use "/src/styles/palette" as *;
+
+.container {
+  background-image: url("../../../../assets/images/introduction-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+  z-index: 1;
+  min-height: calc(100% - 92px);
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: rgba(0, 0, 0);
+    opacity: 0.2;
+    z-index: -1;
+    inset: 0;
+  }
+}
+
+article {
+  max-width: 30rem;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+
+span {
+  color: $light-red;
+}
+
+p {
+  margin-top: 2rem;
+}

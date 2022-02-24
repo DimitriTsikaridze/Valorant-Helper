@@ -1,0 +1,35 @@
+@use "/src/styles/_palette" as *;
+@use "/src/styles/fonts" as *;
+header {
+  background-color: $primary-dark;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 10rem;
+  border-bottom: 4px solid $light-red;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  &-image {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  &-title {
+    font-family: "valorant";
+    font-weight: 300;
+    font-size: 1.3rem;
+    margin-left: 1rem;
+  }
+}
+
+ul {
+  display: flex;
+  gap: 1.2rem;
+}
+li {
+  font-family: "oswald";
+  font-weight: 600;
+}

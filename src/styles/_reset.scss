@@ -13,8 +13,17 @@ a {
 li {
   list-style: none;
 }
+li,
+button {
+  cursor: pointer;
+}
 
 button {
   outline: none;
   border: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }

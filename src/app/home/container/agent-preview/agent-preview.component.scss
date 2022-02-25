@@ -3,24 +3,35 @@
 .container {
   background-color: $primary-dark;
   min-height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+}
+
+.agents-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  width: 90vw;
+  margin-inline: auto;
+  justify-items: center;
+  gap: 2rem;
 }
 
 .agent {
   position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-
-.agent-bg {
-  position: absolute;
-  z-index: -1;
-}
-
 .agent-img {
-  position: absolute;
+  width: 300px;
 }
 
-.carousel {
-  max-width: 90vw;
+.agent-name {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  h2 {
+    font-family: "valorant";
+    font-weight: 300;
+  }
+  background-color: $light-red;
 }

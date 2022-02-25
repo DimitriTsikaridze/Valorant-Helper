@@ -1,21 +1,21 @@
-<section class="container">
+<section *ngIf="agents$ | async as agents" class="container">
   <app-title margin="3rem 0 3rem 0">AGENTS</app-title>
-  <section *ngIf="agents$ | async as agents" class="container">
-    <carousel class="carousel" [cellsToShow]="3" [height]="350">
-      <div class="agent" *ngFor="let agent of agents">
-        <div>
-          <img
-            class="agent-img"
-            [src]="agent.bustPortrait"
-            [alt]="agent.displayName"
-          />
-          <img
-            class="agent-bg"
-            [src]="agent.background"
-            alt="agent-background"
-          />
-        </div>
+  <div class="agents-container">
+    <div
+      [ngStyle]="{ 'background-image': 'url(' + agent.background + ')' }"
+      class="agent"
+      *ngFor="let agent of agents"
+    >
+      <img
+        class="agent-img"
+        [src]="agent.bustPortrait"
+        [alt]="agent.displayName"
+      />
+
+      <div class="agent-name">
+        <h2>{{ agent.displayName }}</h2>
+        <h3>{{ agent.role.displayName }}</h3>
       </div>
-    </carousel>
-  </section>
+    </div>
+  </div>
 </section>

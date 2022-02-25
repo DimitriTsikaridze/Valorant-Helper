@@ -6,7 +6,6 @@ import { ContainerComponent } from './container/container.component';
 import { IntroductionComponent } from './container/introduction/introduction.component';
 import { AgentPreviewComponent } from './container/agent-preview/agent-preview.component';
 import { SharedModule } from '../shared/shared.module';
-import { IvyCarouselModule } from 'angular-responsive-carousel';
 
 @NgModule({
   declarations: [
@@ -14,6 +13,6 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
     IntroductionComponent,
     AgentPreviewComponent,
   ],
-  imports: [CommonModule, HomeRoutingModule, SharedModule, IvyCarouselModule],
+  imports: [CommonModule, HomeRoutingModule, SharedModule],
 })
 export class HomeModule {}

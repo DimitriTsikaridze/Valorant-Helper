@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Agent } from '../../models/agent.interface';
+import { AgentsService } from '../../services/agents.service';
 
 @Component({
   selector: 'app-container',
@@ -6,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./container.component.scss'],
 })
 export class ContainerComponent implements OnInit {
-  constructor() {}
+  constructor(private agentsService: AgentsService) {}
 
-  ngOnInit(): void {}
+  agents$!: Observable<Agent[]>;
+
+  ngOnInit(): void {
+    this.agents$ = this.agentsService.getAllAgents();
+  }
 }

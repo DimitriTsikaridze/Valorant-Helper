@@ -1,17 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Agent } from '../../../models/agent.interface';
-import { AgentsService } from '../../../services/agents.service';
 
 @Component({
   selector: 'app-agent-preview',
   templateUrl: './agent-preview.component.html',
   styleUrls: ['./agent-preview.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AgentPreviewComponent implements OnInit {
-  constructor(private agentService: AgentsService) {}
-  agents$!: Observable<Agent[]>;
-  ngOnInit(): void {
-    this.agents$ = this.agentService.getAllAgents();
-  }
+export class AgentPreviewComponent {
+  constructor() {}
+  @Input() agents!: Agent[];
 }

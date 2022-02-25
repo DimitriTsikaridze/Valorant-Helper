@@ -1,2 +1,4 @@
 <app-introduction></app-introduction>
-<app-agent-preview></app-agent-preview>
+<ng-container *ngIf="agents$ | async as agents">
+  <app-agent-preview [agents]="agents"></app-agent-preview>
+</ng-container>

@@ -3,4 +3,24 @@
 .container {
   background-color: $primary-dark;
   min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.agent {
+  position: relative;
+}
+
+.agent-bg {
+  position: absolute;
+  z-index: -1;
+}
+
+.agent-img {
+  position: absolute;
+}
+
+.carousel {
+  max-width: 90vw;
 }

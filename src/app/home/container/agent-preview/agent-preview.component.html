@@ -1,1 +1,14 @@
-<section class="container"></section>
+<section *ngIf="agents$ | async as agents" class="container">
+  <carousel class="carousel" [cellsToShow]="3" [height]="350">
+    <div class="agent" *ngFor="let agent of agents">
+      <div>
+        <img
+          class="agent-img"
+          [src]="agent.bustPortrait"
+          [alt]="agent.displayName"
+        />
+        <img class="agent-bg" [src]="agent.background" alt="agent-background" />
+      </div>
+    </div>
+  </carousel>
+</section>

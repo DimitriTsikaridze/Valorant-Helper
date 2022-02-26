@@ -10,13 +10,16 @@ import { Agent } from '../../../models/agent.interface';
 export class AgentPreviewComponent {
   constructor() {}
   translateValue = 0;
+  isVisible = true;
 
   @Input() agents!: Agent[];
 
   onLeft() {
+    if (this.translateValue == 0) return;
     this.translateValue += 332 * 3;
   }
   onRight() {
+    if (this.translateValue == -4980) return;
     this.translateValue -= 332 * 3;
   }
 }

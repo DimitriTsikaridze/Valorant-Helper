@@ -2,6 +2,9 @@
 
 .container {
   background-color: $primary-dark;
+}
+
+.agents-wrapper {
   position: relative;
 }
 
@@ -10,6 +13,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  cursor: pointer;
 }
 .arrow-left {
   left: 10vw;
@@ -34,14 +38,22 @@
   background-size: cover;
   background-repeat: no-repeat;
   transition: 0.3s ease-in;
+  overflow: hidden;
 }
 .agent-name {
   position: absolute;
   width: 100%;
   bottom: 0;
+  padding: 10px;
   h2 {
     font-family: "valorant";
     font-weight: 300;
   }
   background-color: $light-red;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  padding: 4rem 0 2rem 0;
 }

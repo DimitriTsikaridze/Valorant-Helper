@@ -1,34 +1,39 @@
 <section class="container">
   <app-title margin="3rem 0 3rem 0">AGENTS</app-title>
-  <div class="agents-container">
-    <div
-      [ngStyle]="{ 'background-image': 'url(' + agent.background + ')' }"
-      [style.transform]="'translateX(' + translateValue + 'px)'"
-      class="agent"
-      *ngFor="let agent of agents; let i = index"
-    >
-      <img
-        class="agent-img agent-{{ i }}"
-        [src]="agent.bustPortrait"
-        [alt]="agent.displayName"
-      />
+  <div class="agents-wrapper">
+    <div class="agents-container">
+      <div
+        [ngStyle]="{ 'background-image': 'url(' + agent.background + ')' }"
+        [style.transform]="'translateX(' + translateValue + 'px)'"
+        class="agent"
+        *ngFor="let agent of agents; let i = index"
+      >
+        <img
+          class="agent-img agent-{{ i }}"
+          [src]="agent.bustPortrait"
+          [alt]="agent.displayName"
+        />
 
-      <div class="agent-name">
-        <h2>{{ agent.displayName }}</h2>
-        <h3>{{ agent.role.displayName }}</h3>
+        <div class="agent-name">
+          <h2>{{ agent.displayName }}</h2>
+          <h3>{{ agent.role.displayName }}</h3>
+        </div>
       </div>
     </div>
+    <img
+      class="arrow-left"
+      src="../../../../assets/images/left.svg"
+      alt="arrow-left"
+      (click)="onLeft()"
+    />
+    <img
+      class="arrow-right"
+      src="../../../../assets/images/right.svg"
+      alt="arrow-right"
+      (click)="onRight()"
+    />
   </div>
-  <img
-    class="arrow-left"
-    src="../../../../assets/images/left.svg"
-    alt="arrow-left"
-    (click)="onLeft()"
-  />
-  <img
-    class="arrow-right"
-    src="../../../../assets/images/right.svg"
-    alt="arrow-right"
-    (click)="onRight()"
-  />
+  <div class="btn">
+    <app-button routerLink="/agents">ALL AGENTS</app-button>
+  </div>
 </section>

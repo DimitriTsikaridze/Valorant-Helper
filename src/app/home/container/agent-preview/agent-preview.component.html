@@ -3,11 +3,12 @@
   <div class="agents-container">
     <div
       [ngStyle]="{ 'background-image': 'url(' + agent.background + ')' }"
+      [style.transform]="'translateX(' + translateValue + 'px)'"
       class="agent"
-      *ngFor="let agent of agents"
+      *ngFor="let agent of agents; let i = index"
     >
       <img
-        class="agent-img"
+        class="agent-img agent-{{ i }}"
         [src]="agent.bustPortrait"
         [alt]="agent.displayName"
       />
@@ -18,4 +19,16 @@
       </div>
     </div>
   </div>
+  <img
+    class="arrow-left"
+    src="../../../../assets/images/left.svg"
+    alt="arrow-left"
+    (click)="onLeft()"
+  />
+  <img
+    class="arrow-right"
+    src="../../../../assets/images/right.svg"
+    alt="arrow-right"
+    (click)="onRight()"
+  />
 </section>

@@ -1,0 +1,11 @@
+<section [ngStyle]="{ backgroundColor: backgroundColor, color: color }">
+  <ng-content select="[appTitle]"></ng-content>
+  <div class="feature-container">
+    <ng-content select="[featureImage]"></ng-content>
+    <div class="feature-description">
+      <ng-content select="[featureTitle]"></ng-content>
+      <ng-content select="[featureText]"></ng-content>
+      <ng-content select="[button]"></ng-content>
+    </div>
+  </div>
+</section>

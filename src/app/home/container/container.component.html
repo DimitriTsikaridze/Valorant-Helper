@@ -2,3 +2,40 @@
 <ng-container *ngIf="agents$ | async as agents">
   <app-agent-preview [agents]="agents"></app-agent-preview>
 </ng-container>
+
+<app-feature-preview backgroundColor="#ECE8E1" color="#111111">
+  <app-title margin="2rem 0 3rem 0" appTitle color="#111111"
+    >CROSSHAIRS</app-title
+  >
+  <img
+    class="feature-image"
+    featureImage
+    src="../../../assets/images/crosshair.webp"
+    alt="crosshair"
+  />
+  <h2 featureTitle>Shroud Crosshair</h2>
+  <p featureText>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat.
+  </p>
+  <app-button button>CROSSHAIRS</app-button>
+</app-feature-preview>
+<app-feature-preview backgroundColor="#0F1923" color="#F2F2F2">
+  <app-title margin="2rem 0 3rem 0" appTitle>LINE-UPS</app-title>
+  <img
+    class="feature-image"
+    featureImage
+    src="../../../assets/images/lineup.webp"
+    alt="lineup"
+  />
+  <h2 featureTitle>Viper Line-Up</h2>
+  <p featureText>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat.
+  </p>
+  <app-button button>ALL LINE-UPS</app-button>
+</app-feature-preview>

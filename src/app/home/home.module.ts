@@ -6,12 +6,14 @@ import { ContainerComponent } from './container/container.component';
 import { IntroductionComponent } from './container/introduction/introduction.component';
 import { AgentPreviewComponent } from './container/agent-preview/agent-preview.component';
 import { SharedModule } from '../shared/shared.module';
+import { FeaturePreviewComponent } from './container/feature-preview/feature-preview.component';
 
 @NgModule({
   declarations: [
     ContainerComponent,
     IntroductionComponent,
     AgentPreviewComponent,
+    FeaturePreviewComponent,
   ],
   imports: [CommonModule, HomeRoutingModule, SharedModule],
 })

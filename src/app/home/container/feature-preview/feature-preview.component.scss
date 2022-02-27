@@ -1,0 +1,22 @@
+section {
+  padding-bottom: 5rem;
+}
+.feature-container {
+  display: grid;
+  grid-template-columns: 600px 600px;
+  justify-content: center;
+  gap: 7rem;
+
+  .feature-description {
+    display: flex;
+    flex-direction: column;
+
+    app-button {
+      margin-top: auto;
+    }
+  }
+
+  h2 {
+    margin-bottom: 2rem;
+  }
+}

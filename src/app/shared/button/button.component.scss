@@ -1,5 +1,9 @@
 @use "/src/styles/palette" as *;
 
+:host {
+  display: block;
+}
+
 button {
   background-color: $light-red;
   padding: 10px 50px;

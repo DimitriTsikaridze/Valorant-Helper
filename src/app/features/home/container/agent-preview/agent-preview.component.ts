@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Agent } from '../../../../models/agent.interface';
+import { Agent } from '../../../../shared/models/agent.interface';
 
 @Component({
   selector: 'app-agent-preview',

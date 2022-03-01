@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
-import { Agent, AgentsResponseType } from '../models/agent.interface';
+import { Agent, AgentsResponseType } from '../shared/models/agent.interface';
 
 @Injectable({
   providedIn: 'root',

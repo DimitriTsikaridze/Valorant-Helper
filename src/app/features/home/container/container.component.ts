@@ -1,19 +1,35 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Agent } from '../../../shared/models/agent.interface';
 import { AgentsService } from '../../../services/agents.service';
+import { Subject, Subscription, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-container',
   templateUrl: './container.component.html',
   styleUrls: ['./container.component.scss'],
 })
-export class ContainerComponent implements OnInit {
+export class ContainerComponent implements OnInit, OnDestroy {
   constructor(private agentsService: AgentsService) {}
 
-  agents$!: Observable<Agent[]>;
+  private destroy$ = new Subject<void>();
+
+  agents!: Agent[];
 
   ngOnInit(): void {
-    this.agents$ = this.agentsService.getAllAgents();
+    if (this.agentsService.agents.length) {
+      this.agents = this.agentsService.agents;
+    } else {
+      this.agentsService
+        .getAllAgents()
+        .pipe(takeUntil(this.destroy$))
+        .subscribe((agents: Agent[]) => {
+          this.agents = agents;
+        });
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete;
   }
 }

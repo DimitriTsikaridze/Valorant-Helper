@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Agent } from '../../models/agent.interface';
-import { AgentsService } from '../../services/agents.service';
+import { Agent } from '../../../models/agent.interface';
+import { AgentsService } from '../../../services/agents.service';
 
 @Component({
   selector: 'app-container',

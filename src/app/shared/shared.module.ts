@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ButtonComponent } from './button/button.component';
-import { TitleComponent } from './title/title.component';
+import { ButtonComponent } from './components/button/button.component';
+import { TitleComponent } from './components/title/title.component';
 
 const components = [ButtonComponent, TitleComponent];
 

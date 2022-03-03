@@ -10,13 +10,5 @@ section {
   .feature-description {
     display: flex;
     flex-direction: column;
-
-    app-button {
-      margin-top: auto;
-    }
-  }
-
-  h2 {
-    margin-bottom: 2rem;
   }
 }

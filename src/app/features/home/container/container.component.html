@@ -1,7 +1,11 @@
 <app-introduction></app-introduction>
 <app-agent-preview [agents]="agents"></app-agent-preview>
-<app-feature-preview backgroundColor="#ECE8E1" color="#111111">
-  <app-title margin="2rem 0 3rem 0" appTitle color="#111111"
+<app-feature-preview
+  class="crosshairs"
+  backgroundColor="#ECE8E1"
+  color="#111111"
+>
+  <app-title margin="3rem 0 4rem 0" appTitle color="#111111"
     >CROSSHAIRS</app-title
   >
   <img
@@ -19,8 +23,13 @@
   </p>
   <app-button button routerLink="/crosshairs">CROSSHAIRS</app-button>
 </app-feature-preview>
-<app-feature-preview backgroundColor="#0F1923" color="#F2F2F2">
-  <app-title margin="2rem 0 3rem 0" appTitle>LINE-UPS</app-title>
+<app-feature-preview
+  [descriptionOrder]="-1"
+  class="line-ups"
+  backgroundColor="#0F1923"
+  color="#F2F2F2"
+>
+  <app-title margin="3rem 0 4rem 0" appTitle>LINE-UPS</app-title>
   <img
     class="feature-image"
     featureImage

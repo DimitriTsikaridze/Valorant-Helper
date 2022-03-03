@@ -9,4 +9,5 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 export class FeaturePreviewComponent {
   @Input() backgroundColor!: string;
   @Input() color!: string;
+  @Input() descriptionOrder!: number;
 }

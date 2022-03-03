@@ -2,7 +2,7 @@
   <ng-content select="[appTitle]"></ng-content>
   <div class="feature-container">
     <ng-content select="[featureImage]"></ng-content>
-    <div class="feature-description">
+    <div [ngStyle]="{ order: descriptionOrder }" class="feature-description">
       <ng-content select="[featureTitle]"></ng-content>
       <ng-content select="[featureText]"></ng-content>
       <ng-content select="[button]"></ng-content>

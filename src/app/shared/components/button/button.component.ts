@@ -2,10 +2,13 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-button',
-  templateUrl: './button.component.html',
+  template: `
+    <button [ngStyle]="{ fontSize: fontSize }">
+      <ng-content></ng-content>
+    </button>
+  `,
   styleUrls: ['./button.component.scss'],
 })
 export class ButtonComponent {
-  @Input() text: string = 'Default Text';
   @Input() fontSize: string = '1rem';
 }

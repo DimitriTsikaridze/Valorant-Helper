@@ -1,33 +1,40 @@
+@use "/src/styles/palette" as *;
+
 .feature-image {
   width: 100%;
 }
 
 app-feature-preview {
-  ::ng-deep {
-    h2 {
-      margin-bottom: 1.3rem;
-    }
+  h2 {
+    margin-bottom: 1.3rem;
   }
 }
 
 .crosshairs {
   app-button {
     margin: auto 0 0 auto;
-    ::ng-deep {
-      button {
-        outline: 1px solid #111111;
-      }
-    }
   }
   ::ng-deep {
     h1::after {
-      background-color: #111111;
+      background-color: $primary-dark;
     }
+    button {
+      outline: 2px solid $primary-dark;
+    }
+  }
+
+  img {
+    outline: 2px solid $primary-dark;
+    outline-offset: 6px;
   }
 }
 
 .line-ups {
   app-button {
     margin: auto auto 0 0;
+  }
+  img {
+    outline: 2px solid white;
+    outline-offset: 6px;
   }
 }

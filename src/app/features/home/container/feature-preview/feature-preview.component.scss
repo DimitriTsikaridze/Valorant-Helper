@@ -3,7 +3,8 @@ section {
 }
 .feature-container {
   display: grid;
-  grid-template-columns: 600px 600px;
+  grid-template-columns: repeat(2, minmax(300px, 600px));
+  margin: 1rem;
   justify-content: center;
   gap: 7rem;
 

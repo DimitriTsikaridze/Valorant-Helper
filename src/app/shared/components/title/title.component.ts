@@ -1,8 +1,12 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-title',
-  templateUrl: './title.component.html',
+  template: ` <div>
+    <h1 [ngStyle]="{ margin: margin, color: color, fontSize: fontSize }">
+      <ng-content></ng-content>
+    </h1>
+  </div>`,
   styleUrls: ['./title.component.scss'],
 })
 export class TitleComponent {

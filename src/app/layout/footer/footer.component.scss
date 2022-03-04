@@ -1,0 +1,21 @@
+@use "/src/styles/index.scss" as *;
+
+footer {
+  background-color: $light-white;
+  color: $primary-dark;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 10rem;
+  border-top: 4px solid $light-red;
+}
+
+:host {
+  ::ng-deep {
+    app-button {
+      button {
+        outline: 2px solid $primary-dark;
+      }
+    }
+  }
+}

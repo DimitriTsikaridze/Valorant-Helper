@@ -10,31 +10,33 @@ app-feature-preview {
   }
 }
 
-.crosshairs {
-  app-button {
-    margin: auto 0 0 auto;
-  }
-  ::ng-deep {
-    h1::after {
-      background-color: $primary-dark;
+:host {
+  .crosshairs {
+    app-button {
+      margin: auto 0 0 auto;
     }
-    button {
+    ::ng-deep {
+      h1::after {
+        background-color: $primary-dark;
+      }
+      button {
+        outline: 2px solid $primary-dark;
+      }
+    }
+
+    img {
       outline: 2px solid $primary-dark;
+      outline-offset: 6px;
     }
   }
 
-  img {
-    outline: 2px solid $primary-dark;
-    outline-offset: 6px;
-  }
-}
-
-.line-ups {
-  app-button {
-    margin: auto auto 0 0;
-  }
-  img {
-    outline: 2px solid white;
-    outline-offset: 6px;
+  .line-ups {
+    app-button {
+      margin: auto auto 0 0;
+    }
+    img {
+      outline: 2px solid white;
+      outline-offset: 6px;
+    }
   }
 }

@@ -10,4 +10,9 @@ button {
   font-weight: bold;
   outline: 2px solid white;
   outline-offset: 5px;
+  transition: 0.2s;
+
+  &:hover {
+    background: $primary-dark;
+  }
 }

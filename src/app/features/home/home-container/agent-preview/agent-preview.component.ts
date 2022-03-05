@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { AgentsService } from '../../../../services/agents.service';
 import { Agent } from '../../../../shared/models/agent.interface';
 
 @Component({
@@ -8,7 +9,7 @@ import { Agent } from '../../../../shared/models/agent.interface';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AgentPreviewComponent {
-  constructor() {}
+  constructor(private agentsService: AgentsService) {}
   translateValue = 0;
   isVisible = true;
 
@@ -21,5 +22,9 @@ export class AgentPreviewComponent {
   onRight() {
     if (this.translateValue == -4980) return;
     this.translateValue -= 332 * 3;
+  }
+
+  onAgentClick(agent: Agent) {
+    this.agentsService.navigateToAgent(agent.displayName, agent);
   }
 }

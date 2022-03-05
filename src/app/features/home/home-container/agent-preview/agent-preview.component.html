@@ -6,6 +6,7 @@
         *ngFor="let agent of agents"
         [style.transform]="'translateX(' + translateValue + 'px)'"
         [agent]="agent"
+        (agentClick)="onAgentClick($event)"
       ></app-agent-card>
       <img
         class="arrow-left"

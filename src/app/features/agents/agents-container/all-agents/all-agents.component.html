@@ -4,5 +4,6 @@
     class="agent"
     *ngFor="let agent of agents"
     [agent]="agent"
+    (agentClick)="onAgentClick($event)"
   ></app-agent-card>
 </div>

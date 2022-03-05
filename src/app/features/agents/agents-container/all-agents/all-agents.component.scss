@@ -1,0 +1,23 @@
+@use "/src/styles/palette" as *;
+
+:host {
+  display: block;
+  background-color: $primary-dark;
+}
+
+.agents-container {
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  justify-content: center;
+  column-gap: 8rem;
+  row-gap: 4rem;
+  padding-bottom: 4rem;
+}
+
+app-agent-card {
+  transition: 0.2s;
+  cursor: pointer;
+  &:hover {
+    transform: translateY(-10px);
+  }
+}

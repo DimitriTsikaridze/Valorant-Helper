@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 import { Agent } from '../../models/agent.interface';
 
 @Component({
@@ -9,4 +15,9 @@ import { Agent } from '../../models/agent.interface';
 })
 export class AgentCardComponent {
   @Input() agent!: Agent;
+  @Output() agentClick = new EventEmitter<Agent>();
+
+  onClick(agent: Agent) {
+    this.agentClick.emit(agent);
+  }
 }

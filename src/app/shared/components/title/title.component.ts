@@ -10,7 +10,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./title.component.scss'],
 })
 export class TitleComponent {
-  @Input() title: string = 'Default Title';
   @Input() margin: string = '2rem';
   @Input() color: string = 'white';
   @Input() fontSize: string = '2rem';

@@ -1,1 +1,8 @@
-<div class="agent" *ngFor="let agent of agents"></div>
+<app-title margin="2rem 0 3rem 0" fontSize="1.5rem">AGENTS</app-title>
+<div class="agents-container">
+  <app-agent-card
+    class="agent"
+    *ngFor="let agent of agents"
+    [agent]="agent"
+  ></app-agent-card>
+</div>

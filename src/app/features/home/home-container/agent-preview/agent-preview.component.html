@@ -2,12 +2,11 @@
   <app-title margin="4rem 0">AGENTS</app-title>
   <div class="agents-wrapper">
     <div class="agents-container">
-      <ng-container *ngFor="let agent of agents">
-        <app-agent-card
-          [style.transform]="'translateX(' + translateValue + 'px)'"
-          [agent]="agent"
-        ></app-agent-card>
-      </ng-container>
+      <app-agent-card
+        *ngFor="let agent of agents"
+        [style.transform]="'translateX(' + translateValue + 'px)'"
+        [agent]="agent"
+      ></app-agent-card>
       <img
         class="arrow-left"
         src="../../../../assets/images/left.svg"

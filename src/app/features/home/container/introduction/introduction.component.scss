@@ -22,16 +22,15 @@
 }
 
 article {
-  max-width: 30rem;
+  max-width: 32rem;
 }
 
 aside {
-  display: grid;
-  grid-template-columns: 1fr;
-
+  .iphone-img {
+    width: 350px;
+  }
   .apple-download {
-    justify-self: flex-end;
-    margin-right: 2rem;
+    margin-left: auto;
   }
 }
 

@@ -16,19 +16,20 @@
   cursor: pointer;
 }
 .arrow-left {
-  left: 10vw;
+  left: 0;
 }
 .arrow-right {
-  right: 10vw;
+  right: 0;
 }
 
 .agents-container {
   position: relative;
   display: grid;
   grid-template-columns: repeat(18, 300px);
-  width: calc(900px + 6rem);
+  width: calc(900px + 4rem);
   margin-inline: auto;
   gap: 2rem;
+  padding-inline: 2rem;
   overflow: hidden;
 }
 
@@ -37,7 +38,7 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  transition: 0.3s ease-in;
+  transition: 0.7s;
   overflow: hidden;
 }
 .agent-name {

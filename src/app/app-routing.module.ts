@@ -20,11 +20,9 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'line-ups',
+    path: 'lineups',
     loadChildren: () =>
-      import('./features/line-ups/line-ups.module').then(
-        (m) => m.LineUpsModule
-      ),
+      import('./features/lineups/lineups.module').then((m) => m.LineUpsModule),
   },
   {
     path: 'about',

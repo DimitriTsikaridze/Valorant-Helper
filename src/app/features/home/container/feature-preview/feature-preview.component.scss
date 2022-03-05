@@ -11,5 +11,13 @@ section {
   .feature-description {
     display: flex;
     flex-direction: column;
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .feature-container {
+    grid-template-columns: 80%;
+    gap: 2rem;
   }
 }

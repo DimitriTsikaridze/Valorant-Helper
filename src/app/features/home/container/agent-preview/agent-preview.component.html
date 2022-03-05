@@ -6,10 +6,10 @@
         [ngStyle]="{ 'background-image': 'url(' + agent.background + ')' }"
         [style.transform]="'translateX(' + translateValue + 'px)'"
         class="agent"
-        *ngFor="let agent of agents; let i = index"
+        *ngFor="let agent of agents"
       >
         <img
-          class="agent-img agent-{{ i }}"
+          class="agent-img"
           [src]="agent.bustPortrait"
           [alt]="agent.displayName"
         />
@@ -19,19 +19,19 @@
           <h3>{{ agent.role.displayName }}</h3>
         </div>
       </div>
+      <img
+        class="arrow-left"
+        src="../../../../assets/images/left.svg"
+        alt="arrow-left"
+        (click)="onLeft()"
+      />
+      <img
+        class="arrow-right"
+        src="../../../../assets/images/right.svg"
+        alt="arrow-right"
+        (click)="onRight()"
+      />
     </div>
-    <img
-      class="arrow-left"
-      src="../../../../assets/images/left.svg"
-      alt="arrow-left"
-      (click)="onLeft()"
-    />
-    <img
-      class="arrow-right"
-      src="../../../../assets/images/right.svg"
-      alt="arrow-right"
-      (click)="onRight()"
-    />
   </div>
   <div class="btn">
     <app-button routerLink="/agents">ALL AGENTS</app-button>

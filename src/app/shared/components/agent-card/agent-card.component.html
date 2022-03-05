@@ -1,0 +1,11 @@
+<div
+  [ngStyle]="{ 'background-image': 'url(' + agent.background + ')' }"
+  class="agent"
+>
+  <img class="agent-img" [src]="agent.bustPortrait" [alt]="agent.displayName" />
+
+  <div class="agent-name">
+    <h2>{{ agent.displayName }}</h2>
+    <h3>{{ agent.role.displayName }}</h3>
+  </div>
+</div>

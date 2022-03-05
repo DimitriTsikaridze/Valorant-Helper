@@ -4,11 +4,11 @@ import { AgentsService } from '../../../services/agents.service';
 import { Subject, takeUntil } from 'rxjs';
 
 @Component({
-  selector: 'app-container',
-  templateUrl: './container.component.html',
-  styleUrls: ['./container.component.scss'],
+  selector: 'app-home-container',
+  templateUrl: './home-container.component.html',
+  styleUrls: ['./home-container.component.scss'],
 })
-export class ContainerComponent implements OnInit, OnDestroy {
+export class HomeContainerComponent implements OnInit, OnDestroy {
   constructor(private agentsService: AgentsService) {}
 
   private destroy$ = new Subject<void>();
@@ -22,7 +22,7 @@ export class ContainerComponent implements OnInit, OnDestroy {
       this.agentsService
         .getAllAgents()
         .pipe(takeUntil(this.destroy$))
-        .subscribe((agents: Agent[]) => {
+        .subscribe((agents) => {
           this.agents = agents;
         });
     }

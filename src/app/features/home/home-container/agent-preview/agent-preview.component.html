@@ -2,23 +2,12 @@
   <app-title margin="4rem 0">AGENTS</app-title>
   <div class="agents-wrapper">
     <div class="agents-container">
-      <div
-        [ngStyle]="{ 'background-image': 'url(' + agent.background + ')' }"
-        [style.transform]="'translateX(' + translateValue + 'px)'"
-        class="agent"
-        *ngFor="let agent of agents"
-      >
-        <img
-          class="agent-img"
-          [src]="agent.bustPortrait"
-          [alt]="agent.displayName"
-        />
-
-        <div class="agent-name">
-          <h2>{{ agent.displayName }}</h2>
-          <h3>{{ agent.role.displayName }}</h3>
-        </div>
-      </div>
+      <ng-container *ngFor="let agent of agents">
+        <app-agent-card
+          [style.transform]="'translateX(' + translateValue + 'px)'"
+          [agent]="agent"
+        ></app-agent-card>
+      </ng-container>
       <img
         class="arrow-left"
         src="../../../../assets/images/left.svg"

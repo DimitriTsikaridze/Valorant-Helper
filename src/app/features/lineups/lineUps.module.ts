@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { LineUpsRoutingModule } from './lineups-routing.module';
+import { LineupsRoutingModule } from './lineups-routing.module';
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, LineUpsRoutingModule],
+  imports: [CommonModule, LineupsRoutingModule],
 })
-export class LineUpsModule {}
+export class LineupsModule {}

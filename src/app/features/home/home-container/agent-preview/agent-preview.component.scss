@@ -21,6 +21,9 @@
 .arrow-right {
   right: 0;
 }
+app-agent-card {
+  transition: 0.7s;
+}
 
 .agents-container {
   position: relative;
@@ -31,29 +34,6 @@
   gap: 2rem;
   padding-inline: 2rem;
   overflow: hidden;
-}
-
-.agent {
-  position: relative;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: 0.7s;
-  overflow: hidden;
-}
-.agent-name {
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  padding: 10px;
-  h2 {
-    font-family: "valorant";
-    font-weight: 300;
-  }
-  h3 {
-    font-weight: 300;
-  }
-  background-color: $light-red;
 }
 
 .btn {

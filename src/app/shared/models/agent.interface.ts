@@ -5,6 +5,7 @@ export interface Agent {
   bustPortrait: string;
   fullPortrait: string;
   background: string;
+  pathName: string;
   role: Role;
   abilities: Ability[];
 }

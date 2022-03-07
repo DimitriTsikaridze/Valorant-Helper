@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { AgentsService } from '../../../../services/agents.service';
 import { Agent } from '../../../../shared/models/agent.interface';
 
 @Component({
@@ -8,13 +10,15 @@ import { Agent } from '../../../../shared/models/agent.interface';
   styleUrls: ['./agent-details.component.scss'],
 })
 export class AgentDetailsComponent implements OnInit {
-  constructor(private router: Router) {}
-  agent!: Agent;
+  constructor(
+    private route: ActivatedRoute,
+    private agentsService: AgentsService
+  ) {}
+
+  agent$!: Observable<Agent>;
 
   ngOnInit(): void {
-    this.agent = history.state.agent;
-    if (this.agent == undefined) {
-      this.router.navigate(['agents']);
-    }
+    const pathName = this.route.snapshot.params['id'];
+    this.agent$ = this.agentsService.getSingleAgent(pathName);
   }
 }

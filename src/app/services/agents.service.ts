@@ -10,6 +10,8 @@ import { Agent } from '../shared/models/agent.interface';
 export class AgentsService {
   private AGENTS_URL =
     'https://raw.githubusercontent.com/DimitriTsikaridze/Valorant-Helper-API/main/all-agents.json';
+  private SINGLE_AGENT_URL =
+    'https://raw.githubusercontent.com/DimitriTsikaridze/Valorant-Helper-API/main/agents/';
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -26,9 +28,7 @@ export class AgentsService {
     );
   }
 
-  navigateToAgent(agentName: string, agent: Agent) {
-    //check for fcking kay/o
-    const name = agentName.replace('/', '').toLocaleLowerCase();
-    this.router.navigateByUrl(`agents/${name}`, { state: { agent: agent } });
+  getSingleAgent(pathName: string) {
+    return this.http.get<Agent>(`${this.SINGLE_AGENT_URL}${pathName}.json`);
   }
 }

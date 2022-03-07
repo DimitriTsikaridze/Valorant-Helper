@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { AgentsService } from '../../../../services/agents.service';
+import { Router } from '@angular/router';
 import { Agent } from '../../../../shared/models/agent.interface';
 
 @Component({
@@ -9,11 +9,11 @@ import { Agent } from '../../../../shared/models/agent.interface';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AllAgentsComponent {
-  constructor(private agentsService: AgentsService) {}
+  constructor(private router: Router) {}
 
   @Input() agents!: Agent[];
 
-  onAgentClick(agent: Agent) {
-    this.agentsService.navigateToAgent(agent.displayName, agent);
+  onAgentClick(pathName: string) {
+    this.router.navigate(['agents', pathName]);
   }
 }

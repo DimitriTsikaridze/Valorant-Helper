@@ -15,9 +15,4 @@ import { Agent } from '../../models/agent.interface';
 })
 export class AgentCardComponent {
   @Input() agent!: Agent;
-  @Output() agentClick = new EventEmitter<Agent>();
-
-  onClick(agent: Agent) {
-    this.agentClick.emit(agent);
-  }
 }

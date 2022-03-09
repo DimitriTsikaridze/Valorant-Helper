@@ -3,17 +3,44 @@
   <h6>BACK</h6>
 </div>
 
-<div class="container" *ngIf="agent$ | async as agent">
-  <article>
-    <h1>{{ agent.displayName }}</h1>
-    <h6>// ROLE</h6>
-    <h2>{{ agent.role.displayName }}</h2>
-    <p>{{ agent.role.description }}</p>
-    <h6>// BIOGRAPHY</h6>
-    <p>{{ agent.description }}</p>
-  </article>
+<ng-container *ngIf="agent$ | async as agent">
+  <div class="agent-description">
+    <article>
+      <h1>{{ agent.displayName }}</h1>
+      <h6>// ROLE</h6>
+      <h2>{{ agent.role.displayName }}</h2>
+      <p>{{ agent.role.description }}</p>
+      <h6>// BIOGRAPHY</h6>
+      <p>{{ agent.description }}</p>
+    </article>
 
-  <aside [ngStyle]="{ 'background-image': 'url(' + agent.background + ')' }">
-    <img [src]="agent.bustPortrait" [alt]="agent.displayName" />
-  </aside>
-</div>
+    <aside [ngStyle]="{ 'background-image': 'url(' + agent.background + ')' }">
+      <img [src]="agent.bustPortrait" [alt]="agent.displayName" />
+    </aside>
+  </div>
+
+  <app-title margin="2rem 0 3rem 0">SPECIAL ABILITIES</app-title>
+
+  <div class="ability-container">
+    <div class="ability-overview">
+      <ng-container *ngFor="let ability of agent.abilities">
+        <div *ngIf="ability.slot !== 'Passive'" class="ability">
+          <img
+            class="ability-icon"
+            [src]="ability.displayIcon"
+            [alt]="ability.displayName"
+          />
+          <div class="ability-description">
+            <h2>{{ ability.displayName }}</h2>
+            <p>{{ ability.description }}</p>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+    <video
+      autoplay
+      loop
+      src="https://assets.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt50beaed6524c3219/5ecad82bc846021917ecbb89/Phoenix_X_v001_web.mp4"
+    ></video>
+  </div>
+</ng-container>

@@ -4,6 +4,7 @@
   display: block;
   background-color: $primary-dark;
   min-height: 100%;
+  padding: 1rem;
 }
 
 .back {
@@ -19,25 +20,29 @@
   }
 }
 
-.container {
+.agent-description,
+.ability-container {
   display: grid;
   grid-template-columns: 40% 40%;
   justify-content: center;
+  gap: 2rem;
 }
 
-h1 {
-  font-size: 3rem;
-  font-family: "Valorant";
-  font-weight: 500;
-  margin-bottom: 1.5rem;
-}
+.agent-description {
+  h1 {
+    font-size: 3rem;
+    font-family: "Valorant";
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
 
-h2 + p {
-  margin-bottom: 1.5rem;
-}
+  h2 + p {
+    margin-bottom: 1.5rem;
+  }
 
-h6 {
-  font-size: 0.9rem;
+  h6 {
+    font-size: 0.9rem;
+  }
 }
 
 article {
@@ -50,4 +55,31 @@ aside {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+video {
+  max-width: 100%;
+  align-self: center;
+}
+
+.ability-overview {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.ability {
+  border: 1px solid white;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  img {
+    max-width: 70px;
+    margin-right: 10px;
+  }
+  &-description {
+    h2 {
+      margin-bottom: 0.5rem;
+    }
+  }
 }

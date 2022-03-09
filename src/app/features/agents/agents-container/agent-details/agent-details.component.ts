@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -12,7 +13,8 @@ import { Agent } from '../../../../shared/models/agent.interface';
 export class AgentDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
-    private agentsService: AgentsService
+    private agentsService: AgentsService,
+    private location: Location
   ) {}
 
   agent$!: Observable<Agent>;
@@ -20,5 +22,9 @@ export class AgentDetailsComponent implements OnInit {
   ngOnInit(): void {
     const pathName = this.route.snapshot.params['id'];
     this.agent$ = this.agentsService.getSingleAgent(pathName);
+  }
+
+  navigateBack() {
+    this.location.back();
   }
 }

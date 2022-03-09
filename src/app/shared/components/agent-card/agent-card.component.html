@@ -5,7 +5,11 @@
   <img class="agent-img" [src]="agent.bustPortrait" [alt]="agent.displayName" />
 
   <div class="agent-name">
-    <h2>{{ agent.displayName }}</h2>
-    <h3>{{ agent.role.displayName }}</h3>
+    <div>
+      <h2>{{ agent.displayName }}</h2>
+      <h3>{{ agent.role.displayName }}</h3>
+    </div>
+
+    <img [src]="agent.role.displayIcon" alt="agent-role" />
   </div>
 </div>

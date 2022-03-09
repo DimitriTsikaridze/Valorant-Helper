@@ -1,16 +1,14 @@
-<ng-container *ngIf="agent$ | async as agent">
-  <div class="container">
-    <article>
-      <h1>{{ agent.displayName }}</h1>
-      <h6>//Role</h6>
-      <h2>{{ agent.role.displayName }}</h2>
-      <p>{{ agent.role.description }}</p>
-      <h6>//Biography</h6>
-      <p>{{ agent.description }}</p>
-    </article>
+<div class="container" *ngIf="agent$ | async as agent">
+  <article>
+    <h1>{{ agent.displayName }}</h1>
+    <h6>//Role</h6>
+    <h2>{{ agent.role.displayName }}</h2>
+    <p>{{ agent.role.description }}</p>
+    <h6>//Biography</h6>
+    <p>{{ agent.description }}</p>
+  </article>
 
-    <aside>
-      <img [src]="agent.fullPortrait" [alt]="agent.displayName" />
-    </aside>
-  </div>
-</ng-container>
+  <aside>
+    <img [src]="agent.fullPortrait" [alt]="agent.displayName" />
+  </aside>
+</div>

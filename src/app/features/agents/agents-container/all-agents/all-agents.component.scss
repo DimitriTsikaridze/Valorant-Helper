@@ -7,11 +7,11 @@
 
 .agents-container {
   display: grid;
-  grid-template-columns: repeat(3, 300px);
+  grid-template-columns: repeat(3, minmax(200px, 300px));
   justify-content: center;
-  column-gap: 8rem;
+  column-gap: 6rem;
   row-gap: 4rem;
-  padding-bottom: 4rem;
+  padding: 0 1rem 4rem 1rem;
 }
 
 app-agent-card {
@@ -19,5 +19,17 @@ app-agent-card {
   cursor: pointer;
   &:hover {
     transform: translateY(-10px);
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .agents-container {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 4rem;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .agents-container {
+    grid-template-columns: 90%;
   }
 }

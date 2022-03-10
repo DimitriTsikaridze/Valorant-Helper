@@ -13,7 +13,7 @@
   font-size: 2rem;
   gap: 0.8rem;
   cursor: pointer;
-  margin-left: 5rem;
+  margin-left: 5%;
   padding-top: 2rem;
   img {
     height: 20px;
@@ -26,6 +26,7 @@
   grid-template-columns: 40% 40%;
   justify-content: center;
   gap: 2rem;
+  margin-top: 2rem;
 }
 
 .agent-description {
@@ -51,6 +52,8 @@ article {
 
 aside {
   max-width: 80%;
+  display: flex;
+  align-items: center;
   justify-self: center;
   background-position: center;
   background-size: cover;
@@ -60,11 +63,12 @@ aside {
 video {
   max-width: 100%;
   align-self: center;
+  min-height: 300px;
 }
 
 .ability-overview {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 2rem;
 }
 
@@ -83,5 +87,42 @@ video {
       margin-bottom: 0.5rem;
       color: $light-red;
     }
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .ability-container {
+    grid-template-columns: 80%;
+  }
+  .ability-overview {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  aside {
+    background-size: contain;
+  }
+  .ability-container {
+    grid-template-columns: 100%;
+    gap: 1rem;
+  }
+  .ability {
+    img {
+      max-width: 50px;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .agent-description {
+    grid-template-columns: 1fr;
+    aside {
+      order: -1;
+      background-size: cover;
+    }
+  }
+  .ability-overview {
+    grid-template-columns: 1fr;
   }
 }

@@ -28,6 +28,9 @@
   gap: 2rem;
   margin-top: 2rem;
 }
+.ability-container {
+  margin-bottom: 4rem;
+}
 
 .agent-description {
   h1 {
@@ -74,10 +77,11 @@ video {
 
 .ability {
   border: 1px solid white;
-  padding: 5px;
+  padding: 8px 5px;
   display: flex;
   align-items: center;
   cursor: pointer;
+
   img {
     max-width: 70px;
     margin-right: 10px;

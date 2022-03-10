@@ -46,3 +46,21 @@ span {
 p {
   margin-top: 2rem;
 }
+
+@media only screen and (max-width: 800px) {
+  .container {
+    background-position: center;
+    flex-direction: column;
+    padding-bottom: 2rem;
+    article {
+      margin: 1rem;
+      text-align: center;
+      h1 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

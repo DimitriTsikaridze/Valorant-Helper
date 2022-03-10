@@ -15,6 +15,7 @@ export interface Ability {
   displayName: string;
   description: string;
   displayIcon: string;
+  displayVideo: string;
 }
 
 export interface Role {

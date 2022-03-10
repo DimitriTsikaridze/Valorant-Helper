@@ -73,6 +73,7 @@ video {
   padding: 5px;
   display: flex;
   align-items: center;
+  cursor: pointer;
   img {
     max-width: 70px;
     margin-right: 10px;
@@ -80,6 +81,7 @@ video {
   &-description {
     h2 {
       margin-bottom: 0.5rem;
+      color: $light-red;
     }
   }
 }

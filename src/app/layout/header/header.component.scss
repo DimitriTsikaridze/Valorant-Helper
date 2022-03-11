@@ -50,3 +50,13 @@ a {
     }
   }
 }
+
+@media only screen and (max-width: 780px) {
+  nav {
+    display: none;
+  }
+
+  .logo {
+    margin-inline: auto;
+  }
+}

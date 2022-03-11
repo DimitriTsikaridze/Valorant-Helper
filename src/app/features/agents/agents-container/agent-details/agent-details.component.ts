@@ -22,6 +22,7 @@ export class AgentDetailsComponent implements OnInit, OnDestroy {
   destroy$ = new Subject<void>();
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     const pathName = this.route.snapshot.params['id'];
     this.agentsService
       .getSingleAgent(pathName)

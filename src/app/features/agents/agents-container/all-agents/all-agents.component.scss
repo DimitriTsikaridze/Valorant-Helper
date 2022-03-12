@@ -24,15 +24,17 @@
     li {
       cursor: pointer;
       position: relative;
-      &::after {
-        content: "";
-        position: absolute;
-        width: calc(100% + 6px);
-        border-radius: 5px;
-        height: 3px;
-        bottom: -5px;
-        left: -2px;
-        background-color: $light-red;
+      &.active {
+        &::after {
+          content: "";
+          position: absolute;
+          width: calc(100% + 6px);
+          border-radius: 5px;
+          height: 3px;
+          bottom: -5px;
+          left: -2px;
+          background-color: $light-red;
+        }
       }
     }
   }

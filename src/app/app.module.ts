@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 
 //Firebase
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
-import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { LayoutModule } from './layout/layout.module';
 
@@ -21,7 +20,6 @@ import { LayoutModule } from './layout/layout.module';
     HttpClientModule,
     LayoutModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore()),
   ],
   bootstrap: [AppComponent],
 })

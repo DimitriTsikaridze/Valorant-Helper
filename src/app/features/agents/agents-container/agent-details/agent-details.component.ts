@@ -20,17 +20,15 @@ export class AgentDetailsComponent implements OnInit, OnDestroy {
   agent!: Agent;
   abilityVideo!: string;
   destroy$ = new Subject<void>();
+  activeAbility!: Ability;
 
   ngOnInit(): void {
     window.scrollTo(0, 0);
     const pathName = this.route.snapshot.params['id'];
-    this.agentsService
-      .getSingleAgent(pathName)
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((data) => {
-        this.agent = data;
-        this.abilityVideo = this.agent.abilities[0].displayVideo;
-      });
+    this.agentsService.getSingleAgent(pathName).subscribe((data) => {
+      this.agent = data;
+      this.abilityVideo = this.agent.abilities[0].displayVideo;
+    });
   }
 
   navigateBack() {
@@ -38,6 +36,7 @@ export class AgentDetailsComponent implements OnInit, OnDestroy {
   }
 
   abilityClick(ability: Ability) {
+    this.activeAbility = ability;
     this.abilityVideo = ability.displayVideo;
   }
 

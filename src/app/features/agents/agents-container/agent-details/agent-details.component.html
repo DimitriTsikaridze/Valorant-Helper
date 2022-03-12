@@ -25,6 +25,9 @@
     <div class="ability-overview">
       <div
         class="ability"
+        [ngClass]="{
+          active: ability == activeAbility
+        }"
         (click)="abilityClick(ability)"
         *ngFor="let ability of agent.abilities"
       >

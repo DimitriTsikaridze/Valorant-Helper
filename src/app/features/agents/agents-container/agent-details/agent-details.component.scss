@@ -81,14 +81,18 @@ video {
   display: flex;
   align-items: center;
   cursor: pointer;
-
+  transition: 0.2s;
   img {
     max-width: 70px;
     margin-right: 10px;
   }
-  &-description {
+  h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  &.active {
+    border-color: $light-red;
     h2 {
-      margin-bottom: 0.5rem;
       color: $light-red;
     }
   }

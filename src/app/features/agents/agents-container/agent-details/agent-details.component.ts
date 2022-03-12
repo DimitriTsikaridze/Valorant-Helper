@@ -1,7 +1,6 @@
 import { Location } from '@angular/common';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Subject, takeUntil } from 'rxjs';
 import { AgentsService } from '../../../../services/agents.service';
 import { Ability, Agent } from '../../../../shared/models/agent.interface';
 
@@ -10,7 +9,7 @@ import { Ability, Agent } from '../../../../shared/models/agent.interface';
   templateUrl: './agent-details.component.html',
   styleUrls: ['./agent-details.component.scss'],
 })
-export class AgentDetailsComponent implements OnInit, OnDestroy {
+export class AgentDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private agentsService: AgentsService,
@@ -19,7 +18,6 @@ export class AgentDetailsComponent implements OnInit, OnDestroy {
 
   agent!: Agent;
   abilityVideo!: string;
-  destroy$ = new Subject<void>();
   activeAbility!: Ability;
 
   ngOnInit(): void {
@@ -38,10 +36,5 @@ export class AgentDetailsComponent implements OnInit, OnDestroy {
   abilityClick(ability: Ability) {
     this.activeAbility = ability;
     this.abilityVideo = ability.displayVideo;
-  }
-
-  ngOnDestroy(): void {
-    this.destroy$.next();
-    this.destroy$.complete();
   }
 }

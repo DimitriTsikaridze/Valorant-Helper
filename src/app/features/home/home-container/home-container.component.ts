@@ -8,10 +8,8 @@ import { Subject, takeUntil } from 'rxjs';
   templateUrl: './home-container.component.html',
   styleUrls: ['./home-container.component.scss'],
 })
-export class HomeContainerComponent implements OnInit, OnDestroy {
+export class HomeContainerComponent implements OnInit {
   constructor(private agentsService: AgentsService) {}
-
-  private destroy$ = new Subject<void>();
 
   agents!: Agent[];
 
@@ -19,17 +17,9 @@ export class HomeContainerComponent implements OnInit, OnDestroy {
     if (this.agentsService.agents.length) {
       this.agents = this.agentsService.agents;
     } else {
-      this.agentsService
-        .getAllAgents()
-        .pipe(takeUntil(this.destroy$))
-        .subscribe((agents) => {
-          this.agents = agents;
-        });
+      this.agentsService.getAllAgents().subscribe((agents) => {
+        this.agents = agents;
+      });
     }
-  }
-
-  ngOnDestroy(): void {
-    this.destroy$.next();
-    this.destroy$.complete;
   }
 }

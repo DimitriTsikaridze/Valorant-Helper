@@ -1,44 +1,48 @@
 @use "../../../../../styles/palette" as *;
 
-.container {
+:host {
   background-color: $primary-dark;
+  display: block;
+  padding-inline: 1rem;
 }
 
-.agents-wrapper {
-  position: relative;
-}
-
-.arrow-left,
-.arrow-right {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-}
-.arrow-left {
-  left: 0;
-}
-.arrow-right {
-  right: 0;
-}
 app-agent-card {
   transition: 0.7s;
   cursor: pointer;
 }
 
 .agents-container {
-  position: relative;
   display: grid;
-  grid-template-columns: repeat(18, 300px);
-  width: calc(900px + 4rem);
+  grid-auto-flow: column;
+  max-width: 1200px;
   margin-inline: auto;
+  grid-auto-columns: 33%;
   gap: 2rem;
-  padding-inline: 2rem;
-  overflow: hidden;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  padding-bottom: 1rem;
+  &::-webkit-scrollbar:horizontal {
+    height: 10px;
+  }
+  scroll-snap-type: inline mandatory;
+
+  & > * {
+    scroll-snap-align: start;
+  }
 }
 
 .btn {
   display: flex;
   justify-content: center;
   padding: 4rem 0;
+}
+@media only screen and (max-width: 800px) {
+  .agents-container {
+    grid-auto-columns: 50%;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .agents-container {
+    grid-auto-columns: 100%;
+  }
 }

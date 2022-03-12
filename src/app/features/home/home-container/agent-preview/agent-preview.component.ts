@@ -10,19 +10,7 @@ import { Agent } from '../../../../shared/models/agent.interface';
 })
 export class AgentPreviewComponent {
   constructor(private router: Router) {}
-  translateValue = 0;
-
   @Input() agents!: Agent[];
-
-  onLeft() {
-    if (this.translateValue == 0) return;
-    this.translateValue += 332 * 3;
-  }
-  onRight() {
-    if (this.translateValue == -4980) return;
-    this.translateValue -= 332 * 3;
-  }
-
   onAgentClick(pathName: string) {
     this.router.navigate(['agents', pathName]);
   }

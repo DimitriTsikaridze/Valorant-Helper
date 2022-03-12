@@ -2,11 +2,13 @@
 
 <div class="agents-container">
   <ul>
-    <li #all (click)="roleClick(all)">ALL</li>
-    <li #initiator (click)="roleClick(initiator)">INITIATOR</li>
-    <li #duelsit (click)="roleClick(duelsit)">DUELIST</li>
-    <li #sentinel (click)="roleClick(sentinel)">SENTINEL</li>
-    <li #controller (click)="roleClick(controller)">CONTROLLER</li>
+    <li
+      [ngClass]="{ active: role == activeRole }"
+      (click)="roleClick(role)"
+      *ngFor="let role of agentRoles"
+    >
+      {{ role | uppercase }}
+    </li>
   </ul>
   <app-agent-card
     class="agent"

@@ -19,7 +19,8 @@ export class AllAgentsComponent implements OnInit, OnChanges {
 
   @Input() agents!: Agent[];
   tempAgents!: Agent[];
-  active!: true;
+  agentRoles = ['all', 'initiator', 'duelist', 'sentinel', 'controller'];
+  activeRole!: string;
 
   ngOnInit(): void {
     window.scrollTo(0, 0);
@@ -33,13 +34,12 @@ export class AllAgentsComponent implements OnInit, OnChanges {
     this.router.navigate(['agents', pathName]);
   }
 
-  roleClick(value: HTMLLIElement) {
-    const clickedRole = value.innerText.toLowerCase();
+  roleClick(clickedRole: string) {
+    this.activeRole = clickedRole;
     if (clickedRole === 'all') {
       this.agents = this.tempAgents;
       return;
     }
-    this.active = true;
     const filteredAgents = this.tempAgents.filter((agent) => {
       const agentRole = agent.role.displayName.toLowerCase();
       return agentRole == clickedRole;

@@ -1,5 +1,13 @@
-<app-title margin="2rem 0 3rem 0" fontSize="1.5rem">AGENTS</app-title>
+<app-title margin="2rem 0 3rem 0" fontSize="2rem">AGENTS</app-title>
+
 <div class="agents-container">
+  <ul>
+    <li #all (click)="roleClick(all)">ALL</li>
+    <li #initiator (click)="roleClick(initiator)">INITIATOR</li>
+    <li #duelsit (click)="roleClick(duelsit)">DUELIST</li>
+    <li #sentinel (click)="roleClick(sentinel)">SENTINEL</li>
+    <li #controller (click)="roleClick(controller)">CONTROLLER</li>
+  </ul>
   <app-agent-card
     class="agent"
     *ngFor="let agent of agents"

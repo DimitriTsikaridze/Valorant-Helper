@@ -12,6 +12,30 @@
   column-gap: 6rem;
   row-gap: 4rem;
   padding: 0 1rem 4rem 1rem;
+  margin-top: 4rem;
+  position: relative;
+  ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    position: absolute;
+    top: -4rem;
+    li {
+      cursor: pointer;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        width: calc(100% + 6px);
+        border-radius: 5px;
+        height: 3px;
+        bottom: -5px;
+        left: -2px;
+        background-color: $light-red;
+      }
+    }
+  }
 }
 
 app-agent-card {
@@ -20,6 +44,13 @@ app-agent-card {
   &:hover {
     transform: translateY(-10px);
   }
+}
+
+ul {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  font-size: 1.3rem;
 }
 
 @media only screen and (max-width: 900px) {
@@ -31,5 +62,9 @@ app-agent-card {
 @media only screen and (max-width: 580px) {
   .agents-container {
     grid-template-columns: 90%;
+    margin-top: 6rem;
+    ul {
+      top: -6rem;
+    }
   }
 }

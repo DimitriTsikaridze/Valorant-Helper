@@ -12,10 +12,11 @@ header {
 .logo {
   display: flex;
   align-items: center;
+  cursor: pointer;
+
   &-image {
     width: 3.5rem;
     height: 3.5rem;
-    cursor: pointer;
   }
   &-title {
     font-family: "valorant";

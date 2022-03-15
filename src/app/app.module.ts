@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { LayoutModule } from './layout/layout.module';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +21,12 @@ import { LayoutModule } from './layout/layout.module';
     HttpClientModule,
     LayoutModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
   ],
   bootstrap: [AppComponent],
 })

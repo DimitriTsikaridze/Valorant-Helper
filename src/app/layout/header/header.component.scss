@@ -1,12 +1,16 @@
 @use "/src/styles/index.scss" as *;
 
 header {
-  background-color: $primary-dark;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem 10%;
   border-bottom: 4px solid $light-red;
+  position: fixed;
+  top: 0;
+  width: calc(100% - 20%);
+  z-index: 5;
+  background-color: $primary-dark;
 }
 
 .logo {
@@ -65,14 +69,15 @@ a {
 
 .hamburger-menu {
   transition: 0.3s;
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
   position: absolute;
   left: 0;
   top: 0;
   width: 50%;
   left: -100%;
   background-color: $primary-dark;
+  border-right: 4px solid $light-red;
+  border-bottom: 4px solid $light-red;
+  border-left: 4px solid $light-red;
   top: 92px;
   padding: 3rem;
   z-index: 10;

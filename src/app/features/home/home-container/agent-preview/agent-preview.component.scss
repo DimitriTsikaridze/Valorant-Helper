@@ -43,6 +43,9 @@ app-agent-card {
 }
 @media only screen and (max-width: 450px) {
   .agents-container {
-    grid-auto-columns: 100%;
+    grid-auto-columns: 70%;
+    & > * {
+      scroll-snap-align: center;
+    }
   }
 }

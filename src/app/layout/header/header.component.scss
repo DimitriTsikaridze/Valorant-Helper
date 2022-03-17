@@ -52,11 +52,51 @@ a {
   }
 }
 
+.hamburger-menu,
+.hamburger-icon {
+  display: none;
+}
+
+.hamburger-icon {
+  pointer-events: unset;
+  cursor: pointer;
+  width: 30px;
+}
+
+.hamburger-menu {
+  transition: 0.3s;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 250px;
+  left: -100%;
+  background-color: $primary-dark;
+  top: 92px;
+  padding: 3rem;
+  z-index: 10;
+  ul {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 @media only screen and (max-width: 780px) {
   nav {
     display: none;
   }
+  .hamburger-menu,
+  .hamburger-icon {
+    display: block;
+  }
 
+  .hamburger-menu.active {
+    left: 0;
+  }
+  .logo-title {
+    display: none;
+  }
   .logo {
     margin-inline: auto;
   }

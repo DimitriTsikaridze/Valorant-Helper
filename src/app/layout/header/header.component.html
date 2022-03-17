@@ -7,6 +7,24 @@
     </h2>
   </div>
 
+  <div [ngClass]="{ active: active }" class="hamburger-menu">
+    <ul>
+      <li><a routerLinkActive="active" routerLink="/home">HOME</a></li>
+      <li><a routerLinkActive="active" routerLink="/agents">AGENTS</a></li>
+      <li>
+        <a routerLinkActive="active" routerLink="/crosshairs">CROSSHAIRS</a>
+      </li>
+      <li><a routerLinkActive="active" routerLink="/lineups">LINEUPS</a></li>
+      <li><a routerLinkActive="active" routerLink="/about">ABOUT</a></li>
+    </ul>
+  </div>
+  <img
+    (click)="changeIcon()"
+    class="hamburger-icon"
+    [src]="iconURL"
+    alt="hamburger-icon"
+  />
+
   <nav>
     <ul>
       <li><a routerLinkActive="active" routerLink="/home">HOME</a></li>

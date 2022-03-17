@@ -70,7 +70,7 @@ a {
   position: absolute;
   left: 0;
   top: 0;
-  width: 250px;
+  width: 50%;
   left: -100%;
   background-color: $primary-dark;
   top: 92px;
@@ -91,8 +91,22 @@ a {
     display: block;
   }
 
+  li {
+    width: min-content;
+  }
+
+  a {
+    &.active {
+      &::after {
+        width: calc(100% + 6px);
+      }
+    }
+  }
+
   .hamburger-menu.active {
     left: 0;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+      rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
   }
   .logo-title {
     display: none;

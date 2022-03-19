@@ -43,9 +43,6 @@
 app-agent-card {
   transition: 0.2s;
   cursor: pointer;
-  &:hover {
-    transform: translateY(-10px);
-  }
 }
 
 ul {

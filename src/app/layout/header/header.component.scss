@@ -63,6 +63,8 @@ a {
 
 .hamburger-icon {
   pointer-events: unset;
+  position: absolute;
+  right: 3rem;
   cursor: pointer;
   width: 30px;
 }
@@ -72,9 +74,9 @@ a {
   position: absolute;
   left: 0;
   top: 0;
-  width: 50%;
+  width: calc(100% - 6rem - 8px);
   left: -100%;
-  background-color: $primary-dark;
+  background-color: lighten($color: $primary-dark, $amount: 5%);
   border-right: 4px solid $light-red;
   border-bottom: 4px solid $light-red;
   border-left: 4px solid $light-red;
@@ -83,6 +85,7 @@ a {
   z-index: 10;
   ul {
     display: flex;
+    align-items: center;
     flex-direction: column;
   }
 }

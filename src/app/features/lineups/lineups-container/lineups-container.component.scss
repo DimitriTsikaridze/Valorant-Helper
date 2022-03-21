@@ -41,6 +41,11 @@ ul {
   }
 }
 
+@media only screen and (max-width: 1050px) {
+  .agents-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 @media only screen and (max-width: 800px) {
   .agents-container {
     grid-template-columns: 1fr;

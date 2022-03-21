@@ -8,11 +8,5 @@ import { Agent } from '../../../../shared/models/agent.interface';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AgentLineupsPreviewComponent {
-  activeRole = 'all';
-
   @Input() agent!: Agent;
-
-  agentClick() {
-    console.log('click');
-  }
 }

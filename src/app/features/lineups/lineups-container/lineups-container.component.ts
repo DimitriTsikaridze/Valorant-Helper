@@ -13,6 +13,9 @@ export class LineupsContainerComponent {
   constructor(private agentsService: AgentsService) {}
 
   agents!: Agent[];
+  tempAgents!: Agent[];
+
+  activeRole = 'all';
 
   ngOnInit(): void {
     if (this.agentsService.agents.length) {
@@ -20,7 +23,21 @@ export class LineupsContainerComponent {
     } else {
       this.agentsService.getAllAgents().subscribe((agents) => {
         this.agents = agents;
+        this.tempAgents = this.agents;
       });
     }
+  }
+
+  roleClick(clickedRole: string) {
+    this.activeRole = clickedRole;
+    if (clickedRole === 'all') {
+      this.agents = this.tempAgents;
+      return;
+    }
+    const filteredAgents = this.tempAgents.filter((agent) => {
+      const agentRole = agent.role.displayName.toLowerCase();
+      return agentRole == clickedRole;
+    });
+    this.agents = filteredAgents;
   }
 }

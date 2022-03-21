@@ -1,7 +1,11 @@
 <app-title margin="2rem 0 1rem">AGENTS</app-title>
 
 <ul>
-  <li *ngFor="let role of agentRoles">
+  <li
+    (click)="roleClick(role)"
+    [ngClass]="{ active: role === activeRole }"
+    *ngFor="let role of agentRoles"
+  >
     {{ role | uppercase }}
   </li>
 </ul>

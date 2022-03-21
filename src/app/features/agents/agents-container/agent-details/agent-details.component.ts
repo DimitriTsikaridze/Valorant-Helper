@@ -18,7 +18,8 @@ export class AgentDetailsComponent implements OnInit {
 
   agent!: Agent;
   abilityVideo!: string;
-  activeAbility!: Ability;
+  abilities!: 'Ability1' | 'Ability2' | 'Grenade' | 'Ultimate';
+  activeAbility = 'Ability1';
 
   ngOnInit(): void {
     window.scrollTo(0, 0);
@@ -34,7 +35,7 @@ export class AgentDetailsComponent implements OnInit {
   }
 
   abilityClick(ability: Ability) {
-    this.activeAbility = ability;
+    this.activeAbility = ability.slot;
     this.abilityVideo = ability.displayVideo;
   }
 }

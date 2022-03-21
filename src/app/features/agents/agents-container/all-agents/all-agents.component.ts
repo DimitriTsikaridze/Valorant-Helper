@@ -20,7 +20,7 @@ export class AllAgentsComponent implements OnInit, OnChanges {
   @Input() agents!: Agent[];
   tempAgents!: Agent[];
   agentRoles = ['all', 'initiator', 'duelist', 'sentinel', 'controller'];
-  activeRole!: string;
+  activeRole = 'all';
 
   ngOnInit(): void {
     window.scrollTo(0, 0);

@@ -1,0 +1,48 @@
+@use "/src/styles/palette" as *;
+:host {
+  display: block;
+  background-color: $primary-dark;
+  min-height: 100%;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 1.3rem;
+  padding-top: 2rem;
+  li {
+    cursor: pointer;
+    position: relative;
+    &.active {
+      &::after {
+        content: "";
+        position: absolute;
+        width: calc(100% + 6px);
+        border-radius: 5px;
+        height: 3px;
+        bottom: -5px;
+        left: -2px;
+        background-color: $light-red;
+      }
+    }
+  }
+}
+
+.agents-container {
+  display: grid;
+  padding: 4rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  & > * {
+    background-color: $light-white;
+    border-bottom: 5px solid $light-red;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .agents-container {
+    grid-template-columns: 1fr;
+  }
+}

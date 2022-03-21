@@ -1,0 +1,13 @@
+<app-title margin="2rem 0 1rem">AGENTS</app-title>
+
+<ul>
+  <li *ngFor="let role of agentRoles">
+    {{ role | uppercase }}
+  </li>
+</ul>
+<div class="agents-container">
+  <app-agent-lineups-preview
+    *ngFor="let agent of agents"
+    [agent]="agent"
+  ></app-agent-lineups-preview>
+</div>

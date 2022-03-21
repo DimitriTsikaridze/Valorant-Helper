@@ -13,7 +13,7 @@ export class AgentsService {
   private SINGLE_AGENT_URL =
     'https://raw.githubusercontent.com/DimitriTsikaridze/Valorant-Helper-API/main/agents/';
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient) {}
 
   agents: Agent[] = [];
 

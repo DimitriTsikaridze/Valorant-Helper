@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div [routerLink]="['/lineups', agent.pathName]" class="wrapper">
   <img class="agent-icon" [src]="agent.displayIcon" [alt]="agent.pathName" />
   <div class="agent-info">
     <h2>{{ agent.displayName }}</h2>

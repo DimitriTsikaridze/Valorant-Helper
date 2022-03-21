@@ -1,0 +1,52 @@
+@use "/src/styles/palette" as *;
+
+:host {
+  display: block;
+  min-height: 100%;
+  background-color: $primary-dark;
+}
+.back {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  gap: 0.8rem;
+  cursor: pointer;
+  margin-left: 5%;
+  padding-top: 2rem;
+  img {
+    height: 20px;
+  }
+}
+
+.map-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 80vw;
+  margin-inline: auto;
+  gap: 2rem;
+  padding-block: 2rem;
+}
+
+.map {
+  position: relative;
+  cursor: pointer;
+  h2 {
+    display: inline-block;
+  }
+
+  .description {
+    display: flex;
+    align-items: center;
+    width: calc(100% - 2rem);
+    padding: 1rem;
+    color: black;
+    background-color: $light-white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-bottom: 5px solid $light-red;
+    .regular-arrow {
+      margin-left: auto;
+    }
+  }
+}

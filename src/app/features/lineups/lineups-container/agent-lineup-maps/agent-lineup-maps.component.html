@@ -1,0 +1,20 @@
+<app-title>MAPS</app-title>
+<div routerLink="/lineups" class="back">
+  <img src="../../../../../assets/images/back-arrow.svg" alt="arrow" />
+  <h6>BACK</h6>
+</div>
+
+<div class="map-container">
+  <div class="map" *ngFor="let map of maps$ | async">
+    <img [src]="map.splash" [alt]="map.displayName" />
+    <div class="description">
+      <h2 class="map-name">{{ map.displayName }}</h2>
+
+      <img
+        class="regular-arrow"
+        src="../../../../../assets/images/regular-arrow.svg"
+        alt="arrow"
+      />
+    </div>
+  </div>
+</div>

@@ -3,7 +3,6 @@ import {
   Component,
   Input,
   OnChanges,
-  OnInit,
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { Agent } from '../../../../shared/models/agent.interface';
@@ -14,17 +13,13 @@ import { Agent } from '../../../../shared/models/agent.interface';
   styleUrls: ['./all-agents.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AllAgentsComponent implements OnInit, OnChanges {
+export class AllAgentsComponent implements OnChanges {
   constructor(private router: Router) {}
 
   @Input() agents!: Agent[];
   tempAgents!: Agent[];
   agentRoles = ['all', 'initiator', 'duelist', 'sentinel', 'controller'];
   activeRole = 'all';
-
-  ngOnInit(): void {
-    window.scrollTo(0, 0);
-  }
 
   ngOnChanges(): void {
     this.tempAgents = this.agents;

@@ -22,7 +22,7 @@ const routes: Routes = [
   {
     path: 'lineups',
     loadChildren: () =>
-      import('./features/lineups/lineups.module').then((m) => m.LineupsModule),
+      import('./features/lineups/lineUps.module').then((m) => m.LineupsModule),
   },
   {
     path: 'about',

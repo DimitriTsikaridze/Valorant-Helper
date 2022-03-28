@@ -52,6 +52,9 @@ app-feature-preview {
 }
 
 ::ng-deep {
+  p {
+    max-width: 50ch;
+  }
   .submit-link {
     color: $light-red !important;
     text-decoration: underline;

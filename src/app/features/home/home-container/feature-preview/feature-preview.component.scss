@@ -8,6 +8,10 @@ section {
   justify-content: center;
   gap: 7rem;
 
+  &::slotted {
+    color: red;
+  }
+
   .feature-description {
     display: flex;
     flex-direction: column;

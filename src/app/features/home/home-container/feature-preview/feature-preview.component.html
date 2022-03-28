@@ -4,7 +4,7 @@
     <ng-content select="[featureImage]"></ng-content>
     <div [ngStyle]="{ order: descriptionOrder }" class="feature-description">
       <ng-content select="[featureTitle]"></ng-content>
-      <ng-content select="[featureText]"></ng-content>
+      <ng-content class="feature-text" select="[featureText]"></ng-content>
       <ng-content select="[button]"></ng-content>
     </div>
   </div>

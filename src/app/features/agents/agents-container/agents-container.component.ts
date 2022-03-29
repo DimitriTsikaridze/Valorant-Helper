@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { AgentsService } from '../../../services/agents.service';
 import { Agent } from '../../../shared/models/agent.interface';
 
@@ -8,11 +9,15 @@ import { Agent } from '../../../shared/models/agent.interface';
   styleUrls: ['./agents-container.component.scss'],
 })
 export class AgentsContainerComponent implements OnInit {
-  constructor(private agentsService: AgentsService) {}
+  constructor(
+    private agentsService: AgentsService,
+    private titleService: Title
+  ) {}
 
   agents!: Agent[];
 
   ngOnInit(): void {
+    this.titleService.setTitle('Agents');
     if (this.agentsService.agents.length) {
       this.agents = this.agentsService.agents;
     } else {

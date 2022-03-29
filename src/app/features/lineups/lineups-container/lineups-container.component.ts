@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { AgentsService } from '../../../services/agents.service';
 import { Agent } from '../../../shared/models/agent.interface';
 
@@ -10,7 +11,10 @@ import { Agent } from '../../../shared/models/agent.interface';
 export class LineupsContainerComponent implements OnInit {
   agentRoles = ['all', 'initiator', 'duelist', 'sentinel', 'controller'];
 
-  constructor(private agentsService: AgentsService) {}
+  constructor(
+    private agentsService: AgentsService,
+    private titleService: Title
+  ) {}
 
   agents!: Agent[];
   tempAgents!: Agent[];
@@ -18,6 +22,7 @@ export class LineupsContainerComponent implements OnInit {
   activeRole = 'all';
 
   ngOnInit(): void {
+    this.titleService.setTitle('Lineups');
     if (this.agentsService.agents.length) {
       this.agents = this.agentsService.agents;
     } else {

@@ -1,7 +1,7 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Agent } from '../../../shared/models/agent.interface';
 import { AgentsService } from '../../../services/agents.service';
-import { Subject, takeUntil } from 'rxjs';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home-container',
@@ -9,11 +9,15 @@ import { Subject, takeUntil } from 'rxjs';
   styleUrls: ['./home-container.component.scss'],
 })
 export class HomeContainerComponent implements OnInit {
-  constructor(private agentsService: AgentsService) {}
+  constructor(
+    private agentsService: AgentsService,
+    private titleService: Title
+  ) {}
 
   agents!: Agent[];
 
   ngOnInit(): void {
+    this.titleService.setTitle('Home');
     if (this.agentsService.agents.length) {
       this.agents = this.agentsService.agents;
     } else {

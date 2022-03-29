@@ -3,12 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { CrosshairsRoutingModule } from './crosshairs-routing.module';
 
-
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    CrosshairsRoutingModule
-  ]
+  imports: [CommonModule, CrosshairsRoutingModule],
 })
-export class CrosshairsModule { }
+export class CrosshairsModule {}

@@ -138,9 +138,21 @@
             "firebaseProject": "valorant-helper-fca81",
             "firebaseHostingSite": "valorant-helper-fca81"
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "valorant-helper"
+  "defaultProject": "valorant-helper",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }

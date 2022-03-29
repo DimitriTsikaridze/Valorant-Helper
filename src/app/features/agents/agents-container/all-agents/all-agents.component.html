@@ -4,7 +4,7 @@
   <ul>
     <li
       (click)="roleClick(role)"
-      [ngClass]="{ active: role == activeRole }"
+      [ngClass]="{ active: role === activeRole }"
       *ngFor="let role of agentRoles"
     >
       {{ role | uppercase }}

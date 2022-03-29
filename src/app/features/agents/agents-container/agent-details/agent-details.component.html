@@ -26,7 +26,7 @@
       <div
         class="ability"
         [ngClass]="{
-          active: ability.slot == activeAbility
+          active: ability.slot === activeAbility
         }"
         (click)="abilityClick(ability)"
         *ngFor="let ability of agent.abilities"

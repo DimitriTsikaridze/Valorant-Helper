@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AgentsService } from '../../../services/agents.service';
 import { Agent } from '../../../shared/models/agent.interface';
 
@@ -7,7 +7,7 @@ import { Agent } from '../../../shared/models/agent.interface';
   templateUrl: './lineups-container.component.html',
   styleUrls: ['./lineups-container.component.scss'],
 })
-export class LineupsContainerComponent {
+export class LineupsContainerComponent implements OnInit {
   agentRoles = ['all', 'initiator', 'duelist', 'sentinel', 'controller'];
 
   constructor(private agentsService: AgentsService) {}

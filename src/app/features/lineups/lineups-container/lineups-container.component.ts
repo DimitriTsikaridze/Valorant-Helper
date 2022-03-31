@@ -25,6 +25,7 @@ export class LineupsContainerComponent implements OnInit {
     this.titleService.setTitle('Lineups');
     if (this.agentsService.agents.length) {
       this.agents = this.agentsService.agents;
+      this.tempAgents = this.agents;
     } else {
       this.agentsService.getAllAgents().subscribe((agents) => {
         this.agents = agents;

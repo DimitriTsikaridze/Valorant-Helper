@@ -6,7 +6,7 @@
 
 <div class="map-container">
   <div appToggleSites class="map" *ngFor="let map of maps$ | async">
-    <img [src]="map.splash" [alt]="map.displayName" />
+    <img [src]="map.listViewIcon" [alt]="map.displayName" />
     <div class="description">
       <h2 class="map-name">{{ map.displayName }}</h2>
       <img
@@ -17,7 +17,10 @@
     </div>
 
     <div class="bottom-content">
-      <h1>Lorem ipsum dolor sit amet.</h1>
+      <div class="site" *ngFor="let siteName of map.availableSites">
+        <p>{{ siteName }} Site</p>
+        <img src="../../../../../assets/images/front-arrow.svg" alt="arrow" />
+      </div>
     </div>
   </div>
 </div>

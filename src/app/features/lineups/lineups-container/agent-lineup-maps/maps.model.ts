@@ -4,4 +4,5 @@ export interface Map {
   displayIcon: string;
   listViewIcon: string;
   splash: string;
+  availableSites: string[];
 }

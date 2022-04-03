@@ -6,7 +6,7 @@
   background-color: $primary-dark;
 }
 .back {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   font-size: 2rem;
   gap: 0.8rem;
@@ -20,9 +20,9 @@
 
 .map-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  max-width: 80vw;
-  margin-inline: auto;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 450px));
+  margin-inline: 2rem;
+  justify-content: center;
   gap: 2rem;
   padding-block: 2rem;
 }
@@ -38,14 +38,11 @@
   .description {
     display: flex;
     align-items: center;
-    width: calc(100% - 2rem);
     padding: 1rem;
     color: black;
     background-color: $light-white;
-    position: absolute;
-    bottom: 0;
-    left: 0;
     border-bottom: 5px solid $light-red;
+    z-index: 10;
     .regular-arrow {
       margin-left: auto;
     }
@@ -54,23 +51,31 @@
 
 .bottom-content {
   display: none;
+  width: 100%;
   transition: 0.2s;
   position: absolute;
   bottom: 0;
   transform: translateY(100%);
 }
 
-.active {
-  &.map {
-    margin-bottom: 100px;
-  }
-  .bottom-content {
-    display: block;
+.site {
+  background-color: $light-white;
+  font-size: 1.2rem;
+  color: black;
+  padding: 10px 2rem;
+  border-bottom: 3px solid $light-red;
+  display: flex;
+  align-items: center;
+  img {
+    margin-left: auto;
   }
 }
 
-@media only screen and (max-width: 780px) {
-  .map-container {
-    grid-template-columns: 1fr;
+.active {
+  &.map {
+    margin-bottom: 140px;
+  }
+  .bottom-content {
+    display: block;
   }
 }

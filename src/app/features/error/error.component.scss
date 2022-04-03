@@ -1,0 +1,11 @@
+@use "/src/styles/index" as *;
+:host {
+  display: block;
+  min-height: 100%;
+  background-color: black;
+}
+
+h1 {
+  text-align: center;
+  padding-block: 2rem;
+}

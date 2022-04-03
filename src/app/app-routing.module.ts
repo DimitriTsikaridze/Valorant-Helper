@@ -34,6 +34,11 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full',
   },
+  {
+    path: '**',
+    loadChildren: () =>
+      import('./features/error/error.module').then((m) => m.ErrorModule),
+  },
 ];
 
 @NgModule({

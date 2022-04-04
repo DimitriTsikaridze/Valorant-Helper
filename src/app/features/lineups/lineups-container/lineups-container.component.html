@@ -1,17 +1,16 @@
 <app-title margin="2rem 0 1rem">AGENTS</app-title>
 
-<ul>
-  <li
-    (click)="roleClick(role)"
-    [ngClass]="{ active: role === activeRole }"
-    *ngFor="let role of agentRoles"
-  >
-    {{ role | uppercase }}
-  </li>
-</ul>
+<div class="search-bar">
+  <input
+    placeholder="Search Agent..."
+    (input)="searchAgent($event)"
+    type="text"
+  />
+</div>
+
 <div class="agents-container">
   <app-agent-lineups-preview
-    *ngFor="let agent of agents"
+    *ngFor="let agent of filteredAgents"
     [agent]="agent"
   ></app-agent-lineups-preview>
 </div>

@@ -41,6 +41,25 @@ ul {
   }
 }
 
+.search-bar {
+  display: flex;
+  justify-content: center;
+
+  input {
+    margin-top: 2rem;
+    text-align: center;
+    outline: none;
+    border: 2px solid $light-red;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 4px;
+    background-color: transparent;
+    font-size: 1.3rem;
+    color: white;
+    font-family: "valorant";
+  }
+}
+
 @media only screen and (max-width: 1050px) {
   .agents-container {
     grid-template-columns: 1fr 1fr;

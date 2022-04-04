@@ -18,6 +18,7 @@ export class LineupsContainerComponent implements OnInit {
 
   agents!: Agent[];
   tempAgents!: Agent[];
+  filteredAgents!: Agent[];
 
   activeRole = 'all';
 
@@ -26,10 +27,12 @@ export class LineupsContainerComponent implements OnInit {
     if (this.agentsService.agents.length) {
       this.agents = this.agentsService.agents;
       this.tempAgents = this.agents;
+      this.filteredAgents = this.agents;
     } else {
       this.agentsService.getAllAgents().subscribe((agents) => {
         this.agents = agents;
         this.tempAgents = this.agents;
+        this.filteredAgents = this.agents;
       });
     }
   }
@@ -45,5 +48,12 @@ export class LineupsContainerComponent implements OnInit {
       return agentRole == clickedRole;
     });
     this.agents = filteredAgents;
+  }
+
+  searchAgent(e: any) {
+    const filterText = e.target.value;
+    this.filteredAgents = this.agents.filter((v) =>
+      v.displayName.toLowerCase().includes(filterText.toLowerCase())
+    );
   }
 }

@@ -33,6 +33,7 @@
   cursor: pointer;
   h2 {
     display: inline-block;
+    transition: 0.2s;
   }
 
   .description {
@@ -43,9 +44,11 @@
     background-color: $light-white;
     border-bottom: 5px solid $light-red;
     z-index: 10;
-    .regular-arrow {
-      margin-left: auto;
-    }
+  }
+  .regular-arrow {
+    margin-left: auto;
+    transform: rotate(180deg);
+    transition: 0.2s;
   }
 }
 
@@ -75,6 +78,13 @@
   &.map {
     margin-bottom: 140px;
   }
+  .map-name {
+    color: $light-red;
+  }
+  .regular-arrow {
+    transform: rotate(0);
+  }
+
   .bottom-content {
     display: block;
   }

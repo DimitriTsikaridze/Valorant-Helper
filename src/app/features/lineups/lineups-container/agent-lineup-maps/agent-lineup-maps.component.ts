@@ -14,6 +14,8 @@ export class AgentLineupMapsComponent implements OnInit {
 
   maps$!: Observable<Map[]>;
 
+  mockSites = ['A', 'B'];
+
   ngOnInit(): void {
     this.maps$ = this.lineupsService.getMaps();
   }

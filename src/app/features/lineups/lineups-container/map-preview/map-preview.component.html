@@ -1,6 +1,11 @@
-<app-title>Lineups</app-title>
-<div (click)="navigateBack()" class="back">
-  <img src="../../../../../assets/images/back-arrow.svg" alt="arrow" />
-  <h6>BACK</h6>
+<div class="title" (click)="navigateBack()">
+  <div class="back">
+    <img src="../../../../../assets/images/back-arrow.svg" alt="arrow" />
+    <h6>BACK</h6>
+  </div>
+
+  <app-title>Lineups</app-title>
 </div>
-<div class="map-preview"></div>
+<div class="container">
+  <img class="map-image" [src]="mapUrl" alt="map-name" />
+</div>

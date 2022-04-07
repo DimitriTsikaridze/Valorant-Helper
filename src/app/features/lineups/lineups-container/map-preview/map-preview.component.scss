@@ -6,15 +6,37 @@
   background-color: $primary-dark;
 }
 
-.back {
-  display: inline-flex;
+.title {
+  max-width: 80vw;
+  margin-inline: auto;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.back {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 0;
   font-size: 2rem;
   gap: 0.8rem;
   cursor: pointer;
-  margin-left: 5%;
-  padding-top: 2rem;
   img {
     height: 20px;
   }
+}
+
+.container {
+  max-width: 80vw;
+  margin-inline: auto;
+}
+
+.map-image {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  max-height: 200px;
 }

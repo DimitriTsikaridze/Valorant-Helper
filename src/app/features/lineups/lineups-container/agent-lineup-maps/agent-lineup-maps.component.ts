@@ -22,7 +22,7 @@ export class AgentLineupMapsComponent implements OnInit {
   mockSites = ['A', 'B'];
 
   ngOnInit(): void {
-    this.maps$ = this.lineupsService.getMaps();
+    this.maps$ = this.lineupsService.getMapsData();
   }
 
   navigateToLineup(mapName: string, siteName: string) {

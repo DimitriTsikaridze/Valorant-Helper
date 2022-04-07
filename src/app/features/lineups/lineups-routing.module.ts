@@ -5,7 +5,7 @@ import { LineupsContainerComponent } from './lineups-container/lineups-container
 import { MapPreviewComponent } from './lineups-container/map-preview/map-preview.component';
 
 const routes: Routes = [
-  { path: '', component: LineupsContainerComponent },
+  { path: '', component: LineupsContainerComponent, children: [] },
   { path: ':agentName', component: AgentLineupMapsComponent },
   { path: ':agentName/:mapName/:siteName', component: MapPreviewComponent },
 ];

@@ -2,11 +2,11 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-title',
-  template: ` <div>
+  template: `
     <h1 [ngStyle]="{ margin: margin, color: color, fontSize: fontSize }">
       <ng-content></ng-content>
     </h1>
-  </div>`,
+  `,
   styleUrls: ['./title.component.scss'],
 })
 export class TitleComponent {

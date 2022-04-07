@@ -7,5 +7,10 @@
   <app-title>Lineups</app-title>
 </div>
 <div class="container">
-  <img class="map-image" [src]="mapUrl" alt="map-name" />
+  <div class="map-preview">
+    <img class="map-image" [src]="mapUrl" alt="map-name" />
+    <h2>
+      {{ mapName | uppercase }} - <span>{{ siteName | uppercase }} site</span>
+    </h2>
+  </div>
 </div>

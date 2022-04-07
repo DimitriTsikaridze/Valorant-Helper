@@ -7,12 +7,13 @@
 }
 
 .title {
-  max-width: 80vw;
+  max-width: 80%;
   margin-inline: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  padding-top: 1.5rem;
   margin-bottom: 3rem;
 }
 
@@ -30,13 +31,30 @@
 }
 
 .container {
-  max-width: 80vw;
+  max-width: 80%;
   margin-inline: auto;
 }
 
-.map-image {
-  width: 100%;
-  object-fit: cover;
-  object-position: center;
-  max-height: 200px;
+.map-preview {
+  .map-image {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    max-height: 200px;
+  }
+  h2 {
+    font-size: 25px;
+    color: black;
+    padding: 10px 25px;
+    background-color: $light-white;
+  }
+  span {
+    color: $light-red;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .back {
+    bottom: -30px;
+  }
 }

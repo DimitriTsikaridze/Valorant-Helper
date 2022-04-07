@@ -16,6 +16,8 @@ export class MapPreviewComponent implements OnInit {
   ) {}
 
   mapUrl = '';
+  mapName = this.route.snapshot.params['mapName'];
+  siteName = this.route.snapshot.params['siteName'];
 
   navigateBack() {
     const agentName = this.route.snapshot.params['agentName'];
@@ -23,8 +25,7 @@ export class MapPreviewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const mapName = this.route.snapshot.params['mapName'];
-    this.mapUrl = this.lineupsService.getMapImagePath(mapName, 'splash');
+    this.mapUrl = this.lineupsService.getMapImagePath(this.mapName, 'splash');
     console.log(this.mapUrl);
   }
 }

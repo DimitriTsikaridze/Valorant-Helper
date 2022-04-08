@@ -18,7 +18,7 @@ export class AllAgentsComponent implements OnChanges {
 
   @Input() agents!: Agent[];
   tempAgents!: Agent[];
-  agentRoles = ['all', 'initiator', 'duelist', 'sentinel', 'controller'];
+  agentRoles = ['all', 'initiator', 'duelist', 'controller', 'sentinel'];
   activeRole = 'all';
 
   ngOnChanges(): void {

@@ -11,7 +11,7 @@
     </li>
   </ul>
   <app-agent-card
-    class="agent"
+    class="agent animate__animated animate__fadeIn"
     *ngFor="let agent of agents"
     [agent]="agent"
     (click)="onAgentClick(agent.pathName)"

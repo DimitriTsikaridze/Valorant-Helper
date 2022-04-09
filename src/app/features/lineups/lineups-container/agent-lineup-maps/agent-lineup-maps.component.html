@@ -5,7 +5,11 @@
 </div>
 
 <div class="map-container">
-  <div appToggleSites class="map" *ngFor="let map of maps$ | async">
+  <div
+    appToggleSites
+    class="map animate__animated animate__fadeIn"
+    *ngFor="let map of maps$ | async"
+  >
     <img [src]="map.listViewIcon" [alt]="map.displayName" />
     <div class="description">
       <h2 class="map-name">{{ map.displayName }}</h2>

@@ -67,6 +67,10 @@
   border-bottom: 3px solid $light-red;
   display: flex;
   align-items: center;
+  transition: 0.2s;
+  &:hover {
+    color: $light-red;
+  }
   img {
     margin-left: auto;
   }

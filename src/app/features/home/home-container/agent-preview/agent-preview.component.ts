@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
 import { Agent } from '@models/agent';
 
 @Component({
@@ -9,9 +8,6 @@ import { Agent } from '@models/agent';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AgentPreviewComponent {
-  constructor(private router: Router) {}
+  constructor() {}
   @Input() agents!: Agent[];
-  onAgentClick(pathName: string) {
-    this.router.navigate(['agents', pathName]);
-  }
 }

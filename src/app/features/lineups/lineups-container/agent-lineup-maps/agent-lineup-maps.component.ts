@@ -1,8 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { LineupsService } from '../../../../services/lineups.service';
-import { Map } from './maps.model';
+import { LineupsService } from '@services/lineups.service';
+import { Map } from '@models/map';
 
 @Component({
   selector: 'app-agent-lineup-maps',

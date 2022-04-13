@@ -4,7 +4,6 @@ import {
   Input,
   OnChanges,
 } from '@angular/core';
-import { Router } from '@angular/router';
 import { Agent } from '@models/agent';
 
 @Component({
@@ -14,7 +13,7 @@ import { Agent } from '@models/agent';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AllAgentsComponent implements OnChanges {
-  constructor(private router: Router) {}
+  constructor() {}
 
   @Input() agents!: Agent[];
   tempAgents!: Agent[];
@@ -23,10 +22,6 @@ export class AllAgentsComponent implements OnChanges {
 
   ngOnChanges(): void {
     this.tempAgents = this.agents;
-  }
-
-  onAgentClick(pathName: string) {
-    this.router.navigate(['agents', pathName]);
   }
 
   roleClick(clickedRole: string) {

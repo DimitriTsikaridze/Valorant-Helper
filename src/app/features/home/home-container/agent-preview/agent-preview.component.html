@@ -3,7 +3,7 @@
   <app-agent-card
     *ngFor="let agent of agents"
     [agent]="agent"
-    (click)="onAgentClick(agent.pathName)"
+    [routerLink]="['/agents', agent.pathName]"
   ></app-agent-card>
 </div>
 <div class="btn">

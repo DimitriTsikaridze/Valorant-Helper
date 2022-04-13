@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Map } from '../features/lineups/lineups-container/agent-lineup-maps/maps.model';
+import { Map } from '@models/map';
 
 @Injectable({
   providedIn: 'root',

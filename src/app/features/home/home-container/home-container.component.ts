@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Agent } from '../../../shared/models/agent.interface';
-import { AgentsService } from '../../../services/agents.service';
+import { Agent } from '@models/agent';
+import { AgentsService } from '@services/agents.service';
 import { Title } from '@angular/platform-browser';
 
 @Component({

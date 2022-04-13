@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { AgentsService } from '../../../services/agents.service';
-import { Agent } from '../../../shared/models/agent.interface';
+import { AgentsService } from '@services/agents.service';
+import { Agent } from '@models/agent';
 
 @Component({
   selector: 'app-lineups-container',

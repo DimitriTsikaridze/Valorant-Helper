@@ -2,7 +2,7 @@ import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AgentsService } from '../../../../services/agents.service';
-import { Ability, Agent } from '../../../../shared/models/agent.interface';
+import { Ability, Agent } from '../../../../shared/models/agent';
 
 @Component({
   selector: 'app-agent-details',

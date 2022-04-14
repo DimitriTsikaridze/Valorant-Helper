@@ -10,6 +10,7 @@ footer {
 }
 
 :host {
+  display: block;
   ::ng-deep {
     app-button {
       button {

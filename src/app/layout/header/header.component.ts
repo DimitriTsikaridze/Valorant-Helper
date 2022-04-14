@@ -9,7 +9,13 @@ export class HeaderComponent {
   private menuIcon = 'https://i.ibb.co/HrfVRcx/menu.png';
   private closeIcon = 'https://i.ibb.co/rt3HybH/close.png';
 
-  readonly navigationLinks = ['home', 'agents', 'crosshas', 'lineups', 'about'];
+  readonly navigationLinks = [
+    'home',
+    'agents',
+    'crosshairs',
+    'lineups',
+    'about',
+  ];
 
   active = false;
   iconURL = this.menuIcon;

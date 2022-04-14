@@ -16,8 +16,8 @@ export class AgentDetailsComponent implements OnInit {
     private location: Location
   ) {}
 
-  agent!: Agent;
   abilityVideo!: string;
+  agent!: Agent;
   abilities!: 'Ability1' | 'Ability2' | 'Grenade' | 'Ultimate';
   activeAbility = 'Ability1';
 

@@ -16,7 +16,7 @@ export class AllAgentsComponent implements OnChanges {
   constructor() {}
 
   @Input() agents!: Agent[];
-  tempAgents!: Agent[];
+  private tempAgents!: Agent[];
   agentRoles = ['all', 'initiator', 'duelist', 'controller', 'sentinel'];
   activeRole = 'all';
 

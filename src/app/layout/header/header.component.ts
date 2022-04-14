@@ -11,7 +11,7 @@ export class HeaderComponent {
   closeIcon = 'https://i.ibb.co/rt3HybH/close.png';
   iconURL = this.menuIcon;
 
-  changeIcon() {
+  toggleMenu() {
     this.active = !this.active;
     this.active
       ? (this.iconURL = this.closeIcon)

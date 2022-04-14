@@ -19,7 +19,9 @@
     </ul>
   </div>
   <img
-    (click)="changeIcon()"
+    appOutsideClick
+    (clickOutside)="toggleMenu()"
+    (click)="toggleMenu()"
     class="hamburger-icon"
     [src]="iconURL"
     alt="hamburger-icon"

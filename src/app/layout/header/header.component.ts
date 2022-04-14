@@ -6,9 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
+  private menuIcon = 'https://i.ibb.co/HrfVRcx/menu.png';
+  private closeIcon = 'https://i.ibb.co/rt3HybH/close.png';
+
   active = false;
-  menuIcon = 'https://i.ibb.co/HrfVRcx/menu.png';
-  closeIcon = 'https://i.ibb.co/rt3HybH/close.png';
   iconURL = this.menuIcon;
 
   toggleMenu() {
@@ -16,5 +17,10 @@ export class HeaderComponent {
     this.active
       ? (this.iconURL = this.closeIcon)
       : (this.iconURL = this.menuIcon);
+  }
+
+  closeMenu() {
+    this.active = false;
+    this.iconURL = this.menuIcon;
   }
 }

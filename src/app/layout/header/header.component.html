@@ -1,4 +1,4 @@
-<header>
+<header appOutsideClick (clickOutside)="closeMenu()">
   <div routerLink="/" class="logo">
     <img class="logo-image" src="../../assets/images/logo.svg" alt="logo" />
     <h2 class="logo-title">
@@ -19,8 +19,6 @@
     </ul>
   </div>
   <img
-    appOutsideClick
-    (clickOutside)="toggleMenu()"
     (click)="toggleMenu()"
     class="hamburger-icon"
     [src]="iconURL"

@@ -68,6 +68,7 @@ ul {
 @media only screen and (max-width: 800px) {
   .search-bar input {
     max-width: 230px;
+    margin-bottom: 2rem;
   }
   .agents-container {
     grid-template-columns: 1fr;

@@ -9,13 +9,11 @@
 
   <div [ngClass]="{ active: active }" class="hamburger-menu">
     <ul>
-      <li><a routerLinkActive="active" routerLink="/home">HOME</a></li>
-      <li><a routerLinkActive="active" routerLink="/agents">AGENTS</a></li>
-      <li>
-        <a routerLinkActive="active" routerLink="/crosshairs">CROSSHAIRS</a>
+      <li *ngFor="let link of navigationLinks">
+        <a routerLinkActive="active" [routerLink]="['/', link]">{{
+          link | uppercase
+        }}</a>
       </li>
-      <li><a routerLinkActive="active" routerLink="/lineups">LINEUPS</a></li>
-      <li><a routerLinkActive="active" routerLink="/about">ABOUT</a></li>
     </ul>
   </div>
   <img
@@ -27,13 +25,11 @@
 
   <nav>
     <ul>
-      <li><a routerLinkActive="active" routerLink="/home">HOME</a></li>
-      <li><a routerLinkActive="active" routerLink="/agents">AGENTS</a></li>
-      <li>
-        <a routerLinkActive="active" routerLink="/crosshairs">CROSSHAIRS</a>
+      <li *ngFor="let link of navigationLinks">
+        <a routerLinkActive="active" [routerLink]="['/', link]">{{
+          link | uppercase
+        }}</a>
       </li>
-      <li><a routerLinkActive="active" routerLink="/lineups">LINEUPS</a></li>
-      <li><a routerLinkActive="active" routerLink="/about">ABOUT</a></li>
     </ul>
   </nav>
 </header>

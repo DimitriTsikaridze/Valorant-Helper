@@ -74,6 +74,13 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+              "sourceMap": {
+                "scripts": true,
+                "styles": true,
+                "hidden": true,
+                "vendor": true
+              },
+              "namedChunks": true,
               "outputHashing": "all"
             },
             "development": {

@@ -10,6 +10,10 @@
       <h3>{{ agent.role.displayName }}</h3>
     </div>
 
-    <img class="role-img" [src]="agent.role.displayIcon" alt="agent-role" />
+    <img
+      class="role-img"
+      [src]="agent.role.displayIcon"
+      [alt]="agent.role.displayName"
+    />
   </div>
 </div>

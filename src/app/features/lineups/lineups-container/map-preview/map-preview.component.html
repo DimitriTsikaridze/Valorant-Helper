@@ -7,8 +7,14 @@
   <app-title>Lineups</app-title>
 </div>
 <div class="container">
-  <div class="map-preview animate__animated animate__fadeIn">
-    <img class="map-image" [src]="mapUrl" alt="map-name" />
+  <div class="map-preview fade-in">
+    <img
+      width="1200"
+      height="500"
+      class="map-image"
+      [src]="mapUrl"
+      alt="map-name"
+    />
     <h2>
       {{ mapName | uppercase }} - <span>{{ siteName | uppercase }} site</span>
     </h2>

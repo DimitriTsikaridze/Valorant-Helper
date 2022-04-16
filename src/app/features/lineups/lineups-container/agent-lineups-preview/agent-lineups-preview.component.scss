@@ -1,12 +1,22 @@
+@use "/src/styles/palette" as *;
+
 .agent-wrapper {
   display: flex;
   align-items: center;
   cursor: pointer;
+  transition: 0.2s;
+  &:hover {
+    background-color: transparent;
+    .agent-info {
+      color: $light-red;
+    }
+  }
   .arrow {
     margin-left: auto;
     margin-right: 1rem;
   }
   .agent-info {
+    transition: color 0.2s;
     margin: 1rem;
     color: black;
     h2 {

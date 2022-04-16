@@ -35,6 +35,11 @@
     display: inline-block;
     transition: 0.2s;
   }
+  &:hover {
+    h2 {
+      color: $light-red;
+    }
+  }
 
   .description {
     display: flex;
@@ -79,9 +84,9 @@
 .active {
   &.map {
     margin-bottom: 140px;
-  }
-  .map-name {
-    color: $light-red;
+    h2 {
+      color: $light-red;
+    }
   }
   .regular-arrow {
     transform: rotate(0);

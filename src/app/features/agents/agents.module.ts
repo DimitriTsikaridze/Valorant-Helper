@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '@shared/shared.module';
-import { AgentsRoutingModule } from './agents-routing.module';
+import { AgentCardModule } from '@shared/modules/agent-card/agent-card.module';
 
 import {
   AgentDetailsComponent,
@@ -9,7 +9,13 @@ import {
   AgentsContainerComponent,
   AllAgentsComponent,
 } from './index';
-import { AgentCardModule } from '../../shared/modules/agent-card/agent-card.module';
+
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  { path: '', component: AgentsContainerComponent },
+  { path: ':id', component: AgentDetailsComponent },
+];
 
 @NgModule({
   declarations: [
@@ -18,6 +24,11 @@ import { AgentCardModule } from '../../shared/modules/agent-card/agent-card.modu
     AllAgentsComponent,
     AgentDetailsComponent,
   ],
-  imports: [CommonModule, AgentsRoutingModule, SharedModule, AgentCardModule],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    SharedModule,
+    AgentCardModule,
+  ],
 })
 export class AgentsModule {}

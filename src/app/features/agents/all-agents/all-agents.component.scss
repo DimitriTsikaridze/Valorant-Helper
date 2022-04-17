@@ -1,4 +1,4 @@
-@use '/src/styles/palette' as *;
+@use "/src/styles/palette" as *;
 
 :host {
   display: block;
@@ -24,16 +24,26 @@
     li {
       cursor: pointer;
       position: relative;
+      transition: 0.2s;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        border-radius: 5px;
+        height: 3px;
+        bottom: -5px;
+        left: -2px;
+        background-color: $light-red;
+        transition: width 0.2s;
+      }
+      &:hover {
+        &::after {
+          width: calc(100% + 6px);
+        }
+      }
       &.active {
         &::after {
-          content: '';
-          position: absolute;
           width: calc(100% + 6px);
-          border-radius: 5px;
-          height: 3px;
-          bottom: -5px;
-          left: -2px;
-          background-color: $light-red;
         }
       }
     }

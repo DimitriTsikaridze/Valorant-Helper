@@ -9,6 +9,7 @@ import {
   AgentsContainerComponent,
   AllAgentsComponent,
 } from './index';
+import { AgentCardModule } from '../../shared/modules/agent-card/agent-card.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,6 @@ import {
     AllAgentsComponent,
     AgentDetailsComponent,
   ],
-  imports: [CommonModule, AgentsRoutingModule, SharedModule],
+  imports: [CommonModule, AgentsRoutingModule, SharedModule, AgentCardModule],
 })
 export class AgentsModule {}

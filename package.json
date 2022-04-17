@@ -8,7 +8,9 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "explore": "source-map-explorer dist/**/*.js"
+    "explore": "source-map-explorer dist/**/*.js",
+    "format:fix": "pretty-quick --staged",
+    "precommit": "run-s format:fix lint"
   },
   "private": true,
   "dependencies": {

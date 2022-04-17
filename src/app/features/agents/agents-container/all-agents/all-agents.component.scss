@@ -1,4 +1,4 @@
-@use "/src/styles/palette" as *;
+@use '/src/styles/palette' as *;
 
 :host {
   display: block;
@@ -10,8 +10,8 @@
   grid-template-columns: repeat(3, minmax(200px, 300px));
   justify-content: center;
   column-gap: 6rem;
-  row-gap: 4rem;
   padding: 0 1rem 4rem 1rem;
+  row-gap: 4rem;
   margin-top: 4rem;
   position: relative;
   ul {
@@ -26,7 +26,7 @@
       position: relative;
       &.active {
         &::after {
-          content: "";
+          content: '';
           position: absolute;
           width: calc(100% + 6px);
           border-radius: 5px;

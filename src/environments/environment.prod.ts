@@ -7,5 +7,7 @@ export const environment = {
     authDomain: 'valorant-helper-fca81.firebaseapp.com',
     messagingSenderId: '845053606056',
   },
-  production: true
+  production: true,
+  baseUrl:
+    'https://raw.githubusercontent.com/DimitriTsikaridze/Valorant-Helper-API/main/',
 };

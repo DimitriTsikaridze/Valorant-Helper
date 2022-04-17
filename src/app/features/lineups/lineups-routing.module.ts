@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AgentLineupMapsComponent } from './lineups-container/agent-lineup-maps/agent-lineup-maps.component';
-import { LineupsContainerComponent } from './lineups-container/lineups-container.component';
-import { MapPreviewComponent } from './lineups-container/map-preview/map-preview.component';
+import {
+  AgentLineupMapsComponent,
+  LineupsContainerComponent,
+  MapPreviewComponent,
+} from './index';
 
 const routes: Routes = [
-  { path: '', component: LineupsContainerComponent, children: [] },
+  { path: '', component: LineupsContainerComponent },
   { path: ':agentName', component: AgentLineupMapsComponent },
   { path: ':agentName/:mapName/:siteName', component: MapPreviewComponent },
 ];

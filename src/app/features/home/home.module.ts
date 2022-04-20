@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeRoutingModule } from './home-routing.module';
 import { SharedModule } from '@shared/shared.module';
 import { AgentCardModule } from '@shared/modules/agent-card/agent-card.module';
+import { RouterModule } from '@angular/router';
 
 import {
   AgentPreviewComponent,
@@ -18,6 +18,6 @@ import {
     AgentPreviewComponent,
     FeaturePreviewComponent,
   ],
-  imports: [CommonModule, HomeRoutingModule, SharedModule, AgentCardModule],
+  imports: [CommonModule, RouterModule, SharedModule, AgentCardModule],
 })
 export class HomeModule {}

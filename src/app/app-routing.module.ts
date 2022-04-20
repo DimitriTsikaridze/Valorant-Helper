@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { HomeContainerComponent } from './features/home';
 
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () =>
-      import('./features/home/home.module').then((m) => m.HomeModule),
+    component: HomeContainerComponent,
   },
   {
     path: 'agents',

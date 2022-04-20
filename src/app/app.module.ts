@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 
 import { environment } from '@environment/environment';
+import { HomeModule } from './features/home/home.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,6 +19,7 @@ import { environment } from '@environment/environment';
     AppRoutingModule,
     HttpClientModule,
     LayoutModule,
+    HomeModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,

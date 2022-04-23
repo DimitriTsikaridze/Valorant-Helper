@@ -6,8 +6,16 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-#Screenshots
-<img width="600" src="src\assets\readme-images\landing.png">
-<img width="600" src="src\assets\readme-images\agents.png">
-<img width="600" src="src\assets\readme-images\agent-details.png">
-<img width="600" src="src\assets\readme-images\lineups.png">
+# Screenshots
+
+<p float="left">
+  <img width="500" src="src\assets\readme-images\landing.png">  
+  <img width="500" src="src\assets\readme-images\agents.png">
+</p>
+
+<p float="left">
+  <img width="500" src="src\assets\readme-images\agent-details.png">
+<img width="500" src="src\assets\readme-images\lineups.png">
+</p>
+
+

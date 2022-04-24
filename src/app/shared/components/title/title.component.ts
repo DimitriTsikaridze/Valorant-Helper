@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-title',
@@ -8,6 +8,7 @@ import { Component, Input } from '@angular/core';
     </h1>
   `,
   styleUrls: ['./title.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TitleComponent {
   @Input() margin: string = '2rem';

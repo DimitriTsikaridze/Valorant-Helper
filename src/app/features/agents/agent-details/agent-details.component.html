@@ -3,7 +3,7 @@
   <h6>BACK</h6>
 </div>
 
-<ng-container *ngIf="agent">
+<ng-container *ngIf="agent$ | async as agent">
   <div class="agent-description">
     <article>
       <h1>{{ agent.displayName }}</h1>

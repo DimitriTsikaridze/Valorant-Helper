@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { AgentsService } from '@services/agents.service';
 import { Agent } from '@models/agent';
@@ -7,6 +7,7 @@ import { Agent } from '@models/agent';
   selector: 'app-agents-container',
   templateUrl: './agents-container.component.html',
   styleUrls: ['./agents-container.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AgentsContainerComponent implements OnInit {
   constructor(

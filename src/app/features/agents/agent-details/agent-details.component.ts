@@ -13,7 +13,7 @@ export class AgentDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private agentsService: AgentsService,
-    private location: Location
+    public location: Location
   ) {}
 
   abilityVideo!: string;
@@ -27,10 +27,6 @@ export class AgentDetailsComponent implements OnInit {
       this.agent = data;
       this.abilityVideo = this.agent.abilities[0].displayVideo;
     });
-  }
-
-  navigateBack() {
-    this.location.back();
   }
 
   abilityClick(ability: Ability) {

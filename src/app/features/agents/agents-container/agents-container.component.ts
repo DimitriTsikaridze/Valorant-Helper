@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { AgentsService } from '@services/agents.service';
 import { Agent } from '@models/agent';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-agents-container',
@@ -15,16 +16,14 @@ export class AgentsContainerComponent implements OnInit {
     private titleService: Title
   ) {}
 
-  agents!: Agent[];
+  agents$!: Observable<Agent[]>;
 
   ngOnInit(): void {
     this.titleService.setTitle('Agents');
     if (this.agentsService.agents.length) {
-      this.agents = this.agentsService.agents;
+      this.agents$ = of(this.agentsService.agents);
     } else {
-      this.agentsService.getAllAgents().subscribe((agents: Agent[]) => {
-        this.agents = agents;
-      });
+      this.agents$ = this.agentsService.getAllAgents();
     }
   }
 }

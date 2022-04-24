@@ -8,6 +8,5 @@ import { Agent } from '@models/agent';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AgentPreviewComponent {
-  constructor() {}
-  @Input() agents!: Agent[];
+  @Input() agents!: Agent[] | null;
 }

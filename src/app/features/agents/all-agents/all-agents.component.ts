@@ -13,10 +13,10 @@ import { Agent } from '@models/agent';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AllAgentsComponent implements OnChanges {
-  constructor() {}
+  @Input() agents!: Agent[] | null;
 
-  @Input() agents!: Agent[];
-  private tempAgents!: Agent[];
+  private tempAgents!: Agent[] | null;
+
   agentRoles = ['all', 'initiator', 'duelist', 'controller', 'sentinel'];
   activeRole = 'all';
 
@@ -26,11 +26,9 @@ export class AllAgentsComponent implements OnChanges {
 
   roleClick(clickedRole: string) {
     this.activeRole = clickedRole;
-    if (clickedRole === 'all') {
-      this.agents = this.tempAgents;
-      return;
-    }
-    const filteredAgents = this.tempAgents.filter((agent) => {
+    if (clickedRole === 'all') this.agents = this.tempAgents;
+
+    const filteredAgents = this.tempAgents!.filter((agent) => {
       const agentRole = agent.role.displayName.toLowerCase();
       return agentRole == clickedRole;
     });

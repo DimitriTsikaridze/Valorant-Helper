@@ -1,5 +1,5 @@
 <app-introduction></app-introduction>
-<app-agent-preview [agents]="agents"></app-agent-preview>
+<app-agent-preview [agents]="agents$ | async"></app-agent-preview>
 <app-feature-preview
   class="crosshairs"
   backgroundColor="#ECE8E1"

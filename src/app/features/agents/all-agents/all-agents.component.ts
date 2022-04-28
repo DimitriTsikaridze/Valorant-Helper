@@ -26,9 +26,12 @@ export class AllAgentsComponent implements OnChanges {
 
   roleClick(clickedRole: string) {
     this.activeRole = clickedRole;
-    if (clickedRole === 'all') this.agents = this.tempAgents;
+    if (clickedRole === 'all') {
+      this.agents = this.tempAgents;
+      return;
+    }
 
-    const filteredAgents = this.tempAgents!.filter((agent) => {
+    const filteredAgents = this.tempAgents.filter((agent) => {
       const agentRole = agent.role.displayName.toLowerCase();
       return agentRole == clickedRole;
     });

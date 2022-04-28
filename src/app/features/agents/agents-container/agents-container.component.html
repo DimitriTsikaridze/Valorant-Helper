@@ -1,2 +1,4 @@
 <app-agent-news></app-agent-news>
-<app-all-agents [agents]="agents$ | async"></app-all-agents>
+<ng-container *ngIf="agents$ | async as agents">
+  <app-all-agents [agents]="agents"></app-all-agents>
+</ng-container>

@@ -1,5 +1,7 @@
 <app-introduction></app-introduction>
-<app-agent-preview [agents]="agents$ | async"></app-agent-preview>
+<ng-container *ngIf="agents$ | async as agents">
+  <app-agent-preview [agents]="agents"></app-agent-preview>
+</ng-container>
 <app-feature-preview
   class="crosshairs"
   backgroundColor="#ECE8E1"

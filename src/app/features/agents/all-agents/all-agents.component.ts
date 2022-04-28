@@ -13,9 +13,9 @@ import { Agent } from '@models/agent';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AllAgentsComponent implements OnChanges {
-  @Input() agents!: Agent[] | null;
+  @Input() agents!: Agent[];
 
-  private tempAgents!: Agent[] | null;
+  private tempAgents!: Agent[];
 
   agentRoles = ['all', 'initiator', 'duelist', 'controller', 'sentinel'];
   activeRole = 'all';

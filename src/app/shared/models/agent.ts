@@ -4,6 +4,7 @@ export interface Agent {
   displayIcon: string;
   bustPortrait: string;
   fullPortrait: string;
+  fullPortraitV2: string;
   background: string;
   pathName: string;
   role: Role;

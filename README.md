@@ -9,13 +9,11 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 # Screenshots
 
 <p float="left">
-  <img width="500" src="src\assets\readme-images\landing.png">  
-  <img width="500" src="src\assets\readme-images\agents.png">
+  <img width="500" src="src\assets\readme-images\landing.webp">  
+  <img width="500" src="src\assets\readme-images\agents.webp">
 </p>
 
 <p float="left">
-  <img width="500" src="src\assets\readme-images\agent-details.png">
-<img width="500" src="src\assets\readme-images\lineups.png">
+  <img width="500" src="src\assets\readme-images\agent-details.webp">
+  <img width="500" src="src\assets\readme-images\lineups.webp">
 </p>
-
-

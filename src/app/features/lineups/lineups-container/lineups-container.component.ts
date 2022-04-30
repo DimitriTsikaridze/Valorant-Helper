@@ -14,8 +14,8 @@ export class LineupsContainerComponent implements OnInit {
     private titleService: Title
   ) {}
 
-  agents!: Agent[];
-  filteredAgents!: Agent[];
+  agents: Agent[];
+  filteredAgents: Agent[];
 
   ngOnInit(): void {
     this.titleService.setTitle('Lineups');

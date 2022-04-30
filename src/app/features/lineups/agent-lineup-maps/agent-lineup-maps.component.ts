@@ -17,7 +17,7 @@ export class AgentLineupMapsComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
 
-  maps$!: Observable<Map[]>;
+  maps$: Observable<Map[]>;
 
   mockSites = ['A', 'B'];
 

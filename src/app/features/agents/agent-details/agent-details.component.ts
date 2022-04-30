@@ -18,9 +18,9 @@ export class AgentDetailsComponent implements OnInit {
     public location: Location
   ) {}
 
-  abilityVideo!: string;
-  agent$!: Observable<Agent>;
-  abilities!: 'Ability1' | 'Ability2' | 'Grenade' | 'Ultimate';
+  abilityVideo: string;
+  agent$: Observable<Agent>;
+  abilities: 'Ability1' | 'Ability2' | 'Grenade' | 'Ultimate';
   activeAbility = 'Ability1';
 
   ngOnInit(): void {

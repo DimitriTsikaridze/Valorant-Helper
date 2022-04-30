@@ -8,5 +8,5 @@ import { Agent } from '@models/agent';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AgentLineupsPreviewComponent {
-  @Input() agent!: Agent;
+  @Input() agent: Agent;
 }

@@ -16,7 +16,7 @@ export class AgentsContainerComponent implements OnInit {
     private titleService: Title
   ) {}
 
-  agents$!: Observable<Agent[]>;
+  agents$: Observable<Agent[]>;
 
   ngOnInit(): void {
     this.titleService.setTitle('Agents');

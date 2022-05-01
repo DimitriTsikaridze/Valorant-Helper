@@ -16,8 +16,8 @@ export class HomeContainerComponent implements OnInit {
     private titleService: Title
   ) {}
 
-  agents!: Agent[];
-  agents$!: Observable<Agent[]>;
+  agents: Agent[];
+  agents$: Observable<Agent[]>;
 
   ngOnInit(): void {
     this.titleService.setTitle('Home');

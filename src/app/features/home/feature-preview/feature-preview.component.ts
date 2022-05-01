@@ -7,7 +7,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FeaturePreviewComponent {
-  @Input() backgroundColor!: string;
-  @Input() color!: string;
-  @Input() descriptionOrder!: number;
+  @Input() backgroundColor: string;
+  @Input() color: string;
+  @Input() descriptionOrder: number;
 }

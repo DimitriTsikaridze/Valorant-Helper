@@ -1,4 +1,3 @@
-@use "/src/styles/_reset";
 @use "/src/styles/index" as *;
 
 ::-webkit-scrollbar {
@@ -9,17 +8,4 @@
 }
 ::-webkit-scrollbar-thumb {
   background: $light-red;
-}
-
-.fade-in {
-  animation: fadeIn 1s forwards;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }

@@ -11,6 +11,6 @@ export class CrosshairsContainerComponent implements OnInit {
   constructor(private title: Title) {}
 
   ngOnInit(): void {
-    this.title.setTitle('About');
+    this.title.setTitle('Crosshairs');
   }
 }

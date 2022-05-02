@@ -41,6 +41,10 @@ li {
   position: relative;
 }
 a {
+  transition: color 0.2s;
+  &:hover {
+    color: $light-red;
+  }
   &.active {
     color: $light-red;
     &::after {

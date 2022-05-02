@@ -1,8 +1,6 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { LineupsService } from '@services/lineups.service';
-import { Map } from '@models/map';
 
 @Component({
   selector: 'app-agent-lineup-maps',
@@ -10,20 +8,16 @@ import { Map } from '@models/map';
   styleUrls: ['./agent-lineup-maps.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AgentLineupMapsComponent implements OnInit {
+export class AgentLineupMapsComponent {
   constructor(
     private lineupsService: LineupsService,
     private router: Router,
     private route: ActivatedRoute
   ) {}
 
-  maps$: Observable<Map[]>;
+  maps$ = this.lineupsService.maps$;
 
   mockSites = ['A', 'B'];
-
-  ngOnInit(): void {
-    this.maps$ = this.lineupsService.getMapsData();
-  }
 
   navigateToLineup(mapName: string, siteName: string) {
     this.router.navigate([mapName, siteName], { relativeTo: this.route });

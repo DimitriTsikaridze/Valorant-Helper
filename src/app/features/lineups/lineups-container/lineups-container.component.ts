@@ -30,10 +30,10 @@ export class LineupsContainerComponent implements OnInit {
     }
   }
 
-  searchAgent(e: any) {
-    const filterText = e.target.value;
-    this.filteredAgents = this.agents.filter((v) =>
-      v.displayName.toLowerCase().includes(filterText.toLowerCase())
+  searchAgent(e: Event) {
+    const filterText = (e.target as HTMLInputElement).value;
+    this.filteredAgents = this.agents.filter((agent) =>
+      agent.displayName.toLowerCase().includes(filterText.toLowerCase())
     );
   }
 }

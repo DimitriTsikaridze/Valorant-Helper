@@ -1,3 +1,5 @@
+<div id="top"></div>
+
 # Valorant Helper
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.
@@ -17,3 +19,4 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
   <img width="500" src="src\assets\readme-images\agent-details.webp">
   <img width="500" src="src\assets\readme-images\lineups.webp">
 </p>
+<p align="right">(<a href="#top">back to top</a>)</p>

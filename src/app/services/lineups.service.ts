@@ -11,9 +11,7 @@ const MAP_PATH = `${environment.baseUrl}assets/maps`;
 export class LineupsService {
   constructor(private http: HttpClient) {}
 
-  getMapsData() {
-    return this.http.get<Map[]>(MAPS_DATA);
-  }
+  maps$ = this.http.get<Map[]>(MAPS_DATA);
 
   getMapImagePath(mapName: string, mapType: 'layout' | 'splash' | 'list-view') {
     return `${MAP_PATH}/${mapName}/${mapName}-${mapType}.webp`;

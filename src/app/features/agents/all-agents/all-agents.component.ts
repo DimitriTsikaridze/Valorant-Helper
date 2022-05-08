@@ -33,7 +33,7 @@ export class AllAgentsComponent implements OnChanges {
 
     const filteredAgents = this.tempAgents.filter((agent) => {
       const agentRole = agent.role.displayName.toLowerCase();
-      return agentRole == clickedRole;
+      return agentRole === clickedRole;
     });
     this.agents = filteredAgents;
   }

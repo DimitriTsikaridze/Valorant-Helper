@@ -35,12 +35,14 @@ button {
   border: none;
   cursor: pointer;
   color: white;
-  font-family: "oswald";
+  font-family: inherit;
 }
 
 img {
   display: block;
   max-width: 100%;
+}
+.no-select {
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;

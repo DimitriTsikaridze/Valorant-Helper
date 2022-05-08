@@ -2,7 +2,11 @@
   [ngStyle]="{ 'background-image': 'url(' + agent.background + ')' }"
   class="agent"
 >
-  <img class="agent-img" [src]="agent.bustPortrait" [alt]="agent.displayName" />
+  <img
+    class="agent-img no-select"
+    [src]="agent.bustPortrait"
+    [alt]="agent.displayName"
+  />
 
   <div class="agent-name">
     <div>

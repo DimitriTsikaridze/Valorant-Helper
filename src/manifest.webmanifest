@@ -31,5 +31,31 @@
       "type": "image/png",
       "purpose": "maskable"
     }
+  ],
+  "shortcuts": [
+    {
+      "name": "Agents",
+      "description": "List All Agents",
+      "url": "/agents",
+      "icons": [
+        {
+          "src": "./assets/images/logo.svg",
+          "type": "image/svg+xml",
+          "purpose": "any"
+        }
+      ]
+    },
+    {
+      "name": "Lineups",
+      "description": "See Agent Lineups",
+      "url": "/agents",
+      "icons": [
+        {
+          "src": "./assets/images/logo.svg",
+          "type": "image/svg+xml",
+          "purpose": "any"
+        }
+      ]
+    }
   ]
 }

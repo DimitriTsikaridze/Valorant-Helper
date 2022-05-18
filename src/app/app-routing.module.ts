@@ -20,6 +20,12 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'weapons',
+    loadChildren: () =>
+      import('./features/weapons/weapons.module').then((m) => m.WeaponsModule),
+  },
+
+  {
     path: 'lineups',
     loadChildren: () =>
       import('./features/lineups/lineUps.module').then((m) => m.LineupsModule),

@@ -13,6 +13,7 @@ export class HeaderComponent {
   readonly navigationLinks = [
     'home',
     'agents',
+    'weapons',
     'crosshairs',
     'lineups',
     'about',

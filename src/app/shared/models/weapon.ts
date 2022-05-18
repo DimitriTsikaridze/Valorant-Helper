@@ -1,7 +1,12 @@
 export interface Weapon {
   displayName: string;
   displayIcon: string;
-  weaponStats?: WeaponStats;
+}
+
+export interface WeaponDetails {
+  displayName: string;
+  displayIcon: string;
+  weaponStats: WeaponStats;
 }
 
 export interface WeaponStats {

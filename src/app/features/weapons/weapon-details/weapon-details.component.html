@@ -1,0 +1,4 @@
+<div *ngIf="weaponDetails$ | async as weapon" class="weapon-details-contai">
+  <app-title>{{ weapon.displayName }}</app-title>
+  <img [src]="weapon.displayIcon" [alt]="weapon.displayName" />
+</div>

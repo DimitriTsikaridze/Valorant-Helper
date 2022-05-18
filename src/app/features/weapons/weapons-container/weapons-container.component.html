@@ -1,7 +1,8 @@
 <div class="weapons-container">
   <div *ngFor="let weapon of weapons$ | async" class="weapon">
     <img
-      (click)="openWeaponDetails(weapon.displayName)"
+      class="weapon-img"
+      [routerLink]="['/weapons', weapon.displayName.toLowerCase()]"
       [src]="weapon.displayIcon"
       [alt]="weapon.displayName + ' image'"
     />

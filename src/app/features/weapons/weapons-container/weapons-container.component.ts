@@ -10,8 +10,4 @@ export class WeaponsContainerComponent {
   constructor(private weaponsService: WeaponsService) {}
 
   weapons$ = this.weaponsService.weapons$;
-
-  openWeaponDetails(weaponName: string) {
-    console.log(weaponName);
-  }
 }

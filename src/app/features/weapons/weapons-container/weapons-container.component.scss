@@ -5,3 +5,9 @@
   min-height: calc(100% - 92px);
   background-color: $primary-dark;
 }
+.weapons-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}

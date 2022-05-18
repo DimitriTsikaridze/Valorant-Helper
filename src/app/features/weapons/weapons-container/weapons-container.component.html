@@ -1,1 +1,9 @@
-<p>weapons-container works!</p>
+<div class="weapons-container">
+  <div *ngFor="let weapon of weapons$ | async" class="weapon">
+    <img
+      (click)="openWeaponDetails(weapon.displayName)"
+      [src]="weapon.displayIcon"
+      [alt]="weapon.displayName + ' image'"
+    />
+  </div>
+</div>

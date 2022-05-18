@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { WeaponsService } from '../../../services/weapons.service';
 
 @Component({
   selector: 'app-weapons-container',
   templateUrl: './weapons-container.component.html',
-  styleUrls: ['./weapons-container.component.scss']
+  styleUrls: ['./weapons-container.component.scss'],
 })
-export class WeaponsContainerComponent implements OnInit {
+export class WeaponsContainerComponent {
+  constructor(private weaponsService: WeaponsService) {}
 
-  constructor() { }
+  weapons$ = this.weaponsService.weapons$;
 
-  ngOnInit(): void {
+  openWeaponDetails(weaponName: string) {
+    console.log(weaponName);
   }
-
 }

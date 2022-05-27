@@ -39,9 +39,9 @@ export interface AirBurstStats {
 }
 
 export enum AltFireType {
-  EWeaponAltFireDisplayTypeADS = 'EWeaponAltFireDisplayType::ADS',
-  EWeaponAltFireDisplayTypeAirBurst = 'EWeaponAltFireDisplayType::AirBurst',
-  EWeaponAltFireDisplayTypeShotgun = 'EWeaponAltFireDisplayType::Shotgun',
+  Ads = 'EWeaponAltFireDisplayType::ADS',
+  AirBurst = 'EWeaponAltFireDisplayType::AirBurst',
+  Shotgun = 'EWeaponAltFireDisplayType::Shotgun',
 }
 
 export interface AltShotgunStats {
@@ -58,7 +58,7 @@ export interface DamageRange {
 }
 
 export enum WallPenetration {
-  EWallPenetrationDisplayTypeHigh = 'EWallPenetrationDisplayType::High',
-  EWallPenetrationDisplayTypeLow = 'EWallPenetrationDisplayType::Low',
-  EWallPenetrationDisplayTypeMedium = 'EWallPenetrationDisplayType::Medium',
+  High = 'EWallPenetrationDisplayType::High',
+  Low = 'EWallPenetrationDisplayType::Low',
+  Medium = 'EWallPenetrationDisplayType::Medium',
 }

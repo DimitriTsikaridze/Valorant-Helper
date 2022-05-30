@@ -7,11 +7,26 @@
 }
 .weapons-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   gap: 2rem;
   padding: 2rem;
 }
 
+.weapon {
+  border-radius: 4px;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  padding-block: 0.5rem;
+}
+
 .weapon-img {
+  margin-top: auto;
   cursor: pointer;
+}
+.bottom-content {
+  background-color: $light-red;
+  padding: 0.5rem;
+  margin-top: auto;
 }

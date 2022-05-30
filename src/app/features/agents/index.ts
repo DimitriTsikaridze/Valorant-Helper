@@ -1,4 +1,4 @@
-export * from './agents-container/agents-container.component';
-export * from './agent-details/agent-details.component';
-export * from './agent-news/agent-news.component';
-export * from './all-agents/all-agents.component';
+export { AgentsContainerComponent } from './agents-container/agents-container.component';
+export { AgentDetailsComponent } from './agent-details/agent-details.component';
+export { AgentNewsComponent } from './agent-news/agent-news.component';
+export { AllAgentsComponent } from './all-agents/all-agents.component';

@@ -1,5 +1,6 @@
 import { Location } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { AgentsService } from '@services/agents.service';
 import { Ability, Agent } from '@shared/models/agent';
@@ -15,7 +16,8 @@ export class AgentDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private agentsService: AgentsService,
-    public location: Location
+    public location: Location,
+    private title: Title
   ) {}
 
   abilityVideo: string;
@@ -24,7 +26,10 @@ export class AgentDetailsComponent implements OnInit {
   activeAbility = 'Ability1';
 
   ngOnInit(): void {
-    const pathName = this.route.snapshot.params['id'];
+    const pathName: string = this.route.snapshot.params['id'];
+    this.title.setTitle(
+      `${pathName.charAt(0).toUpperCase() + pathName.slice(1)} details`
+    );
     this.agent$ = this.agentsService.getSingleAgent(pathName).pipe(
       tap((agent: Agent) => {
         this.abilityVideo = agent.abilities[0].displayVideo;

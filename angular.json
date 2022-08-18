@@ -48,8 +48,13 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["src/assets", "src/manifest.webmanifest"],
-            "styles": ["src/styles.scss"],
+            "assets": [
+              "src/assets",
+              "src/manifest.webmanifest"
+            ],
+            "styles": [
+              "src/styles.scss"
+            ],
             "scripts": [],
             "serviceWorker": true,
             "ngswConfigPath": "ngsw-config.json"
@@ -125,7 +130,9 @@
               "src/assets",
               "src/manifest.webmanifest"
             ],
-            "styles": ["src/styles.scss"],
+            "styles": [
+              "src/styles.scss"
+            ],
             "scripts": []
           }
         },
@@ -142,14 +149,18 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
           }
         }
       }
     }
   },
-  "defaultProject": "valorant-helper",
   "cli": {
-    "defaultCollection": "@angular-eslint/schematics"
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }

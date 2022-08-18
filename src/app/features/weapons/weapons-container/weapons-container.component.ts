@@ -8,6 +8,5 @@ import { WeaponsService } from '../../../services/weapons.service';
 })
 export class WeaponsContainerComponent {
   constructor(private weaponsService: WeaponsService) {}
-
   weapons$ = this.weaponsService.weapons$;
 }

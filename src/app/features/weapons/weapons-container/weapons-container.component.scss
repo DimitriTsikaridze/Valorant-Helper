@@ -18,12 +18,14 @@
   display: flex;
   height: 100%;
   flex-direction: column;
-  padding-block: 0.5rem;
 }
 
 .weapon-img {
-  margin-top: auto;
   cursor: pointer;
+  max-height: 100px;
+  object-fit: contain;
+  margin-block: auto;
+  padding-block: 1rem;
 }
 .bottom-content {
   background-color: $light-red;

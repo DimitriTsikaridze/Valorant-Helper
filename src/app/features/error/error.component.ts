@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ButtonComponent } from '../../shared/components';
+import { ButtonComponent } from '@shared/components';
 
 @Component({
   selector: 'app-error',

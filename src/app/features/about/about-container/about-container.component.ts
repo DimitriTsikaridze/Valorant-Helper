@@ -1,5 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-about-container',
@@ -7,10 +6,5 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./about-container.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AboutContainerComponent implements OnInit {
-  constructor(private title: Title) {}
-
-  ngOnInit(): void {
-    this.title.setTitle('About');
-  }
+export class AboutContainerComponent  {
 }

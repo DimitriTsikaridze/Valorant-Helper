@@ -10,7 +10,7 @@ import {
 } from './index';
 
 import { RouterModule, Routes } from '@angular/router';
-import { TitleComponent } from '@shared/components';
+import { LoadingComponent, TitleComponent } from '@shared/components';
 
 const routes: Routes = [
   { path: '', component: LineupsContainerComponent },
@@ -25,6 +25,11 @@ const routes: Routes = [
     MapPreviewComponent,
     ToggleSitesDirective,
   ],
-  imports: [CommonModule, RouterModule.forChild(routes), TitleComponent],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    TitleComponent,
+    LoadingComponent,
+  ],
 })
 export class LineupsModule {}

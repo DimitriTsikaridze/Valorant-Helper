@@ -20,7 +20,7 @@
 
 .map-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 450px));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   margin-inline: 2rem;
   justify-content: center;
   gap: 2rem;
@@ -95,4 +95,9 @@
   .bottom-content {
     opacity: 1;
   }
+}
+
+.site-img {
+  width: 100%;
+  object-fit: cover;
 }

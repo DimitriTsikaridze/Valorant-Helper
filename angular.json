@@ -10,7 +10,8 @@
           "style": "scss",
           "skipTests": true,
           "changeDetection": "OnPush",
-          "displayBlock": true
+          "displayBlock": true,
+          "standalone": true
         },
         "@schematics/angular:class": {
           "skipTests": true

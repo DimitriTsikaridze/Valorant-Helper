@@ -1,5 +1,4 @@
 <app-title margin="2rem 0 1rem">AGENTS</app-title>
-zzzz
 <div class="search-bar">
   <input
     placeholder="Search Agent..."
@@ -8,10 +7,14 @@ zzzz
   />
 </div>
 
-<div class="agents-container">
+<div *ngIf="agents; else loading" class="agents-container">
   <app-agent-lineups-preview
     class="fade-in"
     *ngFor="let agent of filteredAgents"
     [agent]="agent"
   ></app-agent-lineups-preview>
 </div>
+
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>

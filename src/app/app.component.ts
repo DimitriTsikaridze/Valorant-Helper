@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   template: `
     <app-header></app-header>
     <div class="spacer"></div>
-    <router-outlet (activate)="onRoute()"></router-outlet>
+    <router-outlet></router-outlet>
     <app-footer></app-footer>
   `,
   styles: [
@@ -16,11 +16,4 @@ import { Component } from '@angular/core';
     `,
   ],
 })
-export class AppComponent {
-  onRoute() {
-    window.scroll({
-      top: 0,
-      behavior: 'smooth',
-    });
-  }
-}
+export class AppComponent {}

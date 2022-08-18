@@ -1,5 +1,8 @@
-<div class="weapons-container">
-  <div *ngFor="let weapon of weapons$ | async" class="weapon fade-in">
+<div
+  class="weapons-container"
+  *ngIf="weapons$ | async as weapons; else loading"
+>
+  <div *ngFor="let weapon of weapons" class="weapon fade-in">
     <img
       class="weapon-img"
       width="340"
@@ -13,3 +16,7 @@
     </div>
   </div>
 </div>
+
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>

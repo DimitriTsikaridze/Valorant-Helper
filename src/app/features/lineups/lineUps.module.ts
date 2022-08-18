@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SharedModule } from '@shared/shared.module';
 
 import {
   AgentLineupMapsComponent,
@@ -11,13 +10,13 @@ import {
 } from './index';
 
 import { RouterModule, Routes } from '@angular/router';
+import { TitleComponent } from '@shared/components';
 
 const routes: Routes = [
   { path: '', component: LineupsContainerComponent },
   { path: ':agentName', component: AgentLineupMapsComponent },
   { path: ':agentName/:mapName/:siteName', component: MapPreviewComponent },
 ];
-
 @NgModule({
   declarations: [
     LineupsContainerComponent,
@@ -26,6 +25,6 @@ const routes: Routes = [
     MapPreviewComponent,
     ToggleSitesDirective,
   ],
-  imports: [CommonModule, RouterModule.forChild(routes), SharedModule],
+  imports: [CommonModule, RouterModule.forChild(routes), TitleComponent],
 })
 export class LineupsModule {}

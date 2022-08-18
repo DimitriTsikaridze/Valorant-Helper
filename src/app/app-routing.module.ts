@@ -6,13 +6,13 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeContainerComponent,
-    title: 'Home'
+    title: 'Home',
   },
   {
     path: 'agents',
     loadChildren: () =>
       import('./features/agents/agents.module').then((m) => m.AgentsModule),
-      title: 'Agents'
+    title: 'Agents',
   },
   {
     path: 'crosshairs',
@@ -20,13 +20,13 @@ const routes: Routes = [
       import('./features/crosshairs/crosshairs.module').then(
         (m) => m.CrosshairsModule
       ),
-    title: 'Crosshairs'
+    title: 'Crosshairs',
   },
   {
     path: 'weapons',
     loadChildren: () =>
       import('./features/weapons/weapons.module').then((m) => m.WeaponsModule),
-    title: 'Weapons'
+    title: 'Weapons',
   },
 
   {
@@ -34,13 +34,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./features/lineups/lineUps.module').then((m) => m.LineupsModule),
 
-      title: 'Lineups',
+    title: 'Lineups',
   },
   {
     path: 'about',
     loadChildren: () =>
       import('./features/about/about.module').then((m) => m.AboutModule),
-      title: 'About'
+    title: 'About',
   },
   {
     path: '',
@@ -49,16 +49,16 @@ const routes: Routes = [
   },
   {
     path: '**',
-    loadChildren: () =>
-      import('./features/error/error.module').then((m) => m.ErrorModule),
-      title: 'Error'
+    loadComponent: () =>
+      import('./features/error/error.component').then((c) => c.ErrorComponent),
+    title: 'Error',
   },
 ];
 
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {
-      preloadingStrategy: PreloadAllModules
+      preloadingStrategy: PreloadAllModules,
     }),
   ],
   exports: [RouterModule],

@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
@@ -9,6 +10,8 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   `,
   styleUrls: ['./title.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [CommonModule],
 })
 export class TitleComponent {
   @Input() margin: string = '2rem';

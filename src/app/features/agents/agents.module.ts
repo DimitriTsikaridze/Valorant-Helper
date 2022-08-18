@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SharedModule } from '@shared/shared.module';
-import { AgentCardModule } from '@shared/modules/agent-card/agent-card.module';
 
 import {
   AgentDetailsComponent,
@@ -11,6 +9,11 @@ import {
 } from './index';
 
 import { RouterModule, Routes } from '@angular/router';
+import {
+  AgentCardComponent,
+  ButtonComponent,
+  TitleComponent,
+} from '@shared/components';
 
 const routes: Routes = [
   { path: '', component: AgentsContainerComponent },
@@ -27,8 +30,9 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    SharedModule,
-    AgentCardModule,
+    AgentCardComponent,
+    TitleComponent,
+    ButtonComponent,
   ],
 })
 export class AgentsModule {}

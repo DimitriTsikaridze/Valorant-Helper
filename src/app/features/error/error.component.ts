@@ -1,8 +1,13 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { ButtonComponent } from '../../shared/components';
 
 @Component({
   selector: 'app-error',
-  template: `<h1>Page Not Found</h1> `,
+  template: `
+    <h1>Page Not Found</h1>
+    <app-button routerLink="/">Home</app-button>
+  `,
   styles: [
     `
       @use '/src/styles/index' as *;
@@ -10,6 +15,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
         display: block;
         min-height: 100%;
         background-color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
 
       h1 {
@@ -19,5 +27,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     `,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [ButtonComponent, RouterModule],
 })
 export class ErrorComponent {}

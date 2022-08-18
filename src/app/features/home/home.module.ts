@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SharedModule } from '@shared/shared.module';
-import { AgentCardModule } from '@shared/modules/agent-card/agent-card.module';
 import { RouterModule } from '@angular/router';
 
 import {
@@ -10,6 +8,11 @@ import {
   HomeContainerComponent,
   IntroductionComponent,
 } from './index';
+import {
+  AgentCardComponent,
+  ButtonComponent,
+  TitleComponent,
+} from '@shared/components';
 
 @NgModule({
   declarations: [
@@ -18,6 +21,12 @@ import {
     AgentPreviewComponent,
     FeaturePreviewComponent,
   ],
-  imports: [CommonModule, RouterModule, SharedModule, AgentCardModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    AgentCardComponent,
+    TitleComponent,
+    ButtonComponent,
+  ],
 })
 export class HomeModule {}

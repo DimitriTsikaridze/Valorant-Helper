@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Agent } from '@models/agent';
 
@@ -6,6 +7,8 @@ import { Agent } from '@models/agent';
   templateUrl: './agent-card.component.html',
   styleUrls: ['./agent-card.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [CommonModule],
 })
 export class AgentCardComponent {
   @Input() agent: Agent;

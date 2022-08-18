@@ -8,9 +8,7 @@ import { Agent } from '@models/agent';
   styleUrls: ['./lineups-container.component.scss'],
 })
 export class LineupsContainerComponent implements OnInit {
-  constructor(
-    private agentsService: AgentsService,
-  ) {}
+  constructor(private agentsService: AgentsService) {}
 
   agents: Agent[];
   filteredAgents: Agent[];

@@ -2,8 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { WeaponsService } from '@services/weapons.service';
-import { capitalizeFirstletter } from '@shared/utils/capitalizeFirstLetter'
-
+import { capitalizeFirstletter } from '@shared/utils';
 
 @Component({
   selector: 'app-weapon-details',
@@ -22,6 +21,6 @@ export class WeaponDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.title.setTitle(`${capitalizeFirstletter(this.weaponName)} details`)
+    this.title.setTitle(`${capitalizeFirstletter(this.weaponName)} details`);
   }
 }

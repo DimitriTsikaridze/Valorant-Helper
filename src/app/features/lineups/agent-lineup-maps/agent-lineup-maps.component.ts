@@ -2,9 +2,9 @@ import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LineupsService } from '@services/lineups.service';
-import { capitalizeFirstletter } from '@shared/utils/capitalizeFirstLetter';
+import { capitalizeFirstletter } from '@shared/utils';
 import { Observable, of } from 'rxjs';
-import { Map } from '../../../shared/models/map';
+import { Map } from '@shared/models';
 
 @Component({
   selector: 'app-agent-lineup-maps',

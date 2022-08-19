@@ -1,6 +1,7 @@
 import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { LineupsService } from '@services/lineups.service';
 import { ActivatedRoute } from '@angular/router';
+import { routeParams } from '@shared/utils';
 
 @Component({
   selector: 'app-map-preview',
@@ -15,9 +16,9 @@ export class MapPreviewComponent implements OnInit {
   ) {}
 
   mapUrl = '';
-  mapName = this.route.snapshot.params['mapName'];
-  siteName = this.route.snapshot.params['siteName'];
-  agentName = this.route.snapshot.params['agentName'];
+  mapName = routeParams(this.route, 'mapName');
+  siteName = routeParams(this.route, 'siteName');
+  agentName = routeParams(this.route, 'agentName');
 
   ngOnInit(): void {
     this.mapUrl = this.lineupsService.getMapImagePath(this.mapName, 'splash');

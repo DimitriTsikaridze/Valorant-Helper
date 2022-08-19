@@ -4,7 +4,7 @@ import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { AgentsService } from '@services/agents.service';
 import { Ability, Agent } from '@shared/models/agent';
-import { capitalizeFirstletter } from '@shared/utils';
+import { capitalizeFirstletter, routeParams } from '@shared/utils';
 import { Observable, tap } from 'rxjs';
 
 @Component({
@@ -27,7 +27,7 @@ export class AgentDetailsComponent implements OnInit {
   activeAbility = 'Ability1';
 
   ngOnInit(): void {
-    const pathName: string = this.route.snapshot.params['id'];
+    const pathName = routeParams(this.route, 'id');
     this.title.setTitle(`${capitalizeFirstletter(pathName)} details`);
     this.agent$ = this.agentsService.getSingleAgent(pathName).pipe(
       tap((agent: Agent) => {

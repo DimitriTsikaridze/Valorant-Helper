@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { WeaponsService } from '@services/weapons.service';
-import { capitalizeFirstletter } from '@shared/utils';
+import { capitalizeFirstletter, routeParams } from '@shared/utils';
 
 @Component({
   selector: 'app-weapon-details',
@@ -11,7 +11,7 @@ import { capitalizeFirstletter } from '@shared/utils';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WeaponDetailsComponent implements OnInit {
-  private weaponName = this.route.snapshot.params['weaponName'];
+  private weaponName = routeParams(this.route, 'weaponName');
   weaponDetails$ = this.weaponsService.getWeaponDetails(this.weaponName);
 
   constructor(

@@ -1,4 +1,4 @@
-@use "/src/styles/index.scss" as *;
+@use '/src/styles/index.scss' as *;
 
 header {
   display: flex;
@@ -23,7 +23,7 @@ header {
     height: 3.5rem;
   }
   &-title {
-    font-family: "valorant";
+    font-family: 'valorant';
     font-weight: 300;
     font-size: 1.3rem;
     margin-left: 1rem;
@@ -48,7 +48,7 @@ a {
   &.active {
     color: $light-red;
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       width: calc(100% + 6px);
       border-radius: 5px;

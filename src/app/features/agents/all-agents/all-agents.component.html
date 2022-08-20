@@ -3,17 +3,17 @@
 <div class="agents-container">
   <ul>
     <li
-      (click)="roleClick(role)"
-      [ngClass]="{ active: role === activeRole }"
       *ngFor="let role of agentRoles"
+      [ngClass]="{ active: role === activeRole }"
+      (click)="roleClick(role)"
     >
       {{ role | uppercase }}
     </li>
   </ul>
   <app-agent-card
-    class="agent fade-in"
     *ngFor="let agent of agents"
     [agent]="agent"
     [routerLink]="['/agents', agent.pathName]"
+    class="agent fade-in"
   ></app-agent-card>
 </div>

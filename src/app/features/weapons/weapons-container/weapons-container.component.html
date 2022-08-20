@@ -1,15 +1,15 @@
 <div
-  class="weapons-container"
   *ngIf="weapons$ | async as weapons; else loading"
+  class="weapons-container"
 >
   <div *ngFor="let weapon of weapons" class="weapon fade-in">
     <img
-      class="weapon-img"
-      width="340"
-      height="114"
       [routerLink]="['/weapons', weapon.displayName.toLowerCase()]"
       [src]="weapon.displayIcon"
       [alt]="weapon.displayName + ' image'"
+      class="weapon-img"
+      width="340"
+      height="114"
     />
     <div class="bottom-content">
       <h3>{{ weapon.displayName }}</h3>

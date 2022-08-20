@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-crosshairs-container',
@@ -6,4 +6,4 @@ import { ChangeDetectionStrategy, Component, } from '@angular/core';
   styleUrls: ['./crosshairs-container.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CrosshairsContainerComponent  {}
+export class CrosshairsContainerComponent {}

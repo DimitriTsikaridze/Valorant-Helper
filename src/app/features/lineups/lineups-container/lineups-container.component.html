@@ -1,17 +1,17 @@
 <app-title margin="2rem 0 1rem">AGENTS</app-title>
 <div class="search-bar">
   <input
-    placeholder="Search Agent..."
     (input)="searchAgent($event)"
+    placeholder="Search Agent..."
     type="text"
   />
 </div>
 
 <div *ngIf="agents; else loading" class="agents-container">
   <app-agent-lineups-preview
-    class="fade-in"
     *ngFor="let agent of filteredAgents"
     [agent]="agent"
+    class="fade-in"
   ></app-agent-lineups-preview>
 </div>
 

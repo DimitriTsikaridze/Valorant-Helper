@@ -24,17 +24,17 @@
   <div class="ability-container">
     <div class="ability-overview">
       <div
-        class="ability"
+        *ngFor="let ability of agent.abilities"
         [ngClass]="{
           active: ability.slot === activeAbility
         }"
         (click)="abilityClick(ability)"
-        *ngFor="let ability of agent.abilities"
+        class="ability"
       >
         <img
-          class="ability-icon"
           [src]="ability.displayIcon"
           [alt]="ability.displayName"
+          class="ability-icon"
         />
         <div class="ability-description">
           <h2>{{ ability.displayName }}</h2>
@@ -42,6 +42,6 @@
         </div>
       </div>
     </div>
-    <video [muted]="true" autoplay loop [src]="abilityVideo"></video>
+    <video [muted]="true" [src]="abilityVideo" autoplay loop></video>
   </div>
 </ng-container>

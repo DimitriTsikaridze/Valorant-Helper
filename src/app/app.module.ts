@@ -15,7 +15,7 @@ import { HomeModule } from './features/home/home.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
     LayoutModule,

@@ -45,7 +45,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/valorant-helper",
+            "outputPath": "dist/valorant-helper/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -143,6 +143,69 @@
           "options": {
             "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/valorant-helper/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json",
+            "inlineStyleLanguage": "scss"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "sourceMap": {
+                "scripts": true,
+                "styles": true,
+                "hidden": true,
+                "vendor": true
+              }
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "valorant-helper:build:development",
+              "serverTarget": "valorant-helper:server:development"
+            },
+            "production": {
+              "browserTarget": "valorant-helper:build:production",
+              "serverTarget": "valorant-helper:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": ["/"]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "valorant-helper:build:production",
+              "serverTarget": "valorant-helper:server:production"
+            },
+            "development": {
+              "browserTarget": "valorant-helper:build:development",
+              "serverTarget": "valorant-helper:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

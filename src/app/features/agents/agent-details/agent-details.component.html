@@ -3,7 +3,7 @@
   <h6>BACK</h6>
 </div>
 
-<ng-container *ngIf="agent$ | async as agent">
+<ng-container *ngIf="agent$ | async as agent; else loading">
   <div class="agent-description">
     <article>
       <h1>{{ agent.displayName }}</h1>
@@ -45,3 +45,4 @@
     <video [muted]="true" [src]="abilityVideo" autoplay loop></video>
   </div>
 </ng-container>
+<ng-template #loading> <app-loading></app-loading></ng-template>

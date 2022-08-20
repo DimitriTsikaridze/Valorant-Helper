@@ -12,7 +12,8 @@
     "dev:ssr": "ng run valorant-helper:serve-ssr",
     "serve:ssr": "node dist/valorant-helper/server/main.js",
     "build:ssr": "ng build && ng run valorant-helper:server",
-    "prerender": "ng run valorant-helper:prerender"
+    "prerender": "ng run valorant-helper:prerender",
+    "serve:prerender": "node dist/valorant-helper/server/main.js"
   },
   "private": true,
   "dependencies": {

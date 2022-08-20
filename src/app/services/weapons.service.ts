@@ -5,8 +5,8 @@ import { Weapon, WeaponDetails } from '@models/weapon';
 
 import { map, Observable } from 'rxjs';
 
-const WEAPONS_URL = `${environment.baseUrl}/all-weapons.json`;
-const WEAPON_DETAILS_URL = `${environment.baseUrl}/weapons`;
+const WEAPONS_URL = `${environment.baseUrl}all-weapons.json`;
+const WEAPON_DETAILS_URL = `${environment.baseUrl}weapons`;
 
 @Injectable({
   providedIn: 'root',

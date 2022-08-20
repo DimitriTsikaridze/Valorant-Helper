@@ -193,7 +193,15 @@
         "prerender": {
           "builder": "@nguniversal/builders:prerender",
           "options": {
-            "routes": ["/"]
+            "guessRoutes": false,
+            "routes": [
+              "/home",
+              "/agents",
+              "/weapons",
+              "/crosshairs",
+              "/lineups",
+              "/about"
+            ]
           },
           "configurations": {
             "production": {

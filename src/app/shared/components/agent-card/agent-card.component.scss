@@ -1,4 +1,4 @@
-@use "/src/styles/palette" as *;
+@use '/src/styles/palette' as *;
 .agent {
   aspect-ratio: 1;
   position: relative;
@@ -21,7 +21,7 @@
     margin-bottom: 0.3rem;
   }
   h2 {
-    font-family: "valorant";
+    font-family: 'valorant';
     font-weight: 300;
   }
   h3 {

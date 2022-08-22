@@ -2,9 +2,7 @@
   "hosting": {
     "target": "valorant-helper",
     "public": "dist/valorant-helper",
-    "ignore": [
-      "**/.*"
-    ],
+    "ignore": ["**/.*"],
     "headers": [
       {
         "source": "*.[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f].+(css|js)",

@@ -1,5 +1,5 @@
-<header appOutsideClick (clickOutside)="closeMenu()">
-  <div routerLink="/" class="logo">
+<header (clickOutside)="closeMenu()" appOutsideClick>
+  <div class="logo" routerLink="/">
     <img class="logo-image" src="../../assets/images/logo.svg" alt="logo" />
     <h2 class="logo-title">VALORANT HELPER</h2>
   </div>
@@ -7,23 +7,23 @@
   <div [ngClass]="{ active: active }" class="hamburger-menu">
     <ul>
       <li *ngFor="let link of navigationLinks">
-        <a routerLinkActive="active" [routerLink]="['/', link]">{{
+        <a [routerLink]="['/', link]" routerLinkActive="active">{{
           link | uppercase
         }}</a>
       </li>
     </ul>
   </div>
   <img
+    [src]="iconURL"
     (click)="toggleMenu()"
     class="hamburger-icon"
-    [src]="iconURL"
     alt="hamburger-icon"
   />
 
   <nav>
     <ul>
       <li *ngFor="let link of navigationLinks">
-        <a routerLinkActive="active" [routerLink]="['/', link]">{{
+        <a [routerLink]="['/', link]" routerLinkActive="active">{{
           link | uppercase
         }}</a>
       </li>

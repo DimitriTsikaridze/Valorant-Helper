@@ -10,9 +10,7 @@ import { Observable, of } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeContainerComponent implements OnInit {
-  constructor(
-    private agentsService: AgentsService,
-  ) {}
+  constructor(private agentsService: AgentsService) {}
 
   agents$: Observable<Agent[]>;
 

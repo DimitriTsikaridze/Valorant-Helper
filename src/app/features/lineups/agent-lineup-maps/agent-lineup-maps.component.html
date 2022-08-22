@@ -1,17 +1,17 @@
 <app-title>MAPS</app-title>
-<div routerLink="/lineups" class="back">
+<div class="back" routerLink="/lineups">
   <img src="../../../../../assets/images/back-arrow.svg" alt="arrow" />
   <h6>BACK</h6>
 </div>
 
 <div *ngIf="maps$ | async as maps; else loading" class="map-container">
-  <div appToggleSites class="map fade-in" *ngFor="let map of maps">
+  <div *ngFor="let map of maps" class="map fade-in" appToggleSites>
     <img
-      width="450"
-      height="100"
-      class="site-img"
       [src]="map.listViewIcon"
       [alt]="map.displayName"
+      class="site-img"
+      width="450"
+      height="100"
     />
     <div class="description">
       <h2 class="map-name">{{ map.displayName }}</h2>
@@ -24,6 +24,7 @@
 
     <div class="bottom-content">
       <div
+        *ngFor="let siteName of mockSites"
         (click)="
           navigateToLineup(
             map.displayName.toLowerCase(),
@@ -31,7 +32,6 @@
           )
         "
         class="site"
-        *ngFor="let siteName of mockSites"
       >
         <p>{{ siteName }} Site</p>
         <img src="../../../../../assets/images/front-arrow.svg" alt="arrow" />

@@ -1,4 +1,4 @@
-@use "/src/styles/palette" as *;
+@use '/src/styles/palette' as *;
 
 :host {
   display: block;
@@ -26,7 +26,7 @@
       position: relative;
       transition: 0.2s;
       &::after {
-        content: "";
+        content: '';
         position: absolute;
         width: 0;
         border-radius: 5px;

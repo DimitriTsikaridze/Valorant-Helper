@@ -12,6 +12,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {
   AgentCardComponent,
   ButtonComponent,
+  LoadingComponent,
   TitleComponent,
 } from '@shared/components';
 
@@ -33,6 +34,7 @@ const routes: Routes = [
     AgentCardComponent,
     TitleComponent,
     ButtonComponent,
+    LoadingComponent,
   ],
 })
 export class AgentsModule {}

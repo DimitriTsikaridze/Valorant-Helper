@@ -1,10 +1,10 @@
 <div [routerLink]="['/lineups', agent.pathName]" class="agent-wrapper">
   <img
-    width="100"
-    height="100"
-    class="agent-icon"
     [src]="agent.displayIcon"
     [alt]="agent.pathName"
+    class="agent-icon"
+    width="100"
+    height="100"
   />
   <div class="agent-info">
     <h2>{{ agent.displayName }}</h2>

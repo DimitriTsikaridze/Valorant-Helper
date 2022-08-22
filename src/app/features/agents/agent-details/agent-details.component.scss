@@ -1,4 +1,4 @@
-@use "/src/styles/palette" as *;
+@use '/src/styles/palette' as *;
 
 :host {
   display: block;
@@ -35,7 +35,7 @@
 .agent-description {
   h1 {
     font-size: 3rem;
-    font-family: "Valorant";
+    font-family: 'Valorant';
     font-weight: 500;
     margin-bottom: 1.5rem;
   }

@@ -130,16 +130,6 @@
             "scripts": []
           }
         },
-        "deploy": {
-          "builder": "@angular/fire:deploy",
-          "options": {
-            "prerender": false,
-            "ssr": false,
-            "browserTarget": "valorant-helper:build:production",
-            "firebaseProject": "valorant-helper-fca81",
-            "firebaseHostingSite": "valorant-helper-fca81"
-          }
-        },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
@@ -216,6 +206,18 @@
             }
           },
           "defaultConfiguration": "production"
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": true,
+            "ssr": false,
+            "browserTarget": "valorant-helper:build:production",
+            "firebaseProject": "valorant-helper-5738d",
+            "firebaseHostingSite": "valorant-helper-5738d",
+            "serverTarget": "valorant-helper:server:production",
+            "prerenderTarget": "valorant-helper:prerender:production"
+          }
         }
       }
     }

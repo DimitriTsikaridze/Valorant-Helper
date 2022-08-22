@@ -1,11 +1,10 @@
 import { Location } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { AgentsService } from '@services/agents.service';
 import { Ability, Agent } from '@shared/models/agent';
-import { capitalizeFirstletter, routeParams } from '@shared/utils';
-import { Observable, tap } from 'rxjs';
+import { map, Observable, switchMap, tap } from 'rxjs';
 
 @Component({
   selector: 'app-agent-details',
@@ -27,11 +26,12 @@ export class AgentDetailsComponent implements OnInit {
   activeAbility = 'Ability1';
 
   ngOnInit(): void {
-    const pathName = routeParams(this.route, 'id');
-    this.title.setTitle(`${capitalizeFirstletter(pathName)} details`);
-    this.agent$ = this.agentsService.getSingleAgent(pathName).pipe(
-      tap((agent: Agent) => {
-        this.abilityVideo = agent.abilities[0].displayVideo;
+    this.agent$ = this.route.params.pipe(
+      map((params) => params.id),
+      switchMap((id) => this.agentsService.getSingleAgent(id)),
+      tap(({ abilities, displayName }) => {
+        this.abilityVideo = abilities[0].displayVideo;
+        this.title.setTitle(`${displayName} Details`);
       })
     );
   }

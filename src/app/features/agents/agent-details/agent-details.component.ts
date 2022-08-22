@@ -1,7 +1,7 @@
 import { Location } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { AgentsService } from '@services/agents.service';
 import { Ability, Agent } from '@shared/models/agent';
 import { map, Observable, switchMap, tap } from 'rxjs';

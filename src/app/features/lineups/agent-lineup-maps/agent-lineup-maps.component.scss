@@ -60,6 +60,7 @@
 .bottom-content {
   width: 100%;
   position: absolute;
+  pointer-events: none;
   opacity: 0;
   transition: 0.2s;
 }
@@ -94,6 +95,7 @@
 
   .bottom-content {
     opacity: 1;
+    pointer-events: unset;
   }
 }
 

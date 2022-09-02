@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs';
+import { map, retry } from 'rxjs';
 import { Agent } from '@models/agent';
 import { environment } from '@environment/environment';
 
@@ -16,6 +16,7 @@ export class AgentsService {
 
   getAllAgents() {
     return this.http.get<Agent[]>(AGENTS_URL).pipe(
+      retry(3),
       map((agents: Agent[]) => {
         for (const agent of agents) {
           this.agents.push(agent);
@@ -26,6 +27,8 @@ export class AgentsService {
   }
 
   getSingleAgent(pathName: string) {
-    return this.http.get<Agent>(`${SINGLE_AGENT_URL}${pathName}.json`);
+    return this.http
+      .get<Agent>(`${SINGLE_AGENT_URL}${pathName}.json`)
+      .pipe(retry(3));
   }
 }

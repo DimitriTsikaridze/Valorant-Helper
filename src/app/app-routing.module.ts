@@ -17,36 +17,44 @@ const routes: Routes = [
 
   {
     path: 'agents',
-    loadChildren: () => import('./features').then((m) => m.AgentsModule),
+    loadChildren: () =>
+      import('./features/agents/agents.module').then((m) => m.AgentsModule),
     title: 'Agents',
   },
 
   {
     path: 'crosshairs',
-    loadChildren: () => import('./features').then((m) => m.CrosshairsModule),
+    loadChildren: () =>
+      import('./features/crosshairs/crosshairs.module').then(
+        (m) => m.CrosshairsModule
+      ),
     title: 'Crosshairs',
   },
   {
     path: 'weapons',
-    loadChildren: () => import('./features').then((m) => m.WeaponsModule),
+    loadChildren: () =>
+      import('./features/weapons/weapons.module').then((m) => m.WeaponsModule),
     title: 'Weapons',
   },
 
   {
     path: 'lineups',
-    loadChildren: () => import('./features').then((m) => m.LineupsModule),
+    loadChildren: () =>
+      import('./features/lineups/lineUps.module').then((m) => m.LineupsModule),
     title: 'Lineups',
   },
 
   {
     path: 'about',
-    loadChildren: () => import('./features').then((m) => m.AboutModule),
+    loadChildren: () =>
+      import('./features/about/about.module').then((m) => m.AboutModule),
     title: 'About',
   },
 
   {
     path: '**',
-    loadComponent: () => import('./features').then((c) => c.ErrorComponent),
+    loadComponent: () =>
+      import('./features/error/error.component').then((c) => c.ErrorComponent),
     title: 'Error',
   },
 ];

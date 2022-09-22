@@ -1,12 +1,17 @@
-<div class="container">
-  <article>
-    <h3>// NEW AGENT</h3>
-    <h1>NEON</h1>
-    <p>
-      Filipino Agent Neon surges forward at shocking speeds, discharging bursts
-      of bioelectric radiance as fast as her body generates it. She races ahead
-      to catch enemies off guard then strikes them down quicker than lightning.
-    </p>
-    <app-button routerLink="neon">MORE</app-button>
-  </article>
-</div>
+<ng-container *ngIf="newAgent$ | async as agent">
+  <div
+    [ngStyle]="{ backgroundImage: 'url(' + agent.backgroundImage + ')' }"
+    class="container"
+  >
+    <article>
+      <h3>// NEW AGENT</h3>
+      <h1>{{ agent.displayName }}</h1>
+      <p>
+        {{ agent.description }}
+      </p>
+      <app-button routerLink="{{ agent.displayName.toLowerCase() }}"
+        >MORE</app-button
+      >
+    </article>
+  </div>
+</ng-container>

@@ -11,6 +11,12 @@ export interface Agent {
   abilities: Ability[];
 }
 
+export interface NewAgent {
+  displayName: string;
+  description: string;
+  backgroundImage: string;
+}
+
 export interface Ability {
   slot: string;
   displayName: string;

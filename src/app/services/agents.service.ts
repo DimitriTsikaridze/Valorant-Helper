@@ -34,7 +34,7 @@ export class AgentsService {
 
   getNewAgent() {
     return this.http
-      .get<NewAgent>(`${SINGLE_AGENT_URL}/new-agent.json`)
+      .get<NewAgent>(`${SINGLE_AGENT_URL}new-agent.json`)
       .pipe(retry(3));
   }
 }

@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { WeaponsService } from '@services/weapons.service';
-import { map, Observable, switchMap, tap } from 'rxjs';
+import { Observable, switchMap, tap } from 'rxjs';
 import { WeaponDetails } from '@shared/models/weapon';
+import { MetaService } from '../../../services/meta.service';
 
 @Component({
   selector: 'app-weapon-details',
@@ -15,16 +15,23 @@ export class WeaponDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private weaponsService: WeaponsService,
-    private title: Title
+    private metaService: MetaService
   ) {}
 
   weaponDetails$: Observable<WeaponDetails>;
 
   ngOnInit(): void {
     this.weaponDetails$ = this.route.params.pipe(
-      map((params) => params.weaponName),
-      switchMap((name) => this.weaponsService.getWeaponDetails(name)),
-      tap(({ displayName }) => this.title.setTitle(`${displayName} Details`))
+      switchMap(({ name }) => this.weaponsService.getWeaponDetails(name)),
+      tap(({ displayName, weaponStats, displayIcon }) => {
+        const { fireRate, magazineSize } = weaponStats;
+
+        this.metaService.generateTags({
+          title: `${displayName} Details`,
+          description: `Fire rate: ${fireRate}, Magazine Size ${magazineSize}`,
+          image: displayIcon,
+        });
+      })
     );
   }
 }

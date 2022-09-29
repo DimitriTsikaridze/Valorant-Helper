@@ -1,10 +1,10 @@
 import { Location } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { AgentsService } from '@services/agents.service';
 import { Ability, Agent } from '@shared/models/agent';
-import { map, Observable, switchMap, tap } from 'rxjs';
+import { Observable, switchMap, tap } from 'rxjs';
+import { MetaService } from '@services/meta.service';
 
 @Component({
   selector: 'app-agent-details',
@@ -16,8 +16,8 @@ export class AgentDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private agentsService: AgentsService,
-    public location: Location,
-    private title: Title
+    private metaService: MetaService,
+    public location: Location
   ) {}
 
   abilityVideo: string;
@@ -27,11 +27,14 @@ export class AgentDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.agent$ = this.route.params.pipe(
-      map((params) => params.id),
-      switchMap((id) => this.agentsService.getSingleAgent(id)),
-      tap(({ abilities, displayName }) => {
+      switchMap(({ id }) => this.agentsService.getSingleAgent(id)),
+      tap(({ abilities, displayName, fullPortraitV2, description }) => {
         this.abilityVideo = abilities[0].displayVideo;
-        this.title.setTitle(`${displayName} Details`);
+        this.metaService.generateTags({
+          title: `${displayName} Details`,
+          image: fullPortraitV2,
+          description: description,
+        });
       })
     );
   }

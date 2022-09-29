@@ -6,7 +6,7 @@ import { WeaponsContainerComponent } from './weapons-container/weapons-container
 const routes: Routes = [
   { path: '', component: WeaponsContainerComponent },
   {
-    path: ':weaponName',
+    path: ':name',
     component: WeaponDetailsComponent,
   },
 ];

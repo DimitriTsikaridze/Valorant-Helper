@@ -12,14 +12,14 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeContainerComponent,
-    title: 'Home',
+    // title: 'Home',
   },
 
   {
     path: 'agents',
     loadChildren: () =>
       import('./features/agents/agents.module').then((m) => m.AgentsModule),
-    title: 'Agents',
+    // title: 'Agents',
   },
 
   {
@@ -28,34 +28,34 @@ const routes: Routes = [
       import('./features/crosshairs/crosshairs.module').then(
         (m) => m.CrosshairsModule
       ),
-    title: 'Crosshairs',
+    // title: 'Crosshairs',
   },
   {
     path: 'weapons',
     loadChildren: () =>
       import('./features/weapons/weapons.module').then((m) => m.WeaponsModule),
-    title: 'Weapons',
+    // title: 'Weapons',
   },
 
   {
     path: 'lineups',
     loadChildren: () =>
       import('./features/lineups/lineUps.module').then((m) => m.LineupsModule),
-    title: 'Lineups',
+    // title: 'Lineups',
   },
 
   {
     path: 'about',
     loadChildren: () =>
       import('./features/about/about.module').then((m) => m.AboutModule),
-    title: 'About',
+    // title: 'About',
   },
 
   {
     path: '**',
     loadComponent: () =>
       import('./features/error/error.component').then((c) => c.ErrorComponent),
-    title: 'Error',
+    // title: 'Error',
   },
 ];
 

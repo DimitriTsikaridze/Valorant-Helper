@@ -186,23 +186,7 @@
           "builder": "@nguniversal/builders:prerender",
           "options": {
             "guessRoutes": false,
-            "routes": [
-              "/home",
-              "/agents",
-              "/agents/fade",
-              "/agents/breach",
-              "/agents/raze",
-              "/weapons",
-              "/weapons/odin",
-              "/weapons/ares",
-              "/weapons/vandal",
-              "/crosshairs",
-              "/lineups",
-              "/lineups/fade",
-              "/lineups/breach",
-              "/lineups/raze",
-              "/about"
-            ]
+            "routesFile": "./routes.txt"
           },
           "configurations": {
             "production": {

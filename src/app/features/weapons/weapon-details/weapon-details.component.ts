@@ -24,6 +24,7 @@ export class WeaponDetailsComponent implements OnInit {
     this.weaponDetails$ = this.route.params.pipe(
       switchMap(({ name }) => this.weaponsService.getWeaponDetails(name)),
       tap(({ displayName, weaponStats, displayIcon }) => {
+        if (!weaponStats) return;
         const { fireRate, magazineSize } = weaponStats;
 
         this.metaService.generateTags({

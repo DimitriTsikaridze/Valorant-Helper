@@ -31,7 +31,7 @@ export class AgentDetailsComponent implements OnInit {
       tap(({ abilities, displayName, fullPortraitV2, description }) => {
         this.abilityVideo = abilities[0].displayVideo;
         this.metaService.generateTags({
-          title: `${displayName} Details`,
+          title: `${displayName} Description`,
           image: fullPortraitV2,
           description: description,
         });

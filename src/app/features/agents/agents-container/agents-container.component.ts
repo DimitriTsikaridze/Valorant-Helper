@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { AgentsService } from '@services/agents.service';
 import { Agent } from '@models/agent';
 import { Observable, of } from 'rxjs';
-import { MetaService } from '../../../services/meta.service';
+import { MetaService } from '@services/meta.service';
 
 @Component({
   selector: 'app-agents-container',
@@ -30,8 +30,7 @@ export class AgentsContainerComponent implements OnInit {
   generateTags() {
     this.metaService.generateTags({
       title: 'Agents',
-      image:
-        'https://cdn.oneesports.gg/cdn-data/2022/04/Valorant_Fade_Splash_Art.webp',
+      image: 'https://images8.alphacoders.com/128/1280131.jpg',
       description: 'Explore agents and their details',
     });
   }

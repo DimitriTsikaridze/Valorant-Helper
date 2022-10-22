@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { WeaponsService } from '@services/weapons.service';
 import { Observable, switchMap, tap } from 'rxjs';
 import { WeaponDetails } from '@shared/models/weapon';
-import { MetaService } from '../../../services/meta.service';
+import { MetaService } from '@services/meta.service';
 
 @Component({
   selector: 'app-weapon-details',

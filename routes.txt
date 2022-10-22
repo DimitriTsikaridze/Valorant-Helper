@@ -43,6 +43,7 @@
 /crosshairs
 
 /lineups
+/lineups/harbor
 /lineups/fade
 /lineups/breach
 /lineups/raze

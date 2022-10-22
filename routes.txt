@@ -1,6 +1,7 @@
 /home
 
 /agents
+/agents/harbor
 /agents/fade
 /agents/breach
 /agents/raze

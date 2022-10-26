@@ -14,18 +14,17 @@ export class MetaService {
 
   generateTags({ title = '', image = '', description = '' }) {
     this.title.setTitle(title);
-    this.meta.addTags([
-      { name: 'og:url', content: this.router.url },
-      { name: 'og:title', content: title },
-      {
-        name: 'og:description',
-        content: description,
-      },
-      {
-        name: 'og:image',
-        content: image,
-      },
-      { name: 'twitter:card', content: 'twitter:card' },
-    ]);
+    this.meta.updateTag({ name: 'og:url', content: this.router.url });
+
+    this.meta.updateTag({ name: 'og:title', content: title });
+    this.meta.updateTag({
+      name: 'og:description',
+      content: description,
+    });
+    this.meta.updateTag({
+      name: 'og:image',
+      content: image,
+    });
+    this.meta.updateTag({ name: 'twitter:card', content: 'twitter:card' });
   }
 }

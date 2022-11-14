@@ -13,7 +13,8 @@
     "serve:ssr": "node dist/valorant-helper/server/main.js",
     "build:ssr": "ng build && ng run valorant-helper:server",
     "prerender": "ng run valorant-helper:prerender",
-    "serve:prerender": "node dist/valorant-helper/server/main.js"
+    "serve:prerender": "node dist/valorant-helper/server/main.js",
+    "format": "npx prettier --write ."
   },
   "private": true,
   "dependencies": {

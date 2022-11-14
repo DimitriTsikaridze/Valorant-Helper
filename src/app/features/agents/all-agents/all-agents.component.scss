@@ -14,6 +14,7 @@
   row-gap: 4rem;
   margin-top: 4rem;
   position: relative;
+
   ul {
     display: flex;
     justify-content: center;
@@ -21,10 +22,12 @@
     width: 100%;
     position: absolute;
     top: -4rem;
+
     li {
       cursor: pointer;
       position: relative;
       transition: 0.2s;
+
       &::after {
         content: '';
         position: absolute;
@@ -36,11 +39,13 @@
         background-color: $light-red;
         transition: width 0.2s;
       }
+
       &:hover {
         &::after {
           width: calc(100% + 6px);
         }
       }
+
       &.active {
         &::after {
           width: calc(100% + 6px);
@@ -68,10 +73,12 @@ ul {
     column-gap: 4rem;
   }
 }
+
 @media only screen and (max-width: 580px) {
   .agents-container {
     grid-template-columns: 90%;
     margin-top: 6rem;
+
     ul {
       top: -6rem;
     }

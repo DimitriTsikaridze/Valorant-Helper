@@ -1,11 +1,11 @@
 .container {
-  min-height: 300px;
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 80%;
   display: flex;
   position: relative;
   z-index: 1;
+
   &::before {
     content: '';
     position: absolute;
@@ -23,11 +23,13 @@ article {
   h3 {
     font-size: 1rem;
   }
+
   h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     font-family: 'valorant';
   }
+
   p {
     font-size: 1.1rem;
   }
@@ -41,6 +43,7 @@ article {
   .container {
     background-position: center;
   }
+
   article {
     margin: 3rem;
   }

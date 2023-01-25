@@ -5,7 +5,7 @@
 </div>
 
 <div *ngIf="maps$ | async as maps; else loading" class="map-container">
-  <div *ngFor="let map of maps" class="map fade-in" appToggleSites>
+  <div *ngFor="let map of maps" class="map" appToggleSites>
     <img
       [src]="map.listViewIcon"
       [alt]="map.displayName"

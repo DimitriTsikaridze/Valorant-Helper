@@ -37,4 +37,4 @@ const routes: Routes = [
     LoadingComponent,
   ],
 })
-export class AgentsModule {}
+export default class AgentsModule {}

@@ -8,4 +8,4 @@ import { CrosshairsContainerComponent } from './crosshairs-container/crosshairs-
   declarations: [CrosshairsContainerComponent],
   imports: [CommonModule, CrosshairsRoutingModule],
 })
-export class CrosshairsModule {}
+export default class CrosshairsModule {}

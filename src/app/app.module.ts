@@ -8,7 +8,6 @@ import { LayoutModule } from './layout/layout.module';
 import { AppComponent } from './app.component';
 
 import { environment } from '@environment/environment';
-import { HomeModule } from './features/home/home.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,7 +16,6 @@ import { HomeModule } from './features/home/home.module';
     AppRoutingModule,
     HttpClientModule,
     LayoutModule,
-    HomeModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       registrationStrategy: 'registerWhenStable:30000',

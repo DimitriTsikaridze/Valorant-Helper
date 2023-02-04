@@ -85,7 +85,7 @@
                 "hidden": true,
                 "vendor": true
               },
-              "namedChunks": true,
+              "namedChunks": false,
               "outputHashing": "all"
             },
             "development": {

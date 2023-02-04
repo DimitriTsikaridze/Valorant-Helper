@@ -7,4 +7,4 @@ import { AboutContainerComponent } from './about-container/about-container.compo
   declarations: [AboutContainerComponent],
   imports: [CommonModule, AboutRoutingModule],
 })
-export class AboutModule {}
+export default class AboutModule {}

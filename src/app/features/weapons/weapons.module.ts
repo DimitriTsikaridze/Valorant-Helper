@@ -15,4 +15,4 @@ import { LoadingComponent, TitleComponent } from '@shared/components';
     LoadingComponent,
   ],
 })
-export class WeaponsModule {}
+export default class WeaponsModule {}

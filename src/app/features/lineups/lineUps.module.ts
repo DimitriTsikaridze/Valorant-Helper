@@ -32,4 +32,4 @@ const routes: Routes = [
     LoadingComponent,
   ],
 })
-export class LineupsModule {}
+export default class LineupsModule {}

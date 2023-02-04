@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeContainerComponent } from './features/home';
 
 const routes: Routes = [
   {
@@ -10,34 +9,27 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeContainerComponent,
+    loadChildren: () => import('./features/home/home.module'),
   },
   {
     path: 'agents',
-    loadChildren: () =>
-      import('./features/agents/agents.module').then((m) => m.AgentsModule),
+    loadChildren: () => import('./features/agents/agents.module'),
   },
   {
     path: 'crosshairs',
-    loadChildren: () =>
-      import('./features/crosshairs/crosshairs.module').then(
-        (m) => m.CrosshairsModule
-      ),
+    loadChildren: () => import('./features/crosshairs/crosshairs.module'),
   },
   {
     path: 'weapons',
-    loadChildren: () =>
-      import('./features/weapons/weapons.module').then((m) => m.WeaponsModule),
+    loadChildren: () => import('./features/weapons/weapons.module'),
   },
   {
     path: 'lineups',
-    loadChildren: () =>
-      import('./features/lineups/lineUps.module').then((m) => m.LineupsModule),
+    loadChildren: () => import('./features/lineups/lineUps.module'),
   },
   {
     path: 'about',
-    loadChildren: () =>
-      import('./features/about/about.module').then((m) => m.AboutModule),
+    loadChildren: () => import('./features/about/about.module'),
   },
   {
     path: '**',

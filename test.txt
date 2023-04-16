@@ -10,6 +10,7 @@
 /agents/raze
 /agents/chamber
 /agents/kayo
+/agents/skye
 /agents/cypher
 /agents/sova
 /agents/killjoy
@@ -18,6 +19,7 @@
 /agents/astra
 /agents/brimstone
 /agents/neon
+/agents/yoru
 /agents/sage
 /agents/reyna
 /agents/omen
@@ -28,6 +30,7 @@
 /lineups/raze
 /lineups/chamber
 /lineups/kayo
+/lineups/skye
 /lineups/cypher
 /lineups/sova
 /lineups/killjoy
@@ -36,6 +39,7 @@
 /lineups/astra
 /lineups/brimstone
 /lineups/neon
+/lineups/yoru
 /lineups/sage
 /lineups/reyna
 /lineups/omen

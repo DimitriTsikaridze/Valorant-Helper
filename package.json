@@ -1,6 +1,7 @@
 {
   "name": "valorant-helper",
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -15,7 +16,8 @@
     "prerender": "ng run valorant-helper:prerender",
     "serve:prerender": "node dist/valorant-helper/server/main.js",
     "format": "npx prettier --write .",
-    "generateRoutes": "node utils/staticRoutes.js"
+    "generateRoutes": "node utils/staticRoutes.js",
+    "generateRoutes:watch": "nodemon --quiet utils/staticRoutes.js"
   },
   "private": true,
   "dependencies": {
@@ -58,6 +60,8 @@
     "karma-coverage": "~2.1.0",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "node-fetch": "^3.3.1",
+    "nodemon": "^2.0.22",
     "prettier": "^2.7.1",
     "prettier-plugin-organize-attributes": "^0.0.5",
     "pretty-quick": "^3.1.3",

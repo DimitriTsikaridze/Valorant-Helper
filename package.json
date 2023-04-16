@@ -14,7 +14,8 @@
     "build:ssr": "ng build && ng run valorant-helper:server",
     "prerender": "ng run valorant-helper:prerender",
     "serve:prerender": "node dist/valorant-helper/server/main.js",
-    "format": "npx prettier --write ."
+    "format": "npx prettier --write .",
+    "generateRoutes": "node utils/staticRoutes.js"
   },
   "private": true,
   "dependencies": {

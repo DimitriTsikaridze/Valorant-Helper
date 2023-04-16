@@ -23,7 +23,7 @@ const agentRoutes = agentPathNames.map((agent) => `/agents/${agent}`);
 const lineupRoutes = agentPathNames.map((agent) => `/lineups/${agent}`);
 const weaponRoutes = await getWeaponNames();
 
-truncateSync('./test.txt', 0);
+truncateSync('routes.txt', 0);
 
 const routes = [
   '/home',
@@ -41,5 +41,5 @@ const routes = [
 ];
 
 routes.forEach((route) => {
-  appendFileSync('./test.txt', `${route}\n`);
+  appendFileSync('routes.txt', `${route}\n`);
 });

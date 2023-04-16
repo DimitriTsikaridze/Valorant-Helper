@@ -17,7 +17,7 @@
     "serve:prerender": "node dist/valorant-helper/server/main.js",
     "format": "npx prettier --write .",
     "generateRoutes": "node utils/staticRoutes.js",
-    "generateRoutes:watch": "nodemon --quiet utils/staticRoutes.js"
+    "deploy": "npm run generateRoutes && npm run prerender &&  ng deploy"
   },
   "private": true,
   "dependencies": {

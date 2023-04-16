@@ -43,3 +43,4 @@ const routes = [
 routes.forEach((route) => {
   appendFileSync('routes.txt', `${route}\n`);
 });
+console.log('✔ Generating dynamic routes finished');

@@ -1,7 +1,6 @@
 {
   "name": "valorant-helper",
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -16,7 +15,7 @@
     "prerender": "ng run valorant-helper:prerender",
     "serve:prerender": "node dist/valorant-helper/server/main.js",
     "format": "npx prettier --write .",
-    "generateRoutes": "node utils/staticRoutes.js",
+    "generateRoutes": "node utils/dynamicRoutes.mjs",
     "deploy": "npm run generateRoutes && npm run prerender &&  ng deploy"
   },
   "private": true,

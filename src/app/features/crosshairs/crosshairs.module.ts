@@ -5,7 +5,10 @@ import { CrosshairsRoutingModule } from './crosshairs-routing.module';
 import { CrosshairsContainerComponent } from './crosshairs-container/crosshairs-container.component';
 
 @NgModule({
-  declarations: [CrosshairsContainerComponent],
-  imports: [CommonModule, CrosshairsRoutingModule],
+  imports: [
+    CommonModule,
+    CrosshairsRoutingModule,
+    CrosshairsContainerComponent,
+  ],
 })
 export default class CrosshairsModule {}

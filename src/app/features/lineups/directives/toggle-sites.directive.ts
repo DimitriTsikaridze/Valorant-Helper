@@ -2,6 +2,7 @@ import { Directive, HostBinding, HostListener } from '@angular/core';
 
 @Directive({
   selector: '[appToggleSites]',
+  standalone: true,
 })
 export class ToggleSitesDirective {
   @HostBinding('class.active')

@@ -6,6 +6,7 @@ import { MetaService } from '@services/meta.service';
   templateUrl: './crosshairs-container.component.html',
   styleUrls: ['./crosshairs-container.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
 })
 export class CrosshairsContainerComponent {
   constructor(private metaService: MetaService) {

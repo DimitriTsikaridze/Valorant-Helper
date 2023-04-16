@@ -18,18 +18,16 @@ const routes: Routes = [
   { path: ':agentName/:mapName/:siteName', component: MapPreviewComponent },
 ];
 @NgModule({
-  declarations: [
-    LineupsContainerComponent,
-    AgentLineupsPreviewComponent,
-    AgentLineupMapsComponent,
-    MapPreviewComponent,
-    ToggleSitesDirective,
-  ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     TitleComponent,
     LoadingComponent,
+    LineupsContainerComponent,
+    AgentLineupsPreviewComponent,
+    AgentLineupMapsComponent,
+    MapPreviewComponent,
+    ToggleSitesDirective,
   ],
 })
 export default class LineupsModule {}

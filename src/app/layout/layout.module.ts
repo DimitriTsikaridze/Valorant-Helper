@@ -12,8 +12,13 @@ import { ButtonComponent } from '@shared/components';
 const components = [HeaderComponent, FooterComponent];
 
 @NgModule({
-  declarations: [components, OutsideClickDirective],
-  imports: [CommonModule, RouterModule, ButtonComponent],
+  imports: [
+    CommonModule,
+    RouterModule,
+    ButtonComponent,
+    components,
+    OutsideClickDirective,
+  ],
   exports: [components],
 })
 export class LayoutModule {}

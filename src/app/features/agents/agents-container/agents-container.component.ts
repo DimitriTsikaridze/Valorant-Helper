@@ -3,12 +3,17 @@ import { AgentsService } from '@services/agents.service';
 import { Agent } from '@models/agent';
 import { Observable, of } from 'rxjs';
 import { MetaService } from '@services/meta.service';
+import { AllAgentsComponent } from '../all-agents/all-agents.component';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { AgentNewsComponent } from '../agent-news/agent-news.component';
 
 @Component({
   selector: 'app-agents-container',
   templateUrl: './agents-container.component.html',
   styleUrls: ['./agents-container.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [AgentNewsComponent, NgIf, AllAgentsComponent, AsyncPipe],
 })
 export class AgentsContainerComponent implements OnInit {
   constructor(

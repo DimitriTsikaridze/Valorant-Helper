@@ -4,12 +4,17 @@ import { WeaponsService } from '@services/weapons.service';
 import { Observable, switchMap, tap } from 'rxjs';
 import { WeaponDetails } from '@shared/models/weapon';
 import { MetaService } from '@services/meta.service';
+import { LoadingComponent } from '../../../shared/components/loading/loading.component';
+import { TitleComponent } from '../../../shared/components/title/title.component';
+import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-weapon-details',
   templateUrl: './weapon-details.component.html',
   styleUrls: ['./weapon-details.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [NgIf, TitleComponent, LoadingComponent, AsyncPipe],
 })
 export class WeaponDetailsComponent implements OnInit {
   constructor(

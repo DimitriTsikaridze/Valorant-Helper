@@ -22,12 +22,6 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [
-    AgentsContainerComponent,
-    AgentNewsComponent,
-    AllAgentsComponent,
-    AgentDetailsComponent,
-  ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
@@ -35,6 +29,10 @@ const routes: Routes = [
     TitleComponent,
     ButtonComponent,
     LoadingComponent,
+    AgentsContainerComponent,
+    AgentNewsComponent,
+    AllAgentsComponent,
+    AgentDetailsComponent,
   ],
 })
 export default class AgentsModule {}

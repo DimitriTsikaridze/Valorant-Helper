@@ -2,11 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { AgentsService } from '@services/agents.service';
 import { Agent } from '@models/agent';
 import { MetaService } from '@services/meta.service';
+import { LoadingComponent } from '../../../shared/components/loading/loading.component';
+import { AgentLineupsPreviewComponent } from '../agent-lineups-preview/agent-lineups-preview.component';
+import { NgIf, NgFor } from '@angular/common';
+import { TitleComponent } from '../../../shared/components/title/title.component';
 
 @Component({
   selector: 'app-lineups-container',
   templateUrl: './lineups-container.component.html',
   styleUrls: ['./lineups-container.component.scss'],
+  standalone: true,
+  imports: [
+    TitleComponent,
+    NgIf,
+    NgFor,
+    AgentLineupsPreviewComponent,
+    LoadingComponent,
+  ],
 })
 export class LineupsContainerComponent implements OnInit {
   constructor(

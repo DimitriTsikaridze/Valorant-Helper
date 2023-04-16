@@ -7,12 +7,13 @@ import { WeaponDetailsComponent } from './weapon-details/weapon-details.componen
 import { LoadingComponent, TitleComponent } from '@shared/components';
 
 @NgModule({
-  declarations: [WeaponsContainerComponent, WeaponDetailsComponent],
   imports: [
     CommonModule,
     WeaponsRoutingModule,
     TitleComponent,
     LoadingComponent,
+    WeaponsContainerComponent,
+    WeaponDetailsComponent,
   ],
 })
 export default class WeaponsModule {}

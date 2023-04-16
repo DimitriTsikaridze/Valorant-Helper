@@ -1,16 +1,35 @@
-import { Location } from '@angular/common';
+import {
+  Location,
+  NgIf,
+  NgStyle,
+  NgFor,
+  NgClass,
+  AsyncPipe,
+} from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AgentsService } from '@services/agents.service';
 import { Ability, Agent } from '@shared/models/agent';
 import { Observable, switchMap, tap } from 'rxjs';
 import { MetaService } from '@services/meta.service';
+import { LoadingComponent } from '../../../shared/components/loading/loading.component';
+import { TitleComponent } from '../../../shared/components/title/title.component';
 
 @Component({
   selector: 'app-agent-details',
   templateUrl: './agent-details.component.html',
   styleUrls: ['./agent-details.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    NgIf,
+    NgStyle,
+    TitleComponent,
+    NgFor,
+    NgClass,
+    LoadingComponent,
+    AsyncPipe,
+  ],
 })
 export class AgentDetailsComponent implements OnInit {
   constructor(

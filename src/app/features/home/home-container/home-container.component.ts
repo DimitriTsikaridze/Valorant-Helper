@@ -3,12 +3,30 @@ import { Agent } from '@models/agent';
 import { AgentsService } from '@services/agents.service';
 import { Observable, of } from 'rxjs';
 import { MetaService } from '@services/meta.service';
+import { RouterLink } from '@angular/router';
+import { ButtonComponent } from '../../../shared/components/button/button.component';
+import { TitleComponent } from '../../../shared/components/title/title.component';
+import { FeaturePreviewComponent } from '../feature-preview/feature-preview.component';
+import { AgentPreviewComponent } from '../agent-preview/agent-preview.component';
+import { NgIf, AsyncPipe } from '@angular/common';
+import { IntroductionComponent } from '../introduction/introduction.component';
 
 @Component({
   selector: 'app-home-container',
   templateUrl: './home-container.component.html',
   styleUrls: ['./home-container.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    IntroductionComponent,
+    NgIf,
+    AgentPreviewComponent,
+    FeaturePreviewComponent,
+    TitleComponent,
+    ButtonComponent,
+    RouterLink,
+    AsyncPipe,
+  ],
 })
 export class HomeContainerComponent implements OnInit {
   constructor(

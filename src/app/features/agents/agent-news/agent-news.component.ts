@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { AgentsService } from '@services/agents.service';
 import { RouterLink } from '@angular/router';
-import { ButtonComponent } from '../../../shared/components/button/button.component';
+import { ButtonComponent } from '@shared/components';
 import { NgIf, NgStyle, AsyncPipe } from '@angular/common';
 
 @Component({

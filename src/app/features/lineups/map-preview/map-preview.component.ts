@@ -3,7 +3,7 @@ import { LineupsService } from '@services/lineups.service';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { routeParams } from '@shared/utils';
 import { UpperCasePipe } from '@angular/common';
-import { TitleComponent } from '../../../shared/components/title/title.component';
+import { TitleComponent } from '@shared/components';
 
 @Component({
   selector: 'app-map-preview',

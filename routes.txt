@@ -6,6 +6,7 @@
 /about
 
 
+/agents/gekko
 /agents/harbor
 /agents/fade
 /agents/breach
@@ -28,6 +29,7 @@
 /agents/jett
 
 
+/lineups/gekko
 /lineups/harbor
 /lineups/fade
 /lineups/breach

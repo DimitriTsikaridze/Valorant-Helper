@@ -1,7 +1,7 @@
 @use '/src/styles/palette' as *;
 
 .container {
-  background-image: url('../../../../assets/images/introduction-bg.webp');
+  background-image: url('/assets/images/introduction-bg.webp');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -11,6 +11,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+
   &::before {
     content: '';
     position: absolute;
@@ -29,6 +30,7 @@ aside {
   .iphone-img {
     width: 350px;
   }
+
   .apple-download {
     margin-left: auto;
   }
@@ -52,12 +54,15 @@ p {
     background-position: center;
     flex-direction: column;
     padding-block: 2rem;
+
     article {
       margin: 1rem;
       text-align: center;
+
       h1 {
         font-size: 2rem;
       }
+
       p {
         font-size: 1.5rem;
       }

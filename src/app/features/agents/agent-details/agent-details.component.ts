@@ -12,8 +12,7 @@ import { AgentsService } from '@services/agents.service';
 import { Ability, Agent } from '@shared/models/agent';
 import { Observable, switchMap, tap } from 'rxjs';
 import { MetaService } from '@services/meta.service';
-import { LoadingComponent } from '../../../shared/components/loading/loading.component';
-import { TitleComponent } from '../../../shared/components/title/title.component';
+import { LoadingComponent, TitleComponent } from '@shared/components';
 
 @Component({
   selector: 'app-agent-details',

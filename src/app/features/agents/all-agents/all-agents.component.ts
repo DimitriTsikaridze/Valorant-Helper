@@ -6,9 +6,8 @@ import {
 } from '@angular/core';
 import { Agent } from '@models/agent';
 import { RouterLink } from '@angular/router';
-import { AgentCardComponent } from '../../../shared/components/agent-card/agent-card.component';
+import { AgentCardComponent, TitleComponent } from '@shared/components';
 import { NgFor, NgClass, UpperCasePipe } from '@angular/common';
-import { TitleComponent } from '../../../shared/components/title/title.component';
 
 @Component({
   selector: 'app-all-agents',

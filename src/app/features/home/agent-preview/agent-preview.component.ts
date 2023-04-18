@@ -1,10 +1,12 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Agent } from '@models/agent';
-import { ButtonComponent } from '../../../shared/components/button/button.component';
 import { RouterLink } from '@angular/router';
-import { AgentCardComponent } from '../../../shared/components/agent-card/agent-card.component';
 import { NgFor } from '@angular/common';
-import { TitleComponent } from '../../../shared/components/title/title.component';
+import {
+  ButtonComponent,
+  AgentCardComponent,
+  TitleComponent,
+} from '@shared/components';
 
 @Component({
   selector: 'app-agent-preview',

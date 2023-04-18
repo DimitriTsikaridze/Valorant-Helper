@@ -4,8 +4,7 @@ import { WeaponsService } from '@services/weapons.service';
 import { Observable, switchMap, tap } from 'rxjs';
 import { WeaponDetails } from '@shared/models/weapon';
 import { MetaService } from '@services/meta.service';
-import { LoadingComponent } from '../../../shared/components/loading/loading.component';
-import { TitleComponent } from '../../../shared/components/title/title.component';
+import { LoadingComponent, TitleComponent } from '@shared/components';
 import { NgIf, AsyncPipe } from '@angular/common';
 
 @Component({

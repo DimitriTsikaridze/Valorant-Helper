@@ -3,7 +3,7 @@ import { WeaponsService } from '@services/weapons.service';
 import { Observable, of } from 'rxjs';
 import { Weapon } from '@shared/models/weapon';
 import { MetaService } from '@services/meta.service';
-import { LoadingComponent } from '../../../shared/components/loading/loading.component';
+import { LoadingComponent } from '@shared/components';
 import { RouterLink } from '@angular/router';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 

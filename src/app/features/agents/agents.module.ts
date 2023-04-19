@@ -8,7 +8,6 @@ import {
   AllAgentsComponent,
 } from './index';
 
-import { RouterModule, Routes } from '@angular/router';
 import {
   AgentCardComponent,
   ButtonComponent,
@@ -16,15 +15,9 @@ import {
   TitleComponent,
 } from '@shared/components';
 
-const routes: Routes = [
-  { path: '', component: AgentsContainerComponent },
-  { path: ':id', component: AgentDetailsComponent },
-];
-
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(routes),
     AgentCardComponent,
     TitleComponent,
     ButtonComponent,

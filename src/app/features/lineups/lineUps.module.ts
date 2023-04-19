@@ -9,18 +9,11 @@ import {
   ToggleSitesDirective,
 } from './index';
 
-import { RouterModule, Routes } from '@angular/router';
 import { LoadingComponent, TitleComponent } from '@shared/components';
 
-const routes: Routes = [
-  { path: '', component: LineupsContainerComponent },
-  { path: ':agentName', component: AgentLineupMapsComponent },
-  { path: ':agentName/:mapName/:siteName', component: MapPreviewComponent },
-];
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(routes),
     TitleComponent,
     LoadingComponent,
     LineupsContainerComponent,

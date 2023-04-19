@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 import {
   AgentPreviewComponent,
@@ -14,13 +14,6 @@ import {
   TitleComponent,
 } from '@shared/components';
 
-const routes: Routes = [
-  {
-    path: '',
-    component: HomeContainerComponent,
-  },
-];
-
 @NgModule({
   imports: [
     CommonModule,
@@ -28,7 +21,6 @@ const routes: Routes = [
     AgentCardComponent,
     TitleComponent,
     ButtonComponent,
-    RouterModule.forChild(routes),
     HomeContainerComponent,
     IntroductionComponent,
     AgentPreviewComponent,

@@ -10,7 +10,6 @@ import { ButtonComponent } from '@shared/components';
   `,
   styles: [
     `
-      @use '/src/styles/index' as *;
       :host {
         display: block;
         min-height: 100%;

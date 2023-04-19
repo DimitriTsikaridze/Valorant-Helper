@@ -9,32 +9,31 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => import('./features/home/home.module'),
+    loadChildren: () => import('./features/home/home.routes'),
   },
   {
     path: 'agents',
-    loadChildren: () => import('./features/agents/agents.module'),
+    loadChildren: () => import('./features/agents/agents.routes'),
   },
   {
     path: 'crosshairs',
-    loadChildren: () => import('./features/crosshairs/crosshairs.module'),
+    loadChildren: () => import('./features/crosshairs/crosshairs.routes'),
   },
   {
     path: 'weapons',
-    loadChildren: () => import('./features/weapons/weapons.module'),
+    loadChildren: () => import('./features/weapons/weapons.routes'),
   },
   {
     path: 'lineups',
-    loadChildren: () => import('./features/lineups/lineUps.module'),
+    loadChildren: () => import('./features/lineups/lineups.routes'),
   },
   {
     path: 'about',
-    loadChildren: () => import('./features/about/about.module'),
+    loadChildren: () => import('./features/about/about.routes'),
   },
   {
     path: '**',
-    loadComponent: () =>
-      import('./features/error/error.component').then((c) => c.ErrorComponent),
+    loadChildren: () => import('./features/error/error.routes'),
   },
 ];
 

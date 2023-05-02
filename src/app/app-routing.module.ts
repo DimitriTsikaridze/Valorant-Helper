@@ -25,7 +25,7 @@ const routes: Routes = [
   },
   {
     path: 'lineups',
-    loadChildren: () => import('./features/lineups/lineups.routes'),
+    loadChildren: () => import('./features/lineups/lineUps.routes'),
   },
   {
     path: 'about',

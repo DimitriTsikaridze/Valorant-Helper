@@ -1,11 +1,11 @@
 <section [ngStyle]="{ backgroundColor: backgroundColor, color: color }">
-  <ng-content select="[appTitle]"></ng-content>
+  <ng-content select="app-title"></ng-content>
   <div class="feature-container">
-    <ng-content select="[featureImage]"></ng-content>
+    <ng-content select="img"></ng-content>
     <div [ngStyle]="{ order: descriptionOrder }" class="feature-description">
-      <ng-content select="[featureTitle]"></ng-content>
-      <ng-content class="feature-text" select="[featureText]"></ng-content>
-      <ng-content select="[button]"></ng-content>
+      <ng-content select="h2"></ng-content>
+      <ng-content class="feature-text" select="p"></ng-content>
+      <ng-content select="app-button"></ng-content>
     </div>
   </div>
 </section>

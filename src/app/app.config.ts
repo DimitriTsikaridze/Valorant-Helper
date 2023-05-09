@@ -1,6 +1,7 @@
 import { ApplicationConfig, isDevMode } from '@angular/core';
 import {
   provideRouter,
+  withComponentInputBinding,
   withEnabledBlockingInitialNavigation,
   withInMemoryScrolling,
 } from '@angular/router';
@@ -15,6 +16,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(
       routes,
       withEnabledBlockingInitialNavigation(),
+      withComponentInputBinding(),
       withInMemoryScrolling({ scrollPositionRestoration: 'enabled' })
     ),
     provideHttpClient(withInterceptors([errorHandlerInterceptor])),

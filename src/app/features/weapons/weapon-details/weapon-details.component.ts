@@ -3,10 +3,10 @@ import {
   Component,
   OnInit,
   inject,
+  Input,
 } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { WeaponsService } from '@services/weapons.service';
-import { Observable, switchMap, tap } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { WeaponDetails } from '@shared/models/weapon';
 import { MetaService } from '@services/meta.service';
 import { LoadingComponent, TitleComponent } from '@shared/components';
@@ -21,15 +21,15 @@ import { NgIf, AsyncPipe } from '@angular/common';
   imports: [NgIf, TitleComponent, LoadingComponent, AsyncPipe],
 })
 export class WeaponDetailsComponent implements OnInit {
-  private route = inject(ActivatedRoute);
   private weaponsService = inject(WeaponsService);
   private metaService = inject(MetaService);
+
+  @Input() name: string;
 
   weaponDetails$: Observable<WeaponDetails>;
 
   ngOnInit(): void {
-    this.weaponDetails$ = this.route.params.pipe(
-      switchMap(({ name }) => this.weaponsService.getWeaponDetails(name)),
+    this.weaponDetails$ = this.weaponsService.getWeaponDetails(this.name).pipe(
       tap(({ displayName, weaponStats, displayIcon }) => {
         if (!weaponStats) return;
         const { fireRate, magazineSize } = weaponStats;

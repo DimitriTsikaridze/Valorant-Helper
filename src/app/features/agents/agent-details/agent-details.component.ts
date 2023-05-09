@@ -11,11 +11,11 @@ import {
   Component,
   OnInit,
   inject,
+  Input,
 } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { AgentsService } from '@services/agents.service';
 import { Ability, Agent } from '@shared/models/agent';
-import { Observable, switchMap, tap } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { MetaService } from '@services/meta.service';
 import { LoadingComponent, TitleComponent } from '@shared/components';
 
@@ -36,10 +36,11 @@ import { LoadingComponent, TitleComponent } from '@shared/components';
   ],
 })
 export class AgentDetailsComponent implements OnInit {
-  private route = inject(ActivatedRoute);
   private agentsService = inject(AgentsService);
   private metaService = inject(MetaService);
   public location = inject(Location);
+
+  @Input() id: string;
 
   abilityVideo: string;
   agent$: Observable<Agent>;
@@ -47,8 +48,7 @@ export class AgentDetailsComponent implements OnInit {
   activeAbility = 'Ability1';
 
   ngOnInit(): void {
-    this.agent$ = this.route.params.pipe(
-      switchMap(({ id }) => this.agentsService.getSingleAgent(id)),
+    this.agent$ = this.agentsService.getSingleAgent(this.id).pipe(
       tap(({ abilities, displayName, fullPortraitV2, description }) => {
         this.abilityVideo = abilities[0].displayVideo;
         this.metaService.generateTags({

@@ -5,6 +5,7 @@
   min-height: 100%;
   background-color: $primary-dark;
 }
+
 .back {
   display: inline-flex;
   align-items: center;
@@ -13,6 +14,7 @@
   cursor: pointer;
   margin-left: 5%;
   padding-top: 2rem;
+
   img {
     height: 20px;
   }
@@ -31,10 +33,12 @@
   position: relative;
   transition: 0.2s;
   cursor: pointer;
+
   h2 {
     display: inline-block;
     transition: 0.2s;
   }
+
   &:hover {
     h2 {
       color: $light-red;
@@ -50,6 +54,7 @@
     border-bottom: 5px solid $light-red;
     z-index: 10;
   }
+
   .regular-arrow {
     margin-left: auto;
     transform: rotate(180deg);
@@ -74,9 +79,11 @@
   display: flex;
   align-items: center;
   transition: 0.2s;
+
   &:hover {
     color: $light-red;
   }
+
   img {
     margin-left: auto;
   }
@@ -85,10 +92,12 @@
 .active {
   &.map {
     margin-bottom: 140px;
+
     h2 {
       color: $light-red;
     }
   }
+
   .regular-arrow {
     transform: rotate(0);
   }
@@ -101,5 +110,6 @@
 
 .site-img {
   width: 100%;
+  height: auto;
   object-fit: cover;
 }

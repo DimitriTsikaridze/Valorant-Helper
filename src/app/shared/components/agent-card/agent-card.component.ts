@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Agent } from '@models/agent';
 
@@ -8,7 +8,7 @@ import { Agent } from '@models/agent';
   styleUrls: ['./agent-card.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, NgOptimizedImage],
 })
 export class AgentCardComponent {
   @Input() agent: Agent;

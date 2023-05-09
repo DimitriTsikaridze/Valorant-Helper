@@ -5,28 +5,35 @@
   align-items: center;
   cursor: pointer;
   transition: 0.2s;
+
   &:hover {
     background-color: transparent;
+
     .agent-info {
       color: $light-red;
     }
   }
+
   .arrow {
     margin-left: auto;
     margin-right: 1rem;
   }
+
   .agent-info {
     transition: color 0.2s;
     margin: 1rem;
     color: black;
+
     h2 {
       font-family: 'valorant';
       font-weight: 500;
     }
+
     h3 {
       font-weight: 400;
     }
   }
+
   .agent-icon {
     max-width: 100px;
   }

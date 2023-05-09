@@ -5,11 +5,11 @@
   <div *ngFor="let weapon of weapons" class="weapon">
     <img
       [routerLink]="['/weapons', weapon.displayName.toLowerCase()]"
-      [src]="weapon.displayIcon"
+      [ngSrc]="weapon.displayIcon"
       [alt]="weapon.displayName + ' image'"
       class="weapon-img"
-      width="340"
-      height="114"
+      width="313"
+      height="100"
     />
     <div class="bottom-content">
       <h3>{{ weapon.displayName }}</h3>

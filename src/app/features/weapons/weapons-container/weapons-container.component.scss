@@ -5,6 +5,7 @@
   min-height: calc(100% - 92px);
   background-color: $primary-dark;
 }
+
 .weapons-container {
   display: grid;
   align-items: center;
@@ -25,8 +26,10 @@
   max-height: 100px;
   object-fit: contain;
   margin-block: auto;
+  width: auto;
   padding-block: 1rem;
 }
+
 .bottom-content {
   background-color: $light-red;
   padding: 0.5rem;

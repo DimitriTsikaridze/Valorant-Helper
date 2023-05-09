@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Agent } from '@models/agent';
 import { RouterLink } from '@angular/router';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-agent-lineups-preview',
@@ -8,7 +9,7 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./agent-lineups-preview.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, NgOptimizedImage],
 })
 export class AgentLineupsPreviewComponent {
   @Input() agent: Agent;

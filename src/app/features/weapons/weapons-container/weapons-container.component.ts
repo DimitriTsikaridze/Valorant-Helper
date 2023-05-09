@@ -5,14 +5,21 @@ import { Weapon } from '@shared/models/weapon';
 import { MetaService } from '@services/meta.service';
 import { LoadingComponent } from '@shared/components';
 import { RouterLink } from '@angular/router';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { NgIf, NgFor, AsyncPipe, NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-weapons-container',
   templateUrl: './weapons-container.component.html',
   styleUrls: ['./weapons-container.component.scss'],
   standalone: true,
-  imports: [NgIf, NgFor, RouterLink, LoadingComponent, AsyncPipe],
+  imports: [
+    NgIf,
+    NgFor,
+    RouterLink,
+    LoadingComponent,
+    AsyncPipe,
+    NgOptimizedImage,
+  ],
 })
 export class WeaponsContainerComponent implements OnInit {
   private weaponsService = inject(WeaponsService);

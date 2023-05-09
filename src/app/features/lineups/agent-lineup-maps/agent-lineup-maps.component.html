@@ -7,7 +7,7 @@
 <div *ngIf="maps$ | async as maps; else loading" class="map-container">
   <div *ngFor="let map of maps" class="map" appToggleSites>
     <img
-      [src]="map.listViewIcon"
+      [ngSrc]="map.listViewIcon"
       [alt]="map.displayName"
       class="site-img"
       width="450"

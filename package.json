@@ -29,6 +29,7 @@
     "@angular/platform-browser-dynamic": "^16.0.0",
     "@angular/platform-server": "^16.0.0",
     "@angular/router": "^16.0.0",
+    "@angular/service-worker": "^16.0.0",
     "@nguniversal/express-engine": "^16.0.0",
     "express": "^4.15.2",
     "rxjs": "~7.4.0",

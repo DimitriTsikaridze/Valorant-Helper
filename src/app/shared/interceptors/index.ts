@@ -1,1 +1,1 @@
-export { ErrorHandlerInterceptor } from './error-handler.interceptor';
+export { errorHandlerInterceptor } from './error-handler.interceptor';

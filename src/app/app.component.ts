@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
+import { FooterComponent, HeaderComponent } from './layout';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
+  imports: [HeaderComponent, FooterComponent, RouterOutlet],
   template: `
     <app-header></app-header>
     <div class="spacer"></div>
@@ -15,5 +18,7 @@ import { Component } from '@angular/core';
       }
     `,
   ],
+
+  standalone: true,
 })
 export class AppComponent {}

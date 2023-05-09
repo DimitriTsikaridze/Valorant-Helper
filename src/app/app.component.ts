@@ -6,10 +6,10 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-root',
   imports: [HeaderComponent, FooterComponent, RouterOutlet],
   template: `
-    <app-header></app-header>
+    <app-header />
     <div class="spacer"></div>
-    <router-outlet></router-outlet>
-    <app-footer></app-footer>
+    <router-outlet />
+    <app-footer />
   `,
   styles: [
     `

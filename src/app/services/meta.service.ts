@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 
@@ -6,11 +6,9 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class MetaService {
-  constructor(
-    private meta: Meta,
-    private title: Title,
-    private router: Router
-  ) {}
+  private meta = inject(Meta);
+  private title = inject(Title);
+  private router = inject(Router);
 
   generateTags({ title = '', image = '', description = '' }) {
     this.title.setTitle(title);

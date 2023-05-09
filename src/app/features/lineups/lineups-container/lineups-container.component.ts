@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { AgentsService } from '@services/agents.service';
 import { Agent } from '@models/agent';
 import { MetaService } from '@services/meta.service';
@@ -20,10 +20,8 @@ import { LoadingComponent, TitleComponent } from '@shared/components';
   ],
 })
 export class LineupsContainerComponent implements OnInit {
-  constructor(
-    private agentsService: AgentsService,
-    private metaService: MetaService
-  ) {}
+  private agentsService = inject(AgentsService);
+  private metaService = inject(MetaService);
 
   agents: Agent[];
   filteredAgents: Agent[];

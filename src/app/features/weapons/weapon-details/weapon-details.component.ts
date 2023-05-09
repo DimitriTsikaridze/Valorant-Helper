@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+  inject,
+} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { WeaponsService } from '@services/weapons.service';
 import { Observable, switchMap, tap } from 'rxjs';
@@ -16,11 +21,9 @@ import { NgIf, AsyncPipe } from '@angular/common';
   imports: [NgIf, TitleComponent, LoadingComponent, AsyncPipe],
 })
 export class WeaponDetailsComponent implements OnInit {
-  constructor(
-    private route: ActivatedRoute,
-    private weaponsService: WeaponsService,
-    private metaService: MetaService
-  ) {}
+  private route = inject(ActivatedRoute);
+  private weaponsService = inject(WeaponsService);
+  private metaService = inject(MetaService);
 
   weaponDetails$: Observable<WeaponDetails>;
 

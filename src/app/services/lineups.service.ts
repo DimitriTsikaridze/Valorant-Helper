@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Map } from '@models/map';
 import { environment } from '@environment/environment';
 import { map, retry } from 'rxjs';
@@ -10,7 +10,7 @@ const MAP_PATH = `${environment.baseUrl}assets/maps`;
   providedIn: 'root',
 })
 export class LineupsService {
-  constructor(private http: HttpClient) {}
+  private http = inject(HttpClient);
 
   maps: Map[] = [];
 

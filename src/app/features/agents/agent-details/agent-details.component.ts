@@ -6,7 +6,12 @@ import {
   NgClass,
   AsyncPipe,
 } from '@angular/common';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+  inject,
+} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AgentsService } from '@services/agents.service';
 import { Ability, Agent } from '@shared/models/agent';
@@ -31,12 +36,10 @@ import { LoadingComponent, TitleComponent } from '@shared/components';
   ],
 })
 export class AgentDetailsComponent implements OnInit {
-  constructor(
-    private route: ActivatedRoute,
-    private agentsService: AgentsService,
-    private metaService: MetaService,
-    public location: Location
-  ) {}
+  private route = inject(ActivatedRoute);
+  private agentsService = inject(AgentsService);
+  private metaService = inject(MetaService);
+  public location = inject(Location);
 
   abilityVideo: string;
   agent$: Observable<Agent>;

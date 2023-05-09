@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { environment } from '@environment/environment';
 import { Weapon, WeaponDetails } from '@models/weapon';
 
@@ -12,7 +12,7 @@ const WEAPON_DETAILS_URL = `${environment.baseUrl}weapons`;
   providedIn: 'root',
 })
 export class WeaponsService {
-  constructor(private http: HttpClient) {}
+  private http = inject(HttpClient);
 
   weapons: Weapon[] = [];
 

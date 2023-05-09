@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+  inject,
+} from '@angular/core';
 import { AgentsService } from '@services/agents.service';
 import { Agent } from '@models/agent';
 import { Observable, of } from 'rxjs';
@@ -16,10 +21,8 @@ import { AgentNewsComponent } from '../agent-news/agent-news.component';
   imports: [AgentNewsComponent, NgIf, AllAgentsComponent, AsyncPipe],
 })
 export class AgentsContainerComponent implements OnInit {
-  constructor(
-    private agentsService: AgentsService,
-    private metaService: MetaService
-  ) {}
+  private agentsService = inject(AgentsService);
+  private metaService = inject(MetaService);
 
   agents$: Observable<Agent[]>;
 

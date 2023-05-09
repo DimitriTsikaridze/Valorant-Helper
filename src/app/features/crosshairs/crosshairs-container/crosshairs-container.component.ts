@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MetaService } from '@services/meta.service';
 
 @Component({
@@ -9,11 +9,9 @@ import { MetaService } from '@services/meta.service';
   standalone: true,
 })
 export class CrosshairsContainerComponent {
-  constructor(private metaService: MetaService) {
-    this.metaService.generateTags({
-      title: 'Crosshairs',
-      description: 'Explore pro player crosshair settings',
-      image: 'https://valoranthelper.com.ge/assets/images/crosshair.webp',
-    });
-  }
+  private metaService = inject(MetaService).generateTags({
+    title: 'Crosshairs',
+    description: 'Explore pro player crosshair settings',
+    image: 'https://valoranthelper.com.ge/assets/images/crosshair.webp',
+  });
 }

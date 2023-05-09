@@ -1,5 +1,9 @@
-import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import {
+  Component,
+  ChangeDetectionStrategy,
+  OnInit,
+  inject,
+} from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { LineupsService } from '@services/lineups.service';
 import { capitalizeFirstletter, routeParams } from '@shared/utils';
@@ -27,13 +31,10 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
   ],
 })
 export class AgentLineupMapsComponent implements OnInit {
-  constructor(
-    private lineupsService: LineupsService,
-    private router: Router,
-    private route: ActivatedRoute,
-    private title: Title,
-    private metaService: MetaService
-  ) {}
+  private lineupsService = inject(LineupsService);
+  private router = inject(Router);
+  private route = inject(ActivatedRoute);
+  private metaService = inject(MetaService);
 
   mockSites = ['A', 'B'];
 

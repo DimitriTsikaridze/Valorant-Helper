@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { WeaponsService } from '@services/weapons.service';
 import { Observable, of } from 'rxjs';
 import { Weapon } from '@shared/models/weapon';
@@ -15,10 +15,8 @@ import { NgIf, NgFor, AsyncPipe } from '@angular/common';
   imports: [NgIf, NgFor, RouterLink, LoadingComponent, AsyncPipe],
 })
 export class WeaponsContainerComponent implements OnInit {
-  constructor(
-    private weaponsService: WeaponsService,
-    private metaService: MetaService
-  ) {}
+  private weaponsService = inject(WeaponsService);
+  private metaService = inject(MetaService);
 
   weapons$: Observable<Weapon[]>;
 

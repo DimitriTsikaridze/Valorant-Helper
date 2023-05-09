@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { map, retry } from 'rxjs';
 import { Agent, NewAgent } from '@models/agent';
 import { environment } from '@environment/environment';
@@ -10,7 +10,7 @@ const SINGLE_AGENT_URL = `${environment.baseUrl}agents/`;
   providedIn: 'root',
 })
 export class AgentsService {
-  constructor(private http: HttpClient) {}
+  private http = inject(HttpClient);
 
   agents: Agent[] = [];
 

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { AgentsService } from '@services/agents.service';
 import { RouterLink } from '@angular/router';
 import { ButtonComponent } from '@shared/components';
@@ -13,7 +13,5 @@ import { NgIf, NgStyle, AsyncPipe } from '@angular/common';
   imports: [NgIf, NgStyle, ButtonComponent, RouterLink, AsyncPipe],
 })
 export class AgentNewsComponent {
-  constructor(private agentsService: AgentsService) {}
-
-  newAgent$ = this.agentsService.getNewAgent();
+  newAgent$ = inject(AgentsService).getNewAgent();
 }

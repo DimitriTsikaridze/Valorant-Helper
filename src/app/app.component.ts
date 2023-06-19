@@ -15,6 +15,7 @@ import { RouterOutlet } from '@angular/router';
     `
       .spacer {
         height: 92px;
+        background-color: #0f1923;
       }
     `,
   ],

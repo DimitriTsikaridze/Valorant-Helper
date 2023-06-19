@@ -1,15 +1,19 @@
 @use '/src/styles/index.scss' as *;
 
+:host {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 5;
+  transition: .3s;
+}
+
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem 10%;
   border-bottom: 4px solid $light-red;
-  position: fixed;
-  top: 0;
-  width: calc(100% - 20%);
-  z-index: 5;
   background-color: $primary-dark;
 }
 

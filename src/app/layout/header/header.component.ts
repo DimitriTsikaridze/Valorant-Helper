@@ -1,8 +1,18 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core';
 import { NgClass, NgFor, NgTemplateOutlet } from '@angular/common';
-import { RouterLink, RouterLinkActive } from '@angular/router';
-import { OutsideClickDirective } from '../directives/outside-click.directive';
+import {
+  NavigationEnd,
+  Router,
+  RouterLink,
+  RouterLinkActive,
+} from '@angular/router';
 import { HEADER_ROUTES } from '@shared/constants';
+import { AnimateOnScrollDirective } from './scroll-animation.directive';
 
 @Component({
   selector: 'app-header',
@@ -10,28 +20,29 @@ import { HEADER_ROUTES } from '@shared/constants';
   styleUrls: ['./header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    OutsideClickDirective,
-    RouterLink,
-    NgClass,
-    NgFor,
-    RouterLinkActive,
-    NgTemplateOutlet,
-  ],
+  imports: [RouterLink, NgClass, NgFor, RouterLinkActive, NgTemplateOutlet],
+  hostDirectives: [AnimateOnScrollDirective],
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   private menuIcon = 'https://i.ibb.co/HrfVRcx/menu.png';
   private closeIcon = 'https://i.ibb.co/rt3HybH/close.png';
+  private router = inject(Router);
 
   headerRoutes = HEADER_ROUTES;
   active = false;
   iconURL = this.menuIcon;
 
+  ngOnInit(): void {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.active = false;
+      }
+    });
+  }
+
   toggleMenu() {
     this.active = !this.active;
-    this.active
-      ? (this.iconURL = this.closeIcon)
-      : (this.iconURL = this.menuIcon);
+    this.iconURL = this.active ? this.closeIcon : this.menuIcon;
   }
 
   closeMenu() {

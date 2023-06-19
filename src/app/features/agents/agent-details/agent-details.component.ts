@@ -14,7 +14,7 @@ import {
   Input,
 } from '@angular/core';
 import { AgentsService } from '@services/agents.service';
-import { Ability, Agent } from '@shared/models/agent';
+import { Ability, AbilityType, Agent } from '@shared/models/agent';
 import { Observable, tap } from 'rxjs';
 import { MetaService } from '@services/meta.service';
 import { LoadingComponent, TitleComponent } from '@shared/components';
@@ -44,8 +44,8 @@ export class AgentDetailsComponent implements OnInit {
 
   abilityVideo: string;
   agent$: Observable<Agent>;
-  abilities: 'Ability1' | 'Ability2' | 'Grenade' | 'Ultimate';
-  activeAbility = 'Ability1';
+  abilities: AbilityType;
+  activeAbility = AbilityType.Ability1;
 
   ngOnInit(): void {
     this.agent$ = this.agentsService.getSingleAgent(this.id).pipe(

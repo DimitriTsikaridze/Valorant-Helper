@@ -18,11 +18,18 @@ export interface NewAgent {
 }
 
 export interface Ability {
-  slot: string;
+  slot: AbilityType;
   displayName: string;
   description: string;
   displayIcon: string;
   displayVideo: string;
+}
+
+export enum AbilityType {
+  Ability1 = 'Ability1',
+  Ability2 = 'Ability2',
+  Grenade = 'Grenade',
+  Ultimate = 'Ultimate',
 }
 
 export interface Role {

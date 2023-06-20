@@ -2,7 +2,6 @@ import { Directive, inject, ElementRef, HostListener } from '@angular/core';
 import { HEADER_HEIGHT } from '@shared/constants';
 
 @Directive({
-  selector: '[animateOnScroll]',
   standalone: true,
 })
 export class AnimateOnScrollDirective {

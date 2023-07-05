@@ -1,5 +1,9 @@
 @use '/src/styles/palette' as *;
 
+a {
+  display: block;
+}
+
 .agent {
   aspect-ratio: 1;
   position: relative;

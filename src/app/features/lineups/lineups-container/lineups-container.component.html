@@ -7,7 +7,10 @@
   />
 </div>
 
-<div *ngIf="agents; else loading" class="agents-container">
+<div
+  *ngIf="filteredAgents$ | async as filteredAgents; else loading"
+  class="agents-container"
+>
   <app-agent-lineups-preview
     *ngFor="let agent of filteredAgents"
     [agent]="agent"

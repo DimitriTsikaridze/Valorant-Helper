@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Map } from '@models/map';
 import { environment } from '@environment/environment';
-import { map, retry } from 'rxjs';
+import { map } from 'rxjs';
 
 const MAPS_DATA = `${environment.baseUrl}all-maps.json`;
 const MAP_PATH = `${environment.baseUrl}assets/maps`;
@@ -16,7 +16,6 @@ export class LineupsService {
 
   getAllMaps() {
     return this.http.get<Map[]>(MAPS_DATA).pipe(
-      retry(3),
       map((maps: Map[]) => {
         for (const map of maps) {
           this.maps.push(map);

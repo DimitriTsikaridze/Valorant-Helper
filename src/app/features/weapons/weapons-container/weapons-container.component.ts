@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { WeaponsService } from '@services/weapons.service';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Weapon } from '@shared/models/weapon';
 import { MetaService } from '@services/meta.service';
 import { LoadingComponent } from '@shared/components';
@@ -29,12 +29,7 @@ export class WeaponsContainerComponent implements OnInit {
 
   ngOnInit(): void {
     this.generateTags();
-
-    if (this.weaponsService.weapons.length) {
-      this.weapons$ = of(this.weaponsService.weapons);
-    } else {
-      this.weapons$ = this.weaponsService.getAllWeapons();
-    }
+    this.weapons$ = this.weaponsService.getAllWeapons();
   }
 
   generateTags() {

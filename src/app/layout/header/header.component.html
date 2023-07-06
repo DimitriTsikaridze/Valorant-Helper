@@ -24,9 +24,12 @@
 <ng-template #routeList>
   <ul>
     <li *ngFor="let route of headerRoutes">
-      <a [routerLink]="['/', route.path]" routerLinkActive="active">{{
-        route.name
-      }}</a>
+      <a
+        [routerLink]="['/', route.path]"
+        [routerLinkActiveOptions]="{ exact: true }"
+        routerLinkActive="active"
+        >{{ route.name }}</a
+      >
     </li>
   </ul>
 </ng-template>

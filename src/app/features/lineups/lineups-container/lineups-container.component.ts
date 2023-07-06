@@ -3,8 +3,9 @@ import { AgentsService } from '@services/agents.service';
 import { Agent } from '@models/agent';
 import { MetaService } from '@services/meta.service';
 import { AgentLineupsPreviewComponent } from '../agent-lineups-preview/agent-lineups-preview.component';
-import { NgIf, NgFor } from '@angular/common';
+import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 import { LoadingComponent, TitleComponent } from '@shared/components';
+import { Observable, of, tap } from 'rxjs';
 
 @Component({
   selector: 'app-lineups-container',
@@ -17,34 +18,29 @@ import { LoadingComponent, TitleComponent } from '@shared/components';
     NgFor,
     AgentLineupsPreviewComponent,
     LoadingComponent,
+    AsyncPipe,
   ],
 })
 export class LineupsContainerComponent implements OnInit {
   private agentsService = inject(AgentsService);
   private metaService = inject(MetaService);
 
-  agents: Agent[];
-  filteredAgents: Agent[];
+  private agents: Agent[];
+  filteredAgents$: Observable<Agent[]>;
 
   ngOnInit(): void {
     this.generateTags();
-
-    if (this.agentsService.agents.length) {
-      this.agents = this.agentsService.agents;
-      this.filteredAgents = this.agents;
-    } else {
-      this.agentsService.getAllAgents().subscribe((agents) => {
-        this.agents = agents;
-        this.filteredAgents = this.agents;
-      });
-    }
+    this.filteredAgents$ = this.agentsService
+      .getAllAgents()
+      .pipe(tap((agents) => (this.agents = agents)));
   }
 
   searchAgent(e: Event) {
     const filterText = (e.target as HTMLInputElement).value;
-    this.filteredAgents = this.agents.filter((agent) =>
+    const filteredAgents = this.agents.filter((agent) =>
       agent.displayName.toLowerCase().includes(filterText.toLowerCase())
     );
+    this.filteredAgents$ = of(filteredAgents);
   }
 
   generateTags() {

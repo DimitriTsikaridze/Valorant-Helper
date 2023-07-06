@@ -40,12 +40,7 @@ export class HomeContainerComponent implements OnInit {
 
   ngOnInit(): void {
     this.generateTags();
-
-    if (this.agentsService.agents.length) {
-      this.agents$ = of(this.agentsService.agents);
-    } else {
-      this.agents$ = this.agentsService.getAllAgents();
-    }
+    this.agents$ = this.agentsService.getAllAgents();
   }
 
   generateTags() {

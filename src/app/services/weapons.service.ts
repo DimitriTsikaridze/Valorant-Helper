@@ -3,7 +3,7 @@ import { inject, Injectable } from '@angular/core';
 import { environment } from '@environment/environment';
 import { Weapon, WeaponDetails } from '@models/weapon';
 
-import { map, Observable, retry } from 'rxjs';
+import { Observable, of, tap } from 'rxjs';
 
 const WEAPONS_URL = `${environment.baseUrl}all-weapons.json`;
 const WEAPON_DETAILS_URL = `${environment.baseUrl}weapons`;
@@ -14,23 +14,18 @@ const WEAPON_DETAILS_URL = `${environment.baseUrl}weapons`;
 export class WeaponsService {
   private http = inject(HttpClient);
 
-  weapons: Weapon[] = [];
+  private weapons: Weapon[] = [];
 
-  getAllWeapons() {
-    return this.http.get<Weapon[]>(WEAPONS_URL).pipe(
-      retry(3),
-      map((weapons: Weapon[]) => {
-        for (const weapon of weapons) {
-          this.weapons.push(weapon);
-        }
-        return this.weapons;
-      })
-    );
+  getAllWeapons(): Observable<Weapon[]> {
+    if (this.weapons.length) return of(this.weapons);
+    return this.http
+      .get<Weapon[]>(WEAPONS_URL)
+      .pipe(tap((weapons) => this.weapons.push(...weapons)));
   }
 
   getWeaponDetails(weaponName: string): Observable<WeaponDetails> {
-    return this.http
-      .get<WeaponDetails>(`${WEAPON_DETAILS_URL}/${weaponName}.json`)
-      .pipe(retry(3));
+    return this.http.get<WeaponDetails>(
+      `${WEAPON_DETAILS_URL}/${weaponName}.json`
+    );
   }
 }

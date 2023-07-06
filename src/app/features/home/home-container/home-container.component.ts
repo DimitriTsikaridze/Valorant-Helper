@@ -43,7 +43,7 @@ export class HomeContainerComponent implements OnInit {
     this.agents$ = this.agentsService.getAllAgents();
   }
 
-  generateTags() {
+  private generateTags() {
     this.metaService.generateTags({
       title: 'Valorant Helper',
       image:

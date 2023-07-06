@@ -6,11 +6,12 @@ import {
 } from '@angular/core';
 import { AgentsService } from '@services/agents.service';
 import { Agent } from '@models/agent';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { MetaService } from '@services/meta.service';
-import { AllAgentsComponent } from '../all-agents/all-agents.component';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { AgentNewsComponent } from '../agent-news/agent-news.component';
+import { AgentCardComponent, TitleComponent } from '@shared/components';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-agents-container',
@@ -18,7 +19,13 @@ import { AgentNewsComponent } from '../agent-news/agent-news.component';
   styleUrls: ['./agents-container.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [AgentNewsComponent, NgIf, AllAgentsComponent, AsyncPipe],
+  imports: [
+    AgentNewsComponent,
+    TitleComponent,
+    AgentCardComponent,
+    CommonModule,
+    RouterLink,
+  ],
 })
 export class AgentsContainerComponent implements OnInit {
   private agentsService = inject(AgentsService);
@@ -26,12 +33,19 @@ export class AgentsContainerComponent implements OnInit {
 
   agents$: Observable<Agent[]>;
 
+  agentRoles = ['all', 'initiator', 'duelist', 'controller', 'sentinel'];
+  activeRole = 'all';
+
   ngOnInit(): void {
     this.generateTags();
-    // this.agents$ = this.agentsService.getAllAgents();
+    this.agents$ = this.agentsService.getAllAgents();
   }
 
-  generateTags() {
+  roleClick(clickedRole: string) {
+    console.log(clickedRole);
+  }
+
+  private generateTags() {
     this.metaService.generateTags({
       title: 'Agents',
       image: 'https://images8.alphacoders.com/128/1280131.jpg',

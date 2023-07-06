@@ -32,7 +32,7 @@ export class WeaponsContainerComponent implements OnInit {
     this.weapons$ = this.weaponsService.getAllWeapons();
   }
 
-  generateTags() {
+  private generateTags() {
     this.metaService.generateTags({
       title: 'Weapons',
       description: 'Explore vvalorant weapons and their details',

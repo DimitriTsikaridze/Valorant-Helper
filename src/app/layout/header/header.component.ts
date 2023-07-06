@@ -4,7 +4,7 @@ import {
   inject,
   OnInit,
 } from '@angular/core';
-import { NgClass, NgFor, NgTemplateOutlet } from '@angular/common';
+import { NgFor, NgTemplateOutlet } from '@angular/common';
 import {
   NavigationEnd,
   Router,
@@ -20,7 +20,7 @@ import { AnimateOnScrollDirective } from './scroll-animation.directive';
   styleUrls: ['./header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [RouterLink, NgClass, NgFor, RouterLinkActive, NgTemplateOutlet],
+  imports: [RouterLink, NgFor, RouterLinkActive, NgTemplateOutlet],
   hostDirectives: [AnimateOnScrollDirective],
 })
 export class HeaderComponent implements OnInit {

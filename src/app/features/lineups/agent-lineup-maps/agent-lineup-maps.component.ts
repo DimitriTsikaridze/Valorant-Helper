@@ -51,7 +51,11 @@ export class AgentLineupMapsComponent implements OnInit {
     }
   }
 
-  generateTags() {
+  navigateToLineup(mapName: string, siteName: string) {
+    this.router.navigate([mapName, siteName], { relativeTo: this.route });
+  }
+
+  private generateTags() {
     const agentName = capitalizeFirstletter(
       routeParams(this.route, 'agentName')
     );
@@ -62,9 +66,5 @@ export class AgentLineupMapsComponent implements OnInit {
       image:
         'https://raw.githubusercontent.com/DimitriTsikaridze/Valorant-Helper/main/src/assets/readme-images/lineups.webp',
     });
-  }
-
-  navigateToLineup(mapName: string, siteName: string) {
-    this.router.navigate([mapName, siteName], { relativeTo: this.route });
   }
 }

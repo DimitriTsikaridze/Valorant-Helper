@@ -8,3 +8,83 @@
 app-agent-news {
   min-height: 300px;
 }
+
+.agents-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 300px));
+  justify-content: center;
+  column-gap: 6rem;
+  padding: 0 1rem 4rem 1rem;
+  row-gap: 4rem;
+  margin-top: 4rem;
+  position: relative;
+
+  ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    position: absolute;
+    top: -4rem;
+
+    li {
+      cursor: pointer;
+      position: relative;
+      transition: 0.2s;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        border-radius: 5px;
+        height: 3px;
+        bottom: -5px;
+        left: -2px;
+        background-color: $light-red;
+        transition: width 0.2s;
+      }
+
+      &:hover {
+        &::after {
+          width: calc(100% + 6px);
+        }
+      }
+
+      &.active {
+        &::after {
+          width: calc(100% + 6px);
+        }
+      }
+    }
+  }
+}
+
+app-agent-card {
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+ul {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  font-size: 1.3rem;
+}
+
+@media only screen and (max-width: 900px) {
+  .agents-container {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 4rem;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .agents-container {
+    grid-template-columns: 90%;
+    margin-top: 6rem;
+
+    ul {
+      top: -6rem;
+    }
+  }
+}

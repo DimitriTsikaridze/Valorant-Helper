@@ -5,7 +5,7 @@ import { MetaService } from '@services/meta.service';
 import { AgentLineupsPreviewComponent } from '../agent-lineups-preview/agent-lineups-preview.component';
 import { NgIf, NgFor, AsyncPipe } from '@angular/common';
 import { LoadingComponent, TitleComponent } from '@shared/components';
-import { Observable, of, tap } from 'rxjs';
+import { BehaviorSubject, Observable, map, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-lineups-container',
@@ -24,26 +24,31 @@ import { Observable, of, tap } from 'rxjs';
 export class LineupsContainerComponent implements OnInit {
   private agentsService = inject(AgentsService);
   private metaService = inject(MetaService);
+  private searchInput$ = new BehaviorSubject<string>('');
 
-  private agents: Agent[];
-  filteredAgents$: Observable<Agent[]>;
+  agents$: Observable<Agent[]>;
 
   ngOnInit(): void {
     this.generateTags();
-    this.filteredAgents$ = this.agentsService
-      .getAllAgents()
-      .pipe(tap((agents) => (this.agents = agents)));
+    this.agents$ = this.searchInput$.pipe(
+      switchMap((searchText) => {
+        return this.agentsService.getAllAgents().pipe(
+          map((agents) => {
+            return agents.filter((agent) =>
+              agent.displayName.toLowerCase().includes(searchText)
+            );
+          })
+        );
+      })
+    );
   }
 
   searchAgent(e: Event) {
     const filterText = (e.target as HTMLInputElement).value;
-    const filteredAgents = this.agents.filter((agent) =>
-      agent.displayName.toLowerCase().includes(filterText.toLowerCase())
-    );
-    this.filteredAgents$ = of(filteredAgents);
+    this.searchInput$.next(filterText.toLowerCase());
   }
 
-  generateTags() {
+  private generateTags() {
     this.metaService.generateTags({
       title: 'Lineups',
       description: 'Find best lineups for every agent and win games easily',

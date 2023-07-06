@@ -25,9 +25,7 @@
     <div class="ability-overview">
       <div
         *ngFor="let ability of agent.abilities"
-        [ngClass]="{
-          active: ability.slot === activeAbility
-        }"
+        [class.active]="ability.slot === activeAbility"
         (click)="abilityClick(ability)"
         class="ability"
       >

@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 import { AgentNewsComponent } from '../agent-news/agent-news.component';
 import { AgentCardComponent, TitleComponent } from '@shared/components';
 import { RouterLink } from '@angular/router';
+import { BehaviorSubject, switchMap, map } from 'rxjs';
 
 @Component({
   selector: 'app-agents-container',
@@ -30,19 +31,32 @@ import { RouterLink } from '@angular/router';
 export class AgentsContainerComponent implements OnInit {
   private agentsService = inject(AgentsService);
   private metaService = inject(MetaService);
+  private filterRole$ = new BehaviorSubject<string>('');
 
   agents$: Observable<Agent[]>;
 
-  agentRoles = ['all', 'initiator', 'duelist', 'controller', 'sentinel'];
+  agentRoles = ['all', 'Initiator', 'Duelist', 'Controller', 'Sentinel'];
   activeRole = 'all';
 
   ngOnInit(): void {
     this.generateTags();
-    this.agents$ = this.agentsService.getAllAgents();
+    this.agents$ = this.filterRole$.pipe(
+      switchMap((role) => {
+        role = role === 'all' ? '' : role;
+        return this.agentsService.getAllAgents().pipe(
+          map((agents) => {
+            return agents.filter((agent) =>
+              agent.role.displayName.includes(role)
+            );
+          })
+        );
+      })
+    );
   }
 
-  roleClick(clickedRole: string) {
-    console.log(clickedRole);
+  roleClick(role: string) {
+    this.activeRole = role;
+    this.filterRole$.next(role);
   }
 
   private generateTags() {

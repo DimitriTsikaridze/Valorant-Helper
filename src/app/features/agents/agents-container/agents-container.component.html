@@ -13,10 +13,9 @@
       </li>
     </ul>
     <app-agent-card
-      *ngFor="let agent of agents$ | async"
+      *ngFor="let agent of agents"
       [agent]="agent"
       [routerLink]="['/agents', agent.pathName]"
-      class="agent"
     />
   </div>
 </ng-container>

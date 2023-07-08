@@ -18,7 +18,7 @@ export class AgentsService {
     if (this.agents.length) return of(this.agents);
     return this.http
       .get<Agent[]>(AGENTS_URL)
-      .pipe(tap((agents) => this.agents.push(...agents)));
+      .pipe(tap((agents) => (this.agents = agents)));
   }
 
   getSingleAgent(pathName: string) {

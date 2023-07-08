@@ -11,12 +11,12 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 # Screenshots
 
 <p float="left">
-  <img width="500" src="src\assets\readme-images\landing.webp">  
-  <img width="500" src="src\assets\readme-images\agents.webp">
+  <img width="500" src="/readme-images\landing.webp">  
+  <img width="500" src="/readme-images\agents.webp">
 </p>
 
 <p float="left">
-  <img width="500" src="src\assets\readme-images\agent-details.webp">
-  <img width="500" src="src\assets\readme-images\lineups.webp">
+  <img width="500" src="/readme-images\agent-details.webp">
+  <img width="500" src="/readme-images\lineups.webp">
 </p>
 <p align="right">(<a href="#top">back to top</a>)</p>

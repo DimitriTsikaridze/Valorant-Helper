@@ -10,7 +10,7 @@ import { NgStyle } from '@angular/common';
   imports: [NgStyle],
 })
 export class FeaturePreviewComponent {
-  @Input() backgroundColor: string;
-  @Input() color: string;
+  @Input({ required: true }) backgroundColor: string;
+  @Input({ required: true }) color: string;
   @Input() descriptionOrder: number;
 }

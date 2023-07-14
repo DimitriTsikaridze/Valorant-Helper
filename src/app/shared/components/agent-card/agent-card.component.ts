@@ -12,6 +12,6 @@ import { Agent } from '@models/agent';
   imports: [CommonModule, NgOptimizedImage, RouterLink],
 })
 export class AgentCardComponent {
-  @Input() agent: Agent;
-  @Input() routerLink: string[];
+  @Input({ required: true }) agent: Agent;
+  @Input({ required: true }) routerLink: string[];
 }

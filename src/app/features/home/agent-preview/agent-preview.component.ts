@@ -23,5 +23,5 @@ import {
   ],
 })
 export class AgentPreviewComponent {
-  @Input() agents: Agent[];
+  @Input({ required: true }) agents: Agent[];
 }

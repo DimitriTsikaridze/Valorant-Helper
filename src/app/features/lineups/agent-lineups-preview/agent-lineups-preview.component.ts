@@ -12,5 +12,5 @@ import { NgOptimizedImage } from '@angular/common';
   imports: [RouterLink, NgOptimizedImage],
 })
 export class AgentLineupsPreviewComponent {
-  @Input() agent: Agent;
+  @Input({ required: true }) agent: Agent;
 }

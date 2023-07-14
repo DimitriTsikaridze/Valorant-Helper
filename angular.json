@@ -56,7 +56,11 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["src/assets", "src/manifest.webmanifest"],
+            "assets": [
+              "src/assets",
+              "src/manifest.webmanifest",
+              "src/robots.txt"
+            ],
             "styles": ["src/styles.scss"],
             "scripts": [],
             "serviceWorker": true,

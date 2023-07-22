@@ -12,7 +12,6 @@ import {
   RouterLinkActive,
 } from '@angular/router';
 import { HEADER_ROUTES } from '@shared/constants';
-import { AnimateOnScrollDirective } from './scroll-animation.directive';
 
 @Component({
   selector: 'app-header',
@@ -21,7 +20,6 @@ import { AnimateOnScrollDirective } from './scroll-animation.directive';
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [RouterLink, NgFor, RouterLinkActive, NgTemplateOutlet],
-  hostDirectives: [AnimateOnScrollDirective],
 })
 export class HeaderComponent implements OnInit {
   private menuIcon = 'https://i.ibb.co/HrfVRcx/menu.png';

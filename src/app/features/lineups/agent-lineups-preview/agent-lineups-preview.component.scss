@@ -1,4 +1,4 @@
-@use '/src/styles/palette' as *;
+@use "/src/styles/palette" as *;
 
 .agent-wrapper {
   display: flex;
@@ -25,7 +25,7 @@
     color: black;
 
     h2 {
-      font-family: 'valorant';
+      font-family: "valorant";
       font-weight: 500;
     }
 

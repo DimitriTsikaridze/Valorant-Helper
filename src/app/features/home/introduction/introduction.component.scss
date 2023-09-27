@@ -1,7 +1,7 @@
-@use '/src/styles/palette' as *;
+@use "/src/styles/palette" as *;
 
 .container {
-  background-image: url('/assets/images/introduction-bg.webp');
+  background-image: url("/assets/images/introduction-bg.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -13,7 +13,7 @@
   align-items: center;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     background-color: rgba(0, 0, 0);
     opacity: 0.4;

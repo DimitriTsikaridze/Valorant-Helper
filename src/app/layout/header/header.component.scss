@@ -1,11 +1,11 @@
-@use '/src/styles/index.scss' as *;
+@use "/src/styles/index.scss" as *;
 
 :host {
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 5;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 header {
@@ -28,7 +28,7 @@ header {
   }
 
   &-title {
-    font-family: 'valorant';
+    font-family: "valorant";
     font-weight: 300;
     font-size: 1.3rem;
     margin-left: 1rem;
@@ -57,7 +57,7 @@ a {
     color: $light-red;
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       width: calc(100% + 6px);
       border-radius: 5px;

@@ -1,10 +1,5 @@
 import { ApplicationConfig, isDevMode } from '@angular/core';
-import {
-  provideRouter,
-  withComponentInputBinding,
-  withEnabledBlockingInitialNavigation,
-  withInMemoryScrolling,
-} from '@angular/router';
+import { provideRouter, withComponentInputBinding } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
@@ -13,12 +8,7 @@ import { provideServiceWorker } from '@angular/service-worker';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(
-      routes,
-      withEnabledBlockingInitialNavigation(),
-      withComponentInputBinding(),
-      withInMemoryScrolling({ scrollPositionRestoration: 'enabled' })
-    ),
+    provideRouter(routes, withComponentInputBinding()),
     provideHttpClient(withInterceptors([errorHandlerInterceptor])),
     provideServiceWorker('ngsw-worker.js', {
       enabled: !isDevMode(),

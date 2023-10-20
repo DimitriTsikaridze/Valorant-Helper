@@ -8,10 +8,6 @@
     "watch": "ng build --watch --configuration development",
     "lint": "ng lint",
     "explore": "source-map-explorer dist/**/*.js",
-    "dev:ssr": "ng run valorant-helper:serve-ssr",
-    "serve:ssr": "node dist/valorant-helper/server/main.js",
-    "build:ssr": "ng build && ng run valorant-helper:server",
-    "prerender": "ng run valorant-helper:prerender",
     "format": "npx prettier --write .",
     "generateRoutes": "node utils/dynamicRoutes.mjs",
     "deploy": "npm run generateRoutes && npm run prerender &&  ng deploy"
@@ -29,8 +25,6 @@
     "@angular/platform-server": "^16.1.1",
     "@angular/router": "^16.1.1",
     "@angular/service-worker": "^16.1.1",
-    "@nguniversal/express-engine": "^16.1.0",
-    "express": "^4.15.2",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
@@ -45,16 +39,13 @@
     "@angular/cli": "^16.1.0",
     "@angular/compiler-cli": "^16.1.1",
     "@nguniversal/builders": "^16.1.0",
-    "@types/express": "^4.17.0",
     "@types/node": "^14.15.0",
     "@typescript-eslint/eslint-plugin": "^5.59.2",
     "@typescript-eslint/parser": "^5.59.2",
     "eslint": "^8.39.0",
     "node-fetch": "^3.3.1",
-    "nodemon": "^2.0.22",
     "prettier": "^2.7.1",
     "prettier-plugin-organize-attributes": "^0.0.5",
-    "pretty-quick": "^3.1.3",
     "source-map-explorer": "^2.5.2",
     "typescript": "~4.9.5"
   }

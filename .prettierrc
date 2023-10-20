@@ -1,4 +1,5 @@
 {
+  "singleQuote": true,
   "attributeGroups": [
     "$ANGULAR_STRUCTURAL_DIRECTIVE",
     "$ANGULAR_ELEMENT_REF",

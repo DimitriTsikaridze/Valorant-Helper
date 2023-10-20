@@ -101,10 +101,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "valorant-helper:build:production"
+              "buildTarget": "valorant-helper:build:production"
             },
             "development": {
-              "browserTarget": "valorant-helper:build:development"
+              "buildTarget": "valorant-helper:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -142,7 +142,7 @@
           "defaultConfiguration": "production"
         },
         "serve-ssr": {
-          "builder": "@nguniversal/builders:ssr-dev-server",
+          "builder": "@angular-devkit/build-angular:ssr-dev-server",
           "configurations": {
             "development": {
               "browserTarget": "valorant-helper:build:development",
@@ -156,10 +156,10 @@
           "defaultConfiguration": "development"
         },
         "prerender": {
-          "builder": "@nguniversal/builders:prerender",
+          "builder": "@angular-devkit/build-angular:prerender",
           "options": {
             "routesFile": "./routes.txt",
-            "guessRoutes": false
+            "discoverRoutes": false
           },
           "configurations": {
             "production": {

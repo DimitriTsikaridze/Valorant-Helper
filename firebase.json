@@ -1,0 +1,11 @@
+{
+  "hosting": [
+    {
+      "target": "valorant-helper",
+      "source": ".",
+      "frameworksBackend": {
+        "region": "europe-west1"
+      }
+    }
+  ]
+}

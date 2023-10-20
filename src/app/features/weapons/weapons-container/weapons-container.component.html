@@ -2,9 +2,12 @@
   *ngIf="weapons$ | async as weapons; else loading"
   class="weapons-container"
 >
-  <div *ngFor="let weapon of weapons" class="weapon">
+  <a
+    *ngFor="let weapon of weapons"
+    [routerLink]="['/weapons', weapon.displayName.toLowerCase()]"
+    class="weapon"
+  >
     <img
-      [routerLink]="['/weapons', weapon.displayName.toLowerCase()]"
       [ngSrc]="weapon.displayIcon"
       [alt]="weapon.displayName + ' image'"
       class="weapon-img"
@@ -14,7 +17,7 @@
     <div class="bottom-content">
       <h3>{{ weapon.displayName }}</h3>
     </div>
-  </div>
+  </a>
 </div>
 
 <ng-template #loading>

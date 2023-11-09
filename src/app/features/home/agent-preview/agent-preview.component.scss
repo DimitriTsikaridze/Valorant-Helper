@@ -1,7 +1,5 @@
-@use "/src/styles/palette" as *;
-
 :host {
-  background-color: $primary-dark;
+  background-color: var(--primary-dark);
   display: block;
   padding-inline: 1rem;
 }

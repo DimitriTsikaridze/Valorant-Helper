@@ -1,5 +1,3 @@
-@use "/src/styles/palette" as *;
-
 .feature-image {
   width: 100%;
 }
@@ -18,15 +16,15 @@ app-feature-preview {
 
     ::ng-deep {
       h1::after {
-        background-color: $primary-dark;
+        background-color: var(--primary-dark);
       }
       button {
-        outline: 2px solid $primary-dark;
+        outline: 2px solid var(--primary-dark);
       }
     }
 
     img {
-      outline: 2px solid $primary-dark;
+      outline: 2px solid var(--primary-dark);
       outline-offset: 6px;
     }
   }
@@ -56,7 +54,7 @@ app-feature-preview {
     max-width: 50ch;
   }
   .submit-link {
-    color: $light-red !important;
+    color: var(--light-red) !important;
     text-decoration: underline;
   }
 }

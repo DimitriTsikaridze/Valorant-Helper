@@ -1,5 +1,3 @@
-@use "/src/styles/palette" as *;
-
 a {
   display: block;
 }
@@ -36,7 +34,7 @@ a {
     font-weight: 300;
   }
 
-  background-color: $light-red;
+  background-color: var(--light-red);
 }
 
 .agent-img {

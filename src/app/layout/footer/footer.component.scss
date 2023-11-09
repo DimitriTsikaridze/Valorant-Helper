@@ -1,8 +1,6 @@
-@use "/src/styles/index.scss" as *;
-
 footer {
-  background-color: $light-white;
-  color: $primary-dark;
+  background-color: var(--light-white);
+  color: var(--primary-dark);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,7 +13,7 @@ footer {
   ::ng-deep {
     app-button {
       button {
-        outline: 2px solid $primary-dark;
+        outline: 2px solid var(--primary-dark);
         margin-inline: 1rem;
       }
     }

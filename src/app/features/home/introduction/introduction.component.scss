@@ -1,5 +1,3 @@
-@use "/src/styles/palette" as *;
-
 .container {
   background-image: url("/assets/images/introduction-bg.webp");
   background-repeat: no-repeat;
@@ -42,7 +40,7 @@ h1 {
 }
 
 span {
-  color: $light-red;
+  color: var(--light-red);
 }
 
 p {

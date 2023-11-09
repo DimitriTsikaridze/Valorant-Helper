@@ -1,13 +1,20 @@
-@use "/src/styles/index" as *;
+@import "./styles/reset";
+@import "./styles/fonts";
+
+:root {
+  --primary-dark: #0f1923;
+  --light-red: #ff274d;
+  --light-white: #ece8e1;
+}
 
 ::-webkit-scrollbar {
   width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: lighten($color: $primary-dark, $amount: 5%);
+  background: #172635
 }
 
 ::-webkit-scrollbar-thumb {
-  background: $light-red;
+  background: var(--light-red);
 }

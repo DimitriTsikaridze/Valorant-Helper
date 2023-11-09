@@ -1,8 +1,6 @@
-@use "/src/styles/palette" as *;
-
 :host {
   display: block;
-  background-color: $primary-dark;
+  background-color: var(--primary-dark);
 }
 
 app-agent-news {
@@ -40,7 +38,7 @@ app-agent-news {
         height: 3px;
         bottom: -5px;
         left: -2px;
-        background-color: $light-red;
+        background-color: var(--light-red);
         transition: width 0.2s;
       }
 

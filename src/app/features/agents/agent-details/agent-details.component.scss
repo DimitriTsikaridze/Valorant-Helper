@@ -1,8 +1,6 @@
-@use "/src/styles/palette" as *;
-
 :host {
   display: block;
-  background-color: $primary-dark;
+  background-color: var(--primary-dark);
   min-height: 100%;
   padding: 1rem;
 }
@@ -100,10 +98,10 @@ video {
   }
 
   &.active {
-    border-color: $light-red;
+    border-color: var(--light-red);
 
     h2 {
-      color: $light-red;
+      color: var(--light-red);
     }
   }
 }

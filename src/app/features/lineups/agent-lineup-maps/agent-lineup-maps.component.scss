@@ -1,9 +1,7 @@
-@use "/src/styles/palette" as *;
-
 :host {
   display: block;
   min-height: 100%;
-  background-color: $primary-dark;
+  background-color: var(--primary-dark);
 }
 
 .back {
@@ -41,7 +39,7 @@
 
   &:hover {
     h2 {
-      color: $light-red;
+      color: var(--light-red);
     }
   }
 
@@ -50,8 +48,8 @@
     align-items: center;
     padding: 1rem;
     color: black;
-    background-color: $light-white;
-    border-bottom: 5px solid $light-red;
+    background-color: var(--light-white);
+    border-bottom: 5px solid var(--light-red);
     z-index: 10;
   }
 
@@ -71,17 +69,17 @@
 }
 
 .site {
-  background-color: $light-white;
+  background-color: var(--light-white);
   font-size: 1.2rem;
   color: black;
   padding: 10px 2rem;
-  border-bottom: 3px solid $light-red;
+  border-bottom: 3px solid var(--light-red);
   display: flex;
   align-items: center;
   transition: 0.2s;
 
   &:hover {
-    color: $light-red;
+    color: var(--light-red);
   }
 
   img {
@@ -94,7 +92,7 @@
     margin-bottom: 140px;
 
     h2 {
-      color: $light-red;
+      color: var(--light-red);
     }
   }
 

@@ -1,7 +1,6 @@
-@use "/src/styles/palette" as *;
 :host {
   display: block;
-  background-color: $primary-dark;
+  background-color: var(--primary-dark);
   min-height: 100%;
 }
 
@@ -24,7 +23,7 @@ ul {
         height: 3px;
         bottom: -5px;
         left: -2px;
-        background-color: $light-red;
+        background-color: var(--light-red);
       }
     }
   }
@@ -36,8 +35,8 @@ ul {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
   & > * {
-    background-color: $light-white;
-    border-bottom: 5px solid $light-red;
+    background-color: var(--light-white);
+    border-bottom: 5px solid var(--light-red);
   }
 }
 
@@ -49,7 +48,7 @@ ul {
     margin-top: 2rem;
     text-align: center;
     outline: none;
-    border: 2px solid $light-red;
+    border: 2px solid var(--light-red);
     padding: 10px;
     display: inline-block;
     border-radius: 4px;

@@ -1,7 +1,0 @@
-@use "/src/styles/index" as *;
-
-:host {
-  display: block;
-  min-height: calc(100% - 92px);
-  background-color: $primary-dark;
-}

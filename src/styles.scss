@@ -1,13 +1,1 @@
-@use "/src/styles/index" as *;
-
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: lighten($color: $primary-dark, $amount: 5%);
-}
-
-::-webkit-scrollbar-thumb {
-  background: $light-red;
-}
+/* You can add global styles to this file, and also import other style files */

@@ -1,0 +1,21 @@
+<app-agent-news />
+<ng-container *ngIf="agents$ | async as agents">
+  <app-title margin="2rem 0 3rem 0" fontSize="2rem">AGENTS</app-title>
+
+  <div class="agents-container">
+    <ul>
+      <li
+        *ngFor="let role of agentRoles"
+        [class.active]="role === activeRole"
+        (click)="roleClick(role)"
+      >
+        {{ role | uppercase }}
+      </li>
+    </ul>
+    <app-agent-card
+      *ngFor="let agent of agents"
+      [agent]="agent"
+      [routerLink]="['/agents', agent.pathName]"
+    />
+  </div>
+</ng-container>

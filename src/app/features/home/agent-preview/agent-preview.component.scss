@@ -1,0 +1,51 @@
+@use "/src/styles/palette" as *;
+
+:host {
+  background-color: $primary-dark;
+  display: block;
+  padding-inline: 1rem;
+}
+
+app-agent-card {
+  transition: 0.7s;
+  cursor: pointer;
+}
+
+.agents-container {
+  display: grid;
+  grid-auto-flow: column;
+  max-width: 1200px;
+  margin-inline: auto;
+  grid-auto-columns: 33%;
+  gap: 2rem;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  padding-bottom: 1rem;
+  &::-webkit-scrollbar:horizontal {
+    height: 10px;
+  }
+  scroll-snap-type: inline mandatory;
+
+  & > * {
+    scroll-snap-align: start;
+  }
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  padding: 4rem 0;
+}
+@media only screen and (max-width: 800px) {
+  .agents-container {
+    grid-auto-columns: 50%;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .agents-container {
+    grid-auto-columns: 70%;
+    & > * {
+      scroll-snap-align: center;
+    }
+  }
+}

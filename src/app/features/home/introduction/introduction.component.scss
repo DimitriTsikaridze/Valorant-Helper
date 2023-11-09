@@ -1,0 +1,71 @@
+@use "/src/styles/palette" as *;
+
+.container {
+  background-image: url("/assets/images/introduction-bg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+  min-height: calc(100% - 92px);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: rgba(0, 0, 0);
+    opacity: 0.4;
+    z-index: -1;
+    inset: 0;
+  }
+}
+
+article {
+  max-width: 32rem;
+}
+
+aside {
+  .iphone-img {
+    width: 350px;
+  }
+
+  .apple-download {
+    margin-left: auto;
+  }
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+
+span {
+  color: $light-red;
+}
+
+p {
+  margin-top: 2rem;
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    background-position: center;
+    flex-direction: column;
+    padding-block: 2rem;
+
+    article {
+      margin: 1rem;
+      text-align: center;
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

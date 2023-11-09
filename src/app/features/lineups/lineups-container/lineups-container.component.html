@@ -1,0 +1,16 @@
+<app-title margin="2rem 0 1rem">AGENTS</app-title>
+<div class="search-bar">
+  <input
+    (input)="searchAgent($event)"
+    placeholder="Search Agent..."
+    type="text"
+  />
+</div>
+
+<div *ngIf="agents$ | async as agents; else loading" class="agents-container">
+  <app-agent-lineups-preview *ngFor="let agent of agents" [agent]="agent" />
+</div>
+
+<ng-template #loading>
+  <app-loading />
+</ng-template>

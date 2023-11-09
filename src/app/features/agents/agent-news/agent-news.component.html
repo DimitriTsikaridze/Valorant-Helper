@@ -1,0 +1,17 @@
+<ng-container *ngIf="newAgent$ | async as agent">
+  <div
+    [ngStyle]="{ backgroundImage: 'url(' + agent.backgroundImage + ')' }"
+    class="container"
+  >
+    <article>
+      <h3>// NEW AGENT</h3>
+      <h1>{{ agent.displayName }}</h1>
+      <p>
+        {{ agent.description }}
+      </p>
+      <app-button routerLink="{{ agent.displayName.toLowerCase() }}"
+        >MORE</app-button
+      >
+    </article>
+  </div>
+</ng-container>

@@ -1,0 +1,11 @@
+<app-title margin="4rem 0">AGENTS</app-title>
+<div class="agents-container">
+  <app-agent-card
+    *ngFor="let agent of agents"
+    [agent]="agent"
+    [routerLink]="['/agents', agent.pathName]"
+  />
+</div>
+<div class="btn">
+  <app-button routerLink="/agents">ALL AGENTS</app-button>
+</div>

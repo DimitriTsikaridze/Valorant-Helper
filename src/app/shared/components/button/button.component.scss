@@ -1,0 +1,18 @@
+@use "/src/styles/palette" as *;
+
+:host {
+  display: block;
+}
+
+button {
+  background-color: $light-red;
+  padding: 10px 50px;
+  font-weight: bold;
+  outline: 2px solid white;
+  outline-offset: 5px;
+  transition: 0.2s;
+
+  &:hover {
+    background: $primary-dark;
+  }
+}

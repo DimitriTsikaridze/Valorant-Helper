@@ -1,0 +1,60 @@
+@use "/src/styles/palette" as *;
+
+:host {
+  display: block;
+  min-height: calc(100% - 92px);
+  background-color: $primary-dark;
+}
+
+.title {
+  max-width: 80%;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding-top: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.back {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  font-size: 2rem;
+  gap: 0.8rem;
+  cursor: pointer;
+  img {
+    height: 20px;
+  }
+}
+
+.container {
+  max-width: 80%;
+  margin-inline: auto;
+}
+
+.map-preview {
+  .map-image {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    max-height: 200px;
+  }
+  h2 {
+    font-size: 25px;
+    color: black;
+    padding: 10px 25px;
+    background-color: $light-white;
+  }
+  span {
+    color: $light-red;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .back {
+    bottom: -30px;
+  }
+}

@@ -1,0 +1,35 @@
+<header (clickOutside)="closeMenu()">
+  <div class="logo" routerLink="/">
+    <img class="logo-image" src="assets/images/logo.svg" alt="logo" />
+    <h2 class="logo-title">VALORANT HELPER</h2>
+  </div>
+
+  <div [class.active]="active" class="hamburger-menu">
+    <ul>
+      <ng-container *ngTemplateOutlet="routeList"></ng-container>
+    </ul>
+  </div>
+  <img
+    [src]="iconURL"
+    (click)="toggleMenu()"
+    class="hamburger-icon"
+    alt="hamburger-icon"
+  />
+
+  <nav>
+    <ng-container *ngTemplateOutlet="routeList"></ng-container>
+  </nav>
+</header>
+
+<ng-template #routeList>
+  <ul>
+    <li *ngFor="let route of headerRoutes">
+      <a
+        [routerLink]="['/', route.path]"
+        [routerLinkActiveOptions]="{ exact: route.path === '/' }"
+        routerLinkActive="active"
+        >{{ route.name }}</a
+      >
+    </li>
+  </ul>
+</ng-template>

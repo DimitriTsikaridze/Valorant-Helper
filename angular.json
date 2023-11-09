@@ -140,47 +140,6 @@
             }
           },
           "defaultConfiguration": "production"
-        },
-        "serve-ssr": {
-          "builder": "@angular-devkit/build-angular:ssr-dev-server",
-          "configurations": {
-            "development": {
-              "browserTarget": "valorant-helper:build:development",
-              "serverTarget": "valorant-helper:server:development"
-            },
-            "production": {
-              "browserTarget": "valorant-helper:build:production",
-              "serverTarget": "valorant-helper:server:production"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
-        "prerender": {
-          "builder": "@angular-devkit/build-angular:prerender",
-          "options": {
-            "routesFile": "./routes.txt",
-            "discoverRoutes": false
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "valorant-helper:build:production",
-              "serverTarget": "valorant-helper:server:production"
-            },
-            "development": {
-              "browserTarget": "valorant-helper:build:development",
-              "serverTarget": "valorant-helper:server:development"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "deploy": {
-          "builder": "@angular/fire:deploy",
-          "options": {
-            "version": 2,
-            "browserTarget": "valorant-helper:build:production",
-            "serverTarget": "valorant-helper:server:production",
-            "prerenderTarget": "valorant-helper:prerender:production"
-          }
         }
       }
     }

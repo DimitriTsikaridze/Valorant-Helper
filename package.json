@@ -9,11 +9,7 @@
     "lint": "ng lint",
     "format": "npx prettier --write .",
     "generateRoutes": "node utils/dynamicRoutes.mjs",
-    "deploy": "npm run generateRoutes && npm run prerender &&  ng deploy",
-    "dev:ssr": "ng run valorant-helper:serve-ssr",
-    "serve:ssr": "node dist/valorant-helper/server/main.js",
-    "build:ssr": "ng build && ng run valorant-helper:server",
-    "prerender": "ng run valorant-helper:prerender"
+    "deploy": "npm run generateRoutes && npm run prerender &&  ng deploy"
   },
   "private": true,
   "dependencies": {
@@ -21,14 +17,12 @@
     "@angular/common": "^17.0.0-rc.0",
     "@angular/compiler": "^17.0.0-rc.0",
     "@angular/core": "^17.0.0-rc.0",
-    "@angular/fire": "^7.6.1",
     "@angular/forms": "^17.0.0-rc.0",
     "@angular/platform-browser": "^17.0.0-rc.0",
     "@angular/platform-browser-dynamic": "^17.0.0-rc.0",
     "@angular/platform-server": "^17.0.0-rc.0",
     "@angular/router": "^17.0.0-rc.0",
     "@angular/service-worker": "^17.0.0-rc.0",
-    "@angular/ssr": "^17.0.0-rc.0",
     "express": "^4.15.2",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",

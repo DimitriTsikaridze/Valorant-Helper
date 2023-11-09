@@ -4,8 +4,10 @@
   <h6>BACK</h6>
 </div>
 
-<div *ngIf="maps$ | async as maps; else loading" class="map-container">
-  <div *ngFor="let map of maps" class="map" appToggleSites>
+@if (maps$ | async; as maps) {
+<div class="map-container">
+  @for (map of maps; track map) {
+  <div class="map" appToggleSites>
     <img
       [ngSrc]="map.listViewIcon"
       [alt]="map.displayName"
@@ -23,8 +25,9 @@
     </div>
 
     <div class="bottom-content">
-      <div
-        *ngFor="let siteName of mockSites"
+      @for (siteName of mockSites; track siteName) {
+  <div
+       
         (click)="
           navigateToLineup(
             map.displayName.toLowerCase(),
@@ -36,10 +39,15 @@
         <p>{{ siteName }} Site</p>
         <img src="assets/images/front-arrow.svg" alt="arrow" />
       </div>
+}
     </div>
   </div>
+}
 </div>
+} @else {
 
-<ng-template #loading>
   <app-loading />
-</ng-template>
+
+}
+
+

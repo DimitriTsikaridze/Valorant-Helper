@@ -1,7 +1,9 @@
 <app-introduction />
-<ng-container *ngIf="agents$ | async as agents">
+@if (agents$ | async; as agents) {
+
   <app-agent-preview [agents]="agents" />
-</ng-container>
+
+}
 
 <app-feature-preview
   class="crosshairs"

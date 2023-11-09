@@ -1,8 +1,12 @@
-<ng-container *ngIf="weaponDetails$ | async as weapon; else loading">
+@if (weaponDetails$ | async; as weapon) {
+
   <app-title>{{ weapon.displayName }}</app-title>
   <img [src]="weapon.displayIcon" [alt]="weapon.displayName" />
-</ng-container>
 
-<ng-template #loading>
+} @else {
+
   <app-loading />
-</ng-template>
+
+}
+
+

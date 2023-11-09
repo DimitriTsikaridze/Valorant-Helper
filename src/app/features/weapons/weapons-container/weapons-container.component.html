@@ -1,9 +1,11 @@
+@if (weapons$ | async; as weapons) {
 <div
-  *ngIf="weapons$ | async as weapons; else loading"
+ 
   class="weapons-container"
 >
+  @for (weapon of weapons; track weapon) {
   <a
-    *ngFor="let weapon of weapons"
+   
     [routerLink]="['/weapons', weapon.displayName.toLowerCase()]"
     class="weapon"
   >
@@ -18,8 +20,12 @@
       <h3>{{ weapon.displayName }}</h3>
     </div>
   </a>
+}
 </div>
+} @else {
 
-<ng-template #loading>
   <app-loading />
-</ng-template>
+
+}
+
+

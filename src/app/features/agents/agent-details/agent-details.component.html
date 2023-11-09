@@ -3,7 +3,8 @@
   <h6>BACK</h6>
 </div>
 
-<ng-container *ngIf="agent$ | async as agent; else loading">
+@if (agent$ | async; as agent) {
+
   <div class="agent-description">
     <article>
       <h1>{{ agent.displayName }}</h1>
@@ -23,8 +24,9 @@
 
   <div class="ability-container">
     <div class="ability-overview">
-      <div
-        *ngFor="let ability of agent.abilities"
+      @for (ability of agent.abilities; track ability) {
+  <div
+       
         [class.active]="ability.slot === activeAbility"
         (click)="abilityClick(ability)"
         class="ability"
@@ -39,8 +41,12 @@
           <p>{{ ability.description }}</p>
         </div>
       </div>
+}
     </div>
     <video [muted]="true" [src]="abilityVideo" autoplay loop></video>
   </div>
-</ng-container>
-<ng-template #loading> <app-loading /></ng-template>
+
+} @else {
+ <app-loading />
+}
+

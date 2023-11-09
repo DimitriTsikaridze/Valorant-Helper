@@ -7,10 +7,16 @@
   />
 </div>
 
-<div *ngIf="agents$ | async as agents; else loading" class="agents-container">
-  <app-agent-lineups-preview *ngFor="let agent of agents" [agent]="agent" />
+@if (agents$ | async; as agents) {
+<div class="agents-container">
+  @for (agent of agents; track agent) {
+  <app-agent-lineups-preview [agent]="agent" />
+}
 </div>
+} @else {
 
-<ng-template #loading>
   <app-loading />
-</ng-template>
+
+}
+
+

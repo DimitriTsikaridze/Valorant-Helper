@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "valorant-helper-5738d": {
+      "hosting": {
+        "valorant-helper": [
+          "valorant-helper-5738d"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "valorant-helper-5738d"
+  }
+}

@@ -35,11 +35,11 @@ export class LineupsContainerComponent implements OnInit {
         return this.agentsService.getAllAgents().pipe(
           map((agents) => {
             return agents.filter((agent) =>
-              agent.displayName.toLowerCase().includes(searchText)
+              agent.displayName.toLowerCase().includes(searchText),
             );
-          })
+          }),
         );
-      })
+      }),
     );
   }
 

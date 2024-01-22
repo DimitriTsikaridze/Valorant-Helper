@@ -1,12 +1,6 @@
 @if (weaponDetails$ | async; as weapon) {
-
   <app-title>{{ weapon.displayName }}</app-title>
   <img [src]="weapon.displayIcon" [alt]="weapon.displayName" />
-
 } @else {
-
   <app-loading />
-
 }
-
-

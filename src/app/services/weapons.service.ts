@@ -25,7 +25,7 @@ export class WeaponsService {
 
   getWeaponDetails(weaponName: string): Observable<WeaponDetails> {
     return this.http.get<WeaponDetails>(
-      `${WEAPON_DETAILS_URL}/${weaponName}.json`
+      `${WEAPON_DETAILS_URL}/${weaponName}.json`,
     );
   }
 }

@@ -8,15 +8,11 @@
 </div>
 
 @if (agents$ | async; as agents) {
-<div class="agents-container">
-  @for (agent of agents; track agent) {
-  <app-agent-lineups-preview [agent]="agent" />
-}
-</div>
+  <div class="agents-container">
+    @for (agent of agents; track agent) {
+      <app-agent-lineups-preview [agent]="agent" />
+    }
+  </div>
 } @else {
-
   <app-loading />
-
 }
-
-

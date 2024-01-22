@@ -1,8 +1,6 @@
 <app-introduction />
 @if (agents$ | async; as agents) {
-
   <app-agent-preview [agents]="agents" />
-
 }
 
 <app-feature-preview

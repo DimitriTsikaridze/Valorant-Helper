@@ -24,7 +24,7 @@ export function app(): express.Express {
     '*.*',
     express.static(browserDistFolder, {
       maxAge: '1y',
-    })
+    }),
   );
 
   // All regular routes use the Angular engine

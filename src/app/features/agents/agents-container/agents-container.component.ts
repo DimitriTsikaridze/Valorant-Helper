@@ -46,11 +46,11 @@ export class AgentsContainerComponent implements OnInit {
         return this.agentsService.getAllAgents().pipe(
           map((agents) => {
             return agents.filter((agent) =>
-              agent.role.displayName.includes(role)
+              agent.role.displayName.includes(role),
             );
-          })
+          }),
         );
-      })
+      }),
     );
   }
 

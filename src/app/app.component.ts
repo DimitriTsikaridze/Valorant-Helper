@@ -33,7 +33,7 @@ export class AppComponent {
     this.renderer2.setAttribute(
       this.document.querySelector('app-root'),
       'app-version',
-      environment.appVersion
+      environment.appVersion,
     );
   }
 }

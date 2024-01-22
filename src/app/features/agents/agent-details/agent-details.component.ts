@@ -41,7 +41,7 @@ export class AgentDetailsComponent implements OnInit {
           image: fullPortraitV2,
           description: description,
         });
-      })
+      }),
     );
   }
 

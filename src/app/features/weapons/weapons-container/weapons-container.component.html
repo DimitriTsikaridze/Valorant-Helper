@@ -1,31 +1,23 @@
 @if (weapons$ | async; as weapons) {
-<div
- 
-  class="weapons-container"
->
-  @for (weapon of weapons; track weapon) {
-  <a
-   
-    [routerLink]="['/weapons', weapon.displayName.toLowerCase()]"
-    class="weapon"
-  >
-    <img
-      [ngSrc]="weapon.displayIcon"
-      [alt]="weapon.displayName + ' image'"
-      class="weapon-img"
-      width="313"
-      height="100"
-    />
-    <div class="bottom-content">
-      <h3>{{ weapon.displayName }}</h3>
-    </div>
-  </a>
-}
-</div>
+  <div class="weapons-container">
+    @for (weapon of weapons; track weapon) {
+      <a
+        [routerLink]="['/weapons', weapon.displayName.toLowerCase()]"
+        class="weapon"
+      >
+        <img
+          [ngSrc]="weapon.displayIcon"
+          [alt]="weapon.displayName + ' image'"
+          class="weapon-img"
+          width="313"
+          height="100"
+        />
+        <div class="bottom-content">
+          <h3>{{ weapon.displayName }}</h3>
+        </div>
+      </a>
+    }
+  </div>
 } @else {
-
   <app-loading />
-
 }
-
-

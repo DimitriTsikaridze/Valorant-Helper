@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { Agent } from '@models/agent';
 import { RouterLink } from '@angular/router';
 import { NgFor } from '@angular/common';
@@ -23,5 +23,5 @@ import {
   ],
 })
 export class AgentPreviewComponent {
-  @Input({ required: true }) agents: Agent[];
+  agents = input.required<Agent[]>();
 }

@@ -4,7 +4,7 @@ import {
   Component,
   OnInit,
   inject,
-  Input,
+  input,
 } from '@angular/core';
 import { AgentsService } from '@services/agents.service';
 import { Ability, AbilityType, Agent } from '@shared/models/agent';
@@ -25,7 +25,7 @@ export class AgentDetailsComponent implements OnInit {
   private metaService = inject(MetaService);
   public location = inject(Location);
 
-  @Input() id: string;
+  id = input('');
 
   abilityVideo: string;
   agent$: Observable<Agent>;
@@ -33,7 +33,7 @@ export class AgentDetailsComponent implements OnInit {
   activeAbility = AbilityType.Ability1;
 
   ngOnInit(): void {
-    this.agent$ = this.agentsService.getSingleAgent(this.id).pipe(
+    this.agent$ = this.agentsService.getSingleAgent(this.id()).pipe(
       tap(({ abilities, displayName, fullPortraitV2, description }) => {
         this.abilityVideo = abilities[0].displayVideo;
         this.metaService.generateTags({

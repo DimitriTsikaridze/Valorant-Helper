@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 @Component({
   imports: [CommonModule],
   standalone: true,
   selector: 'app-button',
+
   template: `
-    <button [ngStyle]="{ fontSize: fontSize }">
+    <button [ngStyle]="{ fontSize: fontSize() }">
       <ng-content></ng-content>
     </button>
   `,
@@ -14,5 +15,5 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ButtonComponent {
-  @Input() fontSize: string = '1rem';
+  fontSize = input<string>('1rem');
 }

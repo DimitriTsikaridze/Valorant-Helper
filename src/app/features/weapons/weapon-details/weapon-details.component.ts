@@ -3,7 +3,7 @@ import {
   Component,
   OnInit,
   inject,
-  Input,
+  input,
 } from '@angular/core';
 import { WeaponsService } from '@services/weapons.service';
 import { Observable, tap } from 'rxjs';
@@ -24,22 +24,24 @@ export class WeaponDetailsComponent implements OnInit {
   private weaponsService = inject(WeaponsService);
   private metaService = inject(MetaService);
 
-  @Input() name: string;
+  name = input('');
 
   weaponDetails$: Observable<WeaponDetails>;
 
   ngOnInit(): void {
-    this.weaponDetails$ = this.weaponsService.getWeaponDetails(this.name).pipe(
-      tap(({ displayName, weaponStats, displayIcon }) => {
-        if (!weaponStats) return;
-        const { fireRate, magazineSize } = weaponStats;
+    this.weaponDetails$ = this.weaponsService
+      .getWeaponDetails(this.name())
+      .pipe(
+        tap(({ displayName, weaponStats, displayIcon }) => {
+          if (!weaponStats) return;
+          const { fireRate, magazineSize } = weaponStats;
 
-        this.metaService.generateTags({
-          title: `${displayName} Details`,
-          description: `Fire rate: ${fireRate}, Magazine Size ${magazineSize}`,
-          image: displayIcon,
-        });
-      })
-    );
+          this.metaService.generateTags({
+            title: `${displayName} Details`,
+            description: `Fire rate: ${fireRate}, Magazine Size ${magazineSize}`,
+            image: displayIcon,
+          });
+        })
+      );
   }
 }

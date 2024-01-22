@@ -1,25 +1,25 @@
 <a
-  [routerLink]="routerLink"
-  [ngStyle]="{ 'background-image': 'url(' + agent.background + ')' }"
+  [routerLink]="routerLink()"
+  [ngStyle]="{ 'background-image': 'url(' + agent().background + ')' }"
   class="agent"
 >
   <img
-    [ngSrc]="agent.fullPortraitV2"
-    [alt]="agent.displayName"
+    [ngSrc]="agent().fullPortraitV2"
+    [alt]="agent().displayName"
     class="agent-img"
     width="300"
     height="300"
   />
 
-  <div class="agent-name">
+  <div class="agent()-name">
     <div>
-      <h2>{{ agent.displayName }}</h2>
-      <h3>{{ agent.role.displayName }}</h3>
+      <h2>{{ agent().displayName }}</h2>
+      <h3>{{ agent().role.displayName }}</h3>
     </div>
 
     <img
-      [src]="agent.role.displayIcon"
-      [alt]="agent.role.displayName"
+      [src]="agent().role.displayIcon"
+      [alt]="agent().role.displayName"
       class="role-img"
     />
   </div>

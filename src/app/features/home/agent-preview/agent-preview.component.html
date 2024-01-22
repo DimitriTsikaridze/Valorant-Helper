@@ -1,13 +1,12 @@
 <app-title margin="4rem 0">AGENTS</app-title>
-<div class="agents-container">
-  @for (agent of agents; track agent) {
+<div class="agents()-container">
+  @for (agent of agents(); track agent) {
   <app-agent-card
-   
     [agent]="agent"
-    [routerLink]="['/agents', agent.pathName]"
+    [routerLink]="['/agents()', agent.pathName]"
   />
-}
+  }
 </div>
 <div class="btn">
-  <app-button routerLink="/agents">ALL AGENTS</app-button>
+  <app-button routerLink="/agents()">ALL AGENTS</app-button>
 </div>

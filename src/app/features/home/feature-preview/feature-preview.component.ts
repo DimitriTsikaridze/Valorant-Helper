@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { NgStyle } from '@angular/common';
 
 @Component({
@@ -10,7 +10,7 @@ import { NgStyle } from '@angular/common';
   imports: [NgStyle],
 })
 export class FeaturePreviewComponent {
-  @Input({ required: true }) backgroundColor: string;
-  @Input({ required: true }) color: string;
-  @Input() descriptionOrder: number;
+  backgroundColor = input.required<string>();
+  color = input.required<string>();
+  descriptionOrder = input<number | undefined>();
 }

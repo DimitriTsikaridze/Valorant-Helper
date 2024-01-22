@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { Agent } from '@models/agent';
 import { RouterLink } from '@angular/router';
 import { NgOptimizedImage } from '@angular/common';
@@ -12,5 +12,5 @@ import { NgOptimizedImage } from '@angular/common';
   imports: [RouterLink, NgOptimizedImage],
 })
 export class AgentLineupsPreviewComponent {
-  @Input({ required: true }) agent: Agent;
+  agent = input.required<Agent>();
 }

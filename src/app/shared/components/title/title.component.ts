@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-title',
+
   template: `
-    <h1 [ngStyle]="{ margin: margin, color: color, fontSize: fontSize }">
+    <h1 [ngStyle]="{ margin: margin(), color: color(), fontSize: fontSize() }">
       <ng-content></ng-content>
     </h1>
   `,
@@ -14,7 +15,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   imports: [CommonModule],
 })
 export class TitleComponent {
-  @Input() margin: string = '2rem';
-  @Input() color: string = 'white';
-  @Input() fontSize: string = '2rem';
+  margin = input<string>('2rem');
+  color = input<string>('white');
+  fontSize = input<string>('2rem');
 }

@@ -1,5 +1,5 @@
 import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Agent } from '@models/agent';
 
@@ -12,6 +12,6 @@ import { Agent } from '@models/agent';
   imports: [CommonModule, NgOptimizedImage, RouterLink],
 })
 export class AgentCardComponent {
-  @Input({ required: true }) agent: Agent;
-  @Input({ required: true }) routerLink: string[];
+  agent = input.required<Agent>();
+  routerLink = input.required<string[]>();
 }

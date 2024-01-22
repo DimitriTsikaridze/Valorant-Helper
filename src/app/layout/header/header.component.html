@@ -24,7 +24,7 @@
 <ng-template #routeList>
   <ul>
     @for (route of headerRoutes; track route) {
-  <li>
+    <li>
       <a
         [routerLink]="['/', route.path]"
         [routerLinkActiveOptions]="{ exact: route.path === '/' }"
@@ -32,6 +32,6 @@
         >{{ route.name }}</a
       >
     </li>
-}
+    }
   </ul>
 </ng-template>

@@ -19,7 +19,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(
       routes,
       withComponentInputBinding(),
-      withInMemoryScrolling({ scrollPositionRestoration: 'enabled' })
+      withInMemoryScrolling({ scrollPositionRestoration: 'enabled' }),
     ),
     provideHttpClient(withInterceptors([errorHandlerInterceptor]), withFetch()),
     provideClientHydration(),

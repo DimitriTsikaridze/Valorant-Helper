@@ -57,7 +57,7 @@ export class AgentLineupMapsComponent implements OnInit {
 
   private generateTags() {
     const agentName = capitalizeFirstletter(
-      routeParams(this.route, 'agentName')
+      routeParams(this.route, 'agentName'),
     );
 
     this.metaService.generateTags({

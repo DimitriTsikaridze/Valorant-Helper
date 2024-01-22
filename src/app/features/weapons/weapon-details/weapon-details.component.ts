@@ -41,7 +41,7 @@ export class WeaponDetailsComponent implements OnInit {
             description: `Fire rate: ${fireRate}, Magazine Size ${magazineSize}`,
             image: displayIcon,
           });
-        })
+        }),
       );
   }
 }

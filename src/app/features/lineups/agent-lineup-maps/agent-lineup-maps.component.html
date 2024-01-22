@@ -5,49 +5,44 @@
 </div>
 
 @if (maps$ | async; as maps) {
-<div class="map-container">
-  @for (map of maps; track map) {
-  <div class="map" appToggleSites>
-    <img
-      [ngSrc]="map.listViewIcon"
-      [alt]="map.displayName"
-      class="site-img"
-      width="450"
-      height="100"
-    />
-    <div class="description">
-      <h2 class="map-name">{{ map.displayName }}</h2>
-      <img
-        class="regular-arrow"
-        src="assets/images/regular-arrow.svg"
-        alt="arrow"
-      />
-    </div>
+  <div class="map-container">
+    @for (map of maps; track map) {
+      <div class="map" appToggleSites>
+        <img
+          [ngSrc]="map.listViewIcon"
+          [alt]="map.displayName"
+          class="site-img"
+          width="450"
+          height="100"
+        />
+        <div class="description">
+          <h2 class="map-name">{{ map.displayName }}</h2>
+          <img
+            class="regular-arrow"
+            src="assets/images/regular-arrow.svg"
+            alt="arrow"
+          />
+        </div>
 
-    <div class="bottom-content">
-      @for (siteName of mockSites; track siteName) {
-  <div
-       
-        (click)="
-          navigateToLineup(
-            map.displayName.toLowerCase(),
-            siteName.toLowerCase()
-          )
-        "
-        class="site"
-      >
-        <p>{{ siteName }} Site</p>
-        <img src="assets/images/front-arrow.svg" alt="arrow" />
+        <div class="bottom-content">
+          @for (siteName of mockSites; track siteName) {
+            <div
+              (click)="
+                navigateToLineup(
+                  map.displayName.toLowerCase(),
+                  siteName.toLowerCase()
+                )
+              "
+              class="site"
+            >
+              <p>{{ siteName }} Site</p>
+              <img src="assets/images/front-arrow.svg" alt="arrow" />
+            </div>
+          }
+        </div>
       </div>
-}
-    </div>
+    }
   </div>
-}
-</div>
 } @else {
-
   <app-loading />
-
 }
-
-

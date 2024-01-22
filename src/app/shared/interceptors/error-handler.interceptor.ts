@@ -15,6 +15,6 @@ export const errorHandlerInterceptor: HttpInterceptorFn = (req, next) => {
         router.navigate(['not-found']);
       }
       return throwError(() => err);
-    })
+    }),
   );
 };

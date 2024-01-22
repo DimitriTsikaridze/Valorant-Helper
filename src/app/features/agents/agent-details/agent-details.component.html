@@ -4,7 +4,6 @@
 </div>
 
 @if (agent$ | async; as agent) {
-
   <div class="agent-description">
     <article>
       <h1>{{ agent.displayName }}</h1>
@@ -25,28 +24,25 @@
   <div class="ability-container">
     <div class="ability-overview">
       @for (ability of agent.abilities; track ability) {
-  <div
-       
-        [class.active]="ability.slot === activeAbility"
-        (click)="abilityClick(ability)"
-        class="ability"
-      >
-        <img
-          [src]="ability.displayIcon"
-          [alt]="ability.displayName"
-          class="ability-icon"
-        />
-        <div class="ability-description">
-          <h2>{{ ability.displayName }}</h2>
-          <p>{{ ability.description }}</p>
+        <div
+          [class.active]="ability.slot === activeAbility"
+          (click)="abilityClick(ability)"
+          class="ability"
+        >
+          <img
+            [src]="ability.displayIcon"
+            [alt]="ability.displayName"
+            class="ability-icon"
+          />
+          <div class="ability-description">
+            <h2>{{ ability.displayName }}</h2>
+            <p>{{ ability.description }}</p>
+          </div>
         </div>
-      </div>
-}
+      }
     </div>
     <video [muted]="true" [src]="abilityVideo" autoplay loop></video>
   </div>
-
 } @else {
- <app-loading />
+  <app-loading />
 }
-

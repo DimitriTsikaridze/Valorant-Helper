@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { AgentsService } from '@services/agents.service';
 import { RouterLink } from '@angular/router';
 import { ButtonComponent } from '@shared/components';
-import { NgIf, NgStyle, AsyncPipe } from '@angular/common';
+import { NgStyle, AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-agent-news',
@@ -10,7 +10,7 @@ import { NgIf, NgStyle, AsyncPipe } from '@angular/common';
   styleUrls: ['./agent-news.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, NgStyle, ButtonComponent, RouterLink, AsyncPipe],
+  imports: [NgStyle, ButtonComponent, RouterLink, AsyncPipe],
 })
 export class AgentNewsComponent {
   newAgent$ = inject(AgentsService).getNewAgent();

@@ -7,7 +7,7 @@ import { RouterLink } from '@angular/router';
 import { ButtonComponent, TitleComponent } from '@shared/components';
 import { FeaturePreviewComponent } from '../feature-preview/feature-preview.component';
 import { AgentPreviewComponent } from '../agent-preview/agent-preview.component';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { IntroductionComponent } from '../introduction/introduction.component';
 
 @Component({
@@ -18,14 +18,13 @@ import { IntroductionComponent } from '../introduction/introduction.component';
   standalone: true,
   imports: [
     IntroductionComponent,
-    NgIf,
     AgentPreviewComponent,
     FeaturePreviewComponent,
     TitleComponent,
     ButtonComponent,
     RouterLink,
-    AsyncPipe,
-  ],
+    AsyncPipe
+],
 })
 export class HomeContainerComponent implements OnInit {
   private agentsService = inject(AgentsService);

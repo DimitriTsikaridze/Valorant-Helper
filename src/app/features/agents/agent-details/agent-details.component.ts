@@ -1,4 +1,4 @@
-import { Location, NgIf, NgStyle, NgFor, AsyncPipe } from '@angular/common';
+import { Location, NgStyle, AsyncPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit, inject, input } from '@angular/core';
 import { AgentsService } from '@services/agents.service';
 import { Ability, AbilityType, Agent } from '@shared/models/agent';
@@ -12,7 +12,7 @@ import { LoadingComponent, TitleComponent } from '@shared/components';
   styleUrls: ['./agent-details.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, NgStyle, TitleComponent, NgFor, LoadingComponent, AsyncPipe],
+  imports: [NgStyle, TitleComponent, LoadingComponent, AsyncPipe],
 })
 export class AgentDetailsComponent implements OnInit {
   private agentsService = inject(AgentsService);

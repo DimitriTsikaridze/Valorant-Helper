@@ -7,7 +7,7 @@ import { Map } from '@shared/models';
 import { MetaService } from '@services/meta.service';
 import { ToggleSitesDirective } from '../directives/toggle-sites.directive';
 import { LoadingComponent, TitleComponent } from '@shared/components';
-import { NgIf, NgFor, AsyncPipe, NgOptimizedImage } from '@angular/common';
+import { AsyncPipe, NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-agent-lineup-maps',
@@ -18,13 +18,11 @@ import { NgIf, NgFor, AsyncPipe, NgOptimizedImage } from '@angular/common';
   imports: [
     TitleComponent,
     RouterLink,
-    NgIf,
-    NgFor,
     ToggleSitesDirective,
     LoadingComponent,
     AsyncPipe,
-    NgOptimizedImage,
-  ],
+    NgOptimizedImage
+],
 })
 export class AgentLineupMapsComponent implements OnInit {
   private lineupsService = inject(LineupsService);

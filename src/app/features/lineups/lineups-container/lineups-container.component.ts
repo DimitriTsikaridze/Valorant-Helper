@@ -3,7 +3,7 @@ import { AgentsService } from '@services/agents.service';
 import { Agent } from '@models/agent';
 import { MetaService } from '@services/meta.service';
 import { AgentLineupsPreviewComponent } from '../agent-lineups-preview/agent-lineups-preview.component';
-import { NgIf, NgFor, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { LoadingComponent, TitleComponent } from '@shared/components';
 import { BehaviorSubject, Observable, map, switchMap } from 'rxjs';
 
@@ -12,7 +12,7 @@ import { BehaviorSubject, Observable, map, switchMap } from 'rxjs';
   templateUrl: './lineups-container.component.html',
   styleUrls: ['./lineups-container.component.scss'],
   standalone: true,
-  imports: [TitleComponent, NgIf, NgFor, AgentLineupsPreviewComponent, LoadingComponent, AsyncPipe],
+  imports: [TitleComponent, AgentLineupsPreviewComponent, LoadingComponent, AsyncPipe],
 })
 export class LineupsContainerComponent implements OnInit {
   private agentsService = inject(AgentsService);

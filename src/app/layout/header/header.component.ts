@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
-import { NgFor, NgTemplateOutlet } from '@angular/common';
+import { NgTemplateOutlet } from '@angular/common';
 import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { HEADER_ROUTES } from '@shared/constants';
 import { ClickOutside } from 'ngxtension/click-outside';
@@ -10,7 +10,7 @@ import { ClickOutside } from 'ngxtension/click-outside';
   styleUrls: ['./header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [RouterLink, NgFor, RouterLinkActive, NgTemplateOutlet, ClickOutside],
+  imports: [RouterLink, RouterLinkActive, NgTemplateOutlet, ClickOutside],
 })
 export class HeaderComponent implements OnInit {
   private menuIcon = 'https://i.ibb.co/HrfVRcx/menu.png';

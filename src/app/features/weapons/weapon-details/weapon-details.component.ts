@@ -4,7 +4,7 @@ import { Observable, tap } from 'rxjs';
 import { WeaponDetails } from '@shared/models/weapon';
 import { MetaService } from '@services/meta.service';
 import { LoadingComponent, TitleComponent } from '@shared/components';
-import { NgIf, AsyncPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-weapon-details',
@@ -12,7 +12,7 @@ import { NgIf, AsyncPipe } from '@angular/common';
   styleUrls: ['./weapon-details.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [NgIf, TitleComponent, LoadingComponent, AsyncPipe],
+  imports: [TitleComponent, LoadingComponent, AsyncPipe],
 })
 export class WeaponDetailsComponent implements OnInit {
   private weaponsService = inject(WeaponsService);

@@ -12,14 +12,7 @@ import { BehaviorSubject, Observable, map, switchMap } from 'rxjs';
   templateUrl: './lineups-container.component.html',
   styleUrls: ['./lineups-container.component.scss'],
   standalone: true,
-  imports: [
-    TitleComponent,
-    NgIf,
-    NgFor,
-    AgentLineupsPreviewComponent,
-    LoadingComponent,
-    AsyncPipe,
-  ],
+  imports: [TitleComponent, NgIf, NgFor, AgentLineupsPreviewComponent, LoadingComponent, AsyncPipe],
 })
 export class LineupsContainerComponent implements OnInit {
   private agentsService = inject(AgentsService);
@@ -34,12 +27,10 @@ export class LineupsContainerComponent implements OnInit {
       switchMap((searchText) => {
         return this.agentsService.getAllAgents().pipe(
           map((agents) => {
-            return agents.filter((agent) =>
-              agent.displayName.toLowerCase().includes(searchText),
-            );
-          }),
+            return agents.filter((agent) => agent.displayName.toLowerCase().includes(searchText));
+          })
         );
-      }),
+      })
     );
   }
 

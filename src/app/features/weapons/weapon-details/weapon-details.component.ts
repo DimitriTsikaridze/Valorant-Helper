@@ -1,10 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  OnInit,
-  inject,
-  input,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject, input } from '@angular/core';
 import { WeaponsService } from '@services/weapons.service';
 import { Observable, tap } from 'rxjs';
 import { WeaponDetails } from '@shared/models/weapon';
@@ -29,19 +23,17 @@ export class WeaponDetailsComponent implements OnInit {
   weaponDetails$: Observable<WeaponDetails>;
 
   ngOnInit(): void {
-    this.weaponDetails$ = this.weaponsService
-      .getWeaponDetails(this.name())
-      .pipe(
-        tap(({ displayName, weaponStats, displayIcon }) => {
-          if (!weaponStats) return;
-          const { fireRate, magazineSize } = weaponStats;
+    this.weaponDetails$ = this.weaponsService.getWeaponDetails(this.name()).pipe(
+      tap(({ displayName, weaponStats, displayIcon }) => {
+        if (!weaponStats) return;
+        const { fireRate, magazineSize } = weaponStats;
 
-          this.metaService.generateTags({
-            title: `${displayName} Details`,
-            description: `Fire rate: ${fireRate}, Magazine Size ${magazineSize}`,
-            image: displayIcon,
-          });
-        }),
-      );
+        this.metaService.generateTags({
+          title: `${displayName} Details`,
+          description: `Fire rate: ${fireRate}, Magazine Size ${magazineSize}`,
+          image: displayIcon,
+        });
+      })
+    );
   }
 }

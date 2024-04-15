@@ -1,10 +1,6 @@
 <app-title margin="2rem 0 1rem">AGENTS</app-title>
 <div class="search-bar">
-  <input
-    (input)="searchAgent($event)"
-    placeholder="Search Agent..."
-    type="text"
-  />
+  <input (input)="searchAgent($event)" placeholder="Search Agent..." type="text" />
 </div>
 
 @if (agents$ | async; as agents) {

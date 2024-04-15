@@ -1,11 +1,5 @@
 import { Location, NgIf, NgStyle, NgFor, AsyncPipe } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  OnInit,
-  inject,
-  input,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject, input } from '@angular/core';
 import { AgentsService } from '@services/agents.service';
 import { Ability, AbilityType, Agent } from '@shared/models/agent';
 import { Observable, tap } from 'rxjs';
@@ -41,7 +35,7 @@ export class AgentDetailsComponent implements OnInit {
           image: fullPortraitV2,
           description: description,
         });
-      }),
+      })
     );
   }
 

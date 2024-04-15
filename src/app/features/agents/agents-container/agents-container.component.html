@@ -1,17 +1,17 @@
 <app-agent-news />
 @if (agents$ | async; as agents) {
-<app-title margin="2rem 0 3rem 0" fontSize="2rem">AGENTS</app-title>
+  <app-title margin="2rem 0 3rem 0" fontSize="2rem">AGENTS</app-title>
 
-<div class="agents-container">
-  <ul>
-    @for (role of agentRoles; track role) {
-    <li [class.active]="role === activeRole" (click)="roleClick(role)">
-      {{ role | uppercase }}
-    </li>
+  <div class="agents-container">
+    <ul>
+      @for (role of agentRoles; track role) {
+        <li [class.active]="role === activeRole" (click)="roleClick(role)">
+          {{ role | uppercase }}
+        </li>
+      }
+    </ul>
+    @for (agent of agents; track agent) {
+      <app-agent-card [agent]="agent" [routerLink]="['/agents', agent.pathName]" />
     }
-  </ul>
-  @for (agent of agents; track agent) {
-  <app-agent-card [agent]="agent" [routerLink]="['/agents', agent.pathName]" />
-  }
-</div>
+  </div>
 }

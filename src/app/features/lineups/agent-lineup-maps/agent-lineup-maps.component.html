@@ -17,22 +17,13 @@
         />
         <div class="description">
           <h2 class="map-name">{{ map.displayName }}</h2>
-          <img
-            class="regular-arrow"
-            src="assets/images/regular-arrow.svg"
-            alt="arrow"
-          />
+          <img class="regular-arrow" src="assets/images/regular-arrow.svg" alt="arrow" />
         </div>
 
         <div class="bottom-content">
           @for (siteName of mockSites; track siteName) {
             <div
-              (click)="
-                navigateToLineup(
-                  map.displayName.toLowerCase(),
-                  siteName.toLowerCase()
-                )
-              "
+              (click)="navigateToLineup(map.displayName.toLowerCase(), siteName.toLowerCase())"
               class="site"
             >
               <p>{{ siteName }} Site</p>

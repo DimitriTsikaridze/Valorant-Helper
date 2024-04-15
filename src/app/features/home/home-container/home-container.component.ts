@@ -1,9 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  OnInit,
-  inject,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { Agent } from '@models/agent';
 import { AgentsService } from '@services/agents.service';
 import { Observable, of } from 'rxjs';

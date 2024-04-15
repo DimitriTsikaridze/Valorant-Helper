@@ -29,11 +29,7 @@
           (click)="abilityClick(ability)"
           class="ability"
         >
-          <img
-            [src]="ability.displayIcon"
-            [alt]="ability.displayName"
-            class="ability-icon"
-          />
+          <img [src]="ability.displayIcon" [alt]="ability.displayName" class="ability-icon" />
           <div class="ability-description">
             <h2>{{ ability.displayName }}</h2>
             <p>{{ ability.description }}</p>

@@ -9,12 +9,7 @@
       <ng-container *ngTemplateOutlet="routeList"></ng-container>
     </ul>
   </div>
-  <img
-    [src]="iconURL"
-    (click)="toggleMenu()"
-    class="hamburger-icon"
-    alt="hamburger-icon"
-  />
+  <img [src]="iconURL" (click)="toggleMenu()" class="hamburger-icon" alt="hamburger-icon" />
 
   <nav>
     <ng-container *ngTemplateOutlet="routeList"></ng-container>

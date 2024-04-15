@@ -1,10 +1,7 @@
 @if (weapons$ | async; as weapons) {
   <div class="weapons-container">
     @for (weapon of weapons; track weapon) {
-      <a
-        [routerLink]="['/weapons', weapon.displayName.toLowerCase()]"
-        class="weapon"
-      >
+      <a [routerLink]="['/weapons', weapon.displayName.toLowerCase()]" class="weapon">
         <img
           [ngSrc]="weapon.displayIcon"
           [alt]="weapon.displayName + ' image'"

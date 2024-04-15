@@ -16,7 +16,7 @@ ul {
     position: relative;
     &.active {
       &::after {
-        content: "";
+        content: '';
         position: absolute;
         width: calc(100% + 6px);
         border-radius: 5px;
@@ -55,7 +55,7 @@ ul {
     background-color: transparent;
     font-size: 1.3rem;
     color: white;
-    font-family: "valorant";
+    font-family: 'valorant';
   }
 }
 

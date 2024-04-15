@@ -2,11 +2,7 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { Agent } from '@models/agent';
 import { RouterLink } from '@angular/router';
 import { NgFor } from '@angular/common';
-import {
-  ButtonComponent,
-  AgentCardComponent,
-  TitleComponent,
-} from '@shared/components';
+import { ButtonComponent, AgentCardComponent, TitleComponent } from '@shared/components';
 
 @Component({
   selector: 'app-agent-preview',
@@ -14,13 +10,7 @@ import {
   styleUrls: ['./agent-preview.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    TitleComponent,
-    NgFor,
-    AgentCardComponent,
-    RouterLink,
-    ButtonComponent,
-  ],
+  imports: [TitleComponent, NgFor, AgentCardComponent, RouterLink, ButtonComponent],
 })
 export class AgentPreviewComponent {
   agents = input.required<Agent[]>();

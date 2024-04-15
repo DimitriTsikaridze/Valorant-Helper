@@ -18,14 +18,10 @@ export class WeaponsService {
 
   getAllWeapons(): Observable<Weapon[]> {
     if (this.weapons.length) return of(this.weapons);
-    return this.http
-      .get<Weapon[]>(WEAPONS_URL)
-      .pipe(tap((weapons) => (this.weapons = weapons)));
+    return this.http.get<Weapon[]>(WEAPONS_URL).pipe(tap((weapons) => (this.weapons = weapons)));
   }
 
   getWeaponDetails(weaponName: string): Observable<WeaponDetails> {
-    return this.http.get<WeaponDetails>(
-      `${WEAPON_DETAILS_URL}/${weaponName}.json`,
-    );
+    return this.http.get<WeaponDetails>(`${WEAPON_DETAILS_URL}/${weaponName}.json`);
   }
 }

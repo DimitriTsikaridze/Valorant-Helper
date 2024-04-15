@@ -16,9 +16,7 @@ export class AgentsService {
 
   getAllAgents(): Observable<Agent[]> {
     if (this.agents.length) return of(this.agents);
-    return this.http
-      .get<Agent[]>(AGENTS_URL)
-      .pipe(tap((agents) => (this.agents = agents)));
+    return this.http.get<Agent[]>(AGENTS_URL).pipe(tap((agents) => (this.agents = agents)));
   }
 
   getSingleAgent(pathName: string) {

@@ -1,9 +1,4 @@
-import {
-  Component,
-  ChangeDetectionStrategy,
-  OnInit,
-  inject,
-} from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit, inject } from '@angular/core';
 import { LineupsService } from '@services/lineups.service';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { routeParams } from '@shared/utils';

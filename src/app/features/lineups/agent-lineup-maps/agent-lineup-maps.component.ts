@@ -1,9 +1,4 @@
-import {
-  Component,
-  ChangeDetectionStrategy,
-  OnInit,
-  inject,
-} from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit, inject } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { LineupsService } from '@services/lineups.service';
 import { capitalizeFirstletter, routeParams } from '@shared/utils';
@@ -56,9 +51,7 @@ export class AgentLineupMapsComponent implements OnInit {
   }
 
   private generateTags() {
-    const agentName = capitalizeFirstletter(
-      routeParams(this.route, 'agentName'),
-    );
+    const agentName = capitalizeFirstletter(routeParams(this.route, 'agentName'));
 
     this.metaService.generateTags({
       title: `${agentName} Lineups`,

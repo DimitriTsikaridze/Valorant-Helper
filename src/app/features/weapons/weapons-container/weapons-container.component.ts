@@ -12,14 +12,7 @@ import { NgIf, NgFor, AsyncPipe, NgOptimizedImage } from '@angular/common';
   templateUrl: './weapons-container.component.html',
   styleUrls: ['./weapons-container.component.scss'],
   standalone: true,
-  imports: [
-    NgIf,
-    NgFor,
-    RouterLink,
-    LoadingComponent,
-    AsyncPipe,
-    NgOptimizedImage,
-  ],
+  imports: [NgIf, NgFor, RouterLink, LoadingComponent, AsyncPipe, NgOptimizedImage],
 })
 export class WeaponsContainerComponent implements OnInit {
   private weaponsService = inject(WeaponsService);

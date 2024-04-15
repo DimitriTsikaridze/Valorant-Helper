@@ -1,9 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  OnInit,
-  inject,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { AgentsService } from '@services/agents.service';
 import { Agent } from '@models/agent';
 import { Observable } from 'rxjs';
@@ -20,13 +15,7 @@ import { BehaviorSubject, switchMap, map } from 'rxjs';
   styleUrls: ['./agents-container.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [
-    AgentNewsComponent,
-    TitleComponent,
-    AgentCardComponent,
-    CommonModule,
-    RouterLink,
-  ],
+  imports: [AgentNewsComponent, TitleComponent, AgentCardComponent, CommonModule, RouterLink],
 })
 export class AgentsContainerComponent implements OnInit {
   private agentsService = inject(AgentsService);
@@ -45,12 +34,10 @@ export class AgentsContainerComponent implements OnInit {
         role = role === 'all' ? '' : role;
         return this.agentsService.getAllAgents().pipe(
           map((agents) => {
-            return agents.filter((agent) =>
-              agent.role.displayName.includes(role),
-            );
-          }),
+            return agents.filter((agent) => agent.role.displayName.includes(role));
+          })
         );
-      }),
+      })
     );
   }
 

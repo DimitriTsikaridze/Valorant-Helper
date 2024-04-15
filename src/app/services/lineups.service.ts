@@ -21,7 +21,7 @@ export class LineupsService {
           this.maps.push(map);
         }
         return this.maps;
-      }),
+      })
     );
   }
 

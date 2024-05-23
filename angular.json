@@ -84,23 +84,6 @@
           "options": {
             "buildTarget": "valorant-helper:build"
           }
-        },
-        "deploy": {
-          "builder": "@angular/fire:deploy",
-          "options": {
-            "version": 2
-          },
-          "configurations": {
-            "production": {
-              "buildTarget": "valorant-helper:build:production",
-              "serveTarget": "valorant-helper:serve:production"
-            },
-            "development": {
-              "buildTarget": "valorant-helper:build:development",
-              "serveTarget": "valorant-helper:serve:development"
-            }
-          },
-          "defaultConfiguration": "production"
         }
       }
     }

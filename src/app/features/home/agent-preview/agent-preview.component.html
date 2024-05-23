@@ -1,7 +1,7 @@
 <app-title margin="4rem 0">AGENTS</app-title>
 <div class="agents-container">
   @for (agent of agents(); track agent) {
-    <app-agent-card [agent]="agent" [routerLink]="['/agents()', agent.pathName]" />
+    <app-agent-card [agent]="agent" [routerLink]="['/agents', agent.pathName]" />
   }
 </div>
 <div class="btn">

@@ -26,7 +26,6 @@
             "outputPath": "dist/valorant-helper",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": ["src/assets", "src/robots.txt"],

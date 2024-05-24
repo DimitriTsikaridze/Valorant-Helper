@@ -1,4 +1,4 @@
-import { ApplicationConfig, provideExperimentalZonelessChangeDetection } from '@angular/core';
+import { ApplicationConfig } from '@angular/core';
 import { provideRouter, withComponentInputBinding, withInMemoryScrolling } from '@angular/router';
 
 import { routes } from './app.routes';
@@ -15,6 +15,5 @@ export const appConfig: ApplicationConfig = {
     ),
     provideHttpClient(withInterceptors([errorHandlerInterceptor]), withFetch()),
     provideClientHydration(),
-    provideExperimentalZonelessChangeDetection(),
   ],
 };

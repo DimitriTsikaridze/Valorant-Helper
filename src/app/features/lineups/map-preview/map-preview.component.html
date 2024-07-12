@@ -10,7 +10,7 @@
   <div class="map-preview">
     <img [src]="mapUrl" class="map-image" width="1200" height="500" alt="map-name" />
     <h2>
-      {{ mapName | uppercase }} - <span>{{ siteName | uppercase }} site</span>
+      {{ mapName() | uppercase }} - <span>{{ siteName() | uppercase }} site</span>
     </h2>
   </div>
 </div>

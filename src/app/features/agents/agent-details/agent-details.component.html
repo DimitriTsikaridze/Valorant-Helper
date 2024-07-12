@@ -3,7 +3,9 @@
   <h6>BACK</h6>
 </div>
 
-@if (agent$ | async; as agent) {
+@let agent = agent$ | async;
+
+@if (agent) {
   <div class="agent-description">
     <article>
       <h1>{{ agent.displayName }}</h1>

@@ -1,7 +1,6 @@
-import { Component, ChangeDetectionStrategy, OnInit, inject } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit, inject, input } from '@angular/core';
 import { LineupsService } from '@services/lineups.service';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { routeParams } from '@shared/utils';
 import { UpperCasePipe } from '@angular/common';
 import { TitleComponent } from '@shared/components';
 
@@ -18,11 +17,11 @@ export class MapPreviewComponent implements OnInit {
   private route = inject(ActivatedRoute);
 
   mapUrl = '';
-  mapName = routeParams(this.route, 'mapName');
-  siteName = routeParams(this.route, 'siteName');
-  agentName = routeParams(this.route, 'agentName');
+  mapName = input.required<string>();
+  siteName = input.required<string>();
+  agentName = input.required<string>();
 
   ngOnInit(): void {
-    this.mapUrl = this.lineupsService.getMapImagePath(this.mapName, 'splash');
+    this.mapUrl = this.lineupsService.getMapImagePath(this.mapName(), 'splash');
   }
 }

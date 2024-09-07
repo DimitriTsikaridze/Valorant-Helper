@@ -33,7 +33,9 @@
             "scripts": [],
             "polyfills": ["zone.js"],
             "server": "src/main.server.ts",
-            "prerender": { "routesFile": "routes.txt" },
+            "prerender": {
+              "routesFile": "routes.txt"
+            },
             "ssr": false
           },
           "configurations": {
@@ -83,11 +85,18 @@
           "options": {
             "buildTarget": "valorant-helper:build"
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
+          }
         }
       }
     }
   },
   "cli": {
-    "analytics": false
+    "analytics": false,
+    "schematicCollections": ["@angular-eslint/schematics"]
   }
 }

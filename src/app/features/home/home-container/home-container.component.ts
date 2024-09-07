@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { Agent } from '@models/agent';
 import { AgentsService } from '@services/agents.service';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { MetaService } from '@services/meta.service';
 import { RouterLink } from '@angular/router';
 import { ButtonComponent, TitleComponent } from '@shared/components';
@@ -23,8 +23,8 @@ import { IntroductionComponent } from '../introduction/introduction.component';
     TitleComponent,
     ButtonComponent,
     RouterLink,
-    AsyncPipe
-],
+    AsyncPipe,
+  ],
 })
 export class HomeContainerComponent implements OnInit {
   private agentsService = inject(AgentsService);

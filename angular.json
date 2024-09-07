@@ -33,10 +33,8 @@
             "scripts": [],
             "polyfills": ["zone.js"],
             "server": "src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
-            }
+            "prerender": { "routesFile": "routes.txt" },
+            "ssr": false
           },
           "configurations": {
             "production": {

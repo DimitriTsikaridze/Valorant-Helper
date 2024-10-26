@@ -31,7 +31,6 @@
             "assets": ["src/assets", "src/robots.txt"],
             "styles": ["src/styles.scss"],
             "scripts": [],
-            "polyfills": ["zone.js"],
             "server": "src/main.server.ts",
             "prerender": {
               "routesFile": "routes.txt"

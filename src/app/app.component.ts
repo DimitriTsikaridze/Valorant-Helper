@@ -16,7 +16,7 @@ import { environment } from '@environment/environment';
   styles: [
     `
       .spacer {
-        height: 92px;
+        height: 91px;
       }
     `,
   ],

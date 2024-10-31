@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { AgentsService } from '@services/agents.service';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ButtonComponent } from '@shared/components';
 import { NgStyle, AsyncPipe } from '@angular/common';
 
@@ -13,5 +12,5 @@ import { NgStyle, AsyncPipe } from '@angular/common';
   imports: [NgStyle, ButtonComponent, RouterLink, AsyncPipe],
 })
 export class AgentNewsComponent {
-  newAgent$ = inject(AgentsService).getNewAgent();
+  agent = inject(ActivatedRoute).snapshot.data['newAgent'];
 }

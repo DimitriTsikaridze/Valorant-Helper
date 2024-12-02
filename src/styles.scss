@@ -1,5 +1,5 @@
-@import './styles/reset';
-@import './styles/fonts';
+@use './styles/reset';
+@use './styles/fonts';
 
 :root {
   --primary-dark: #0f1923;

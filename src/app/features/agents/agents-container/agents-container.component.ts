@@ -10,11 +10,11 @@ import { RouterLink } from '@angular/router';
 import { BehaviorSubject, switchMap, map } from 'rxjs';
 
 @Component({
-    selector: 'app-agents-container',
-    templateUrl: './agents-container.component.html',
-    styleUrls: ['./agents-container.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [AgentNewsComponent, TitleComponent, AgentCardComponent, CommonModule, RouterLink]
+  selector: 'app-agents-container',
+  templateUrl: './agents-container.component.html',
+  styleUrls: ['./agents-container.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [AgentNewsComponent, TitleComponent, AgentCardComponent, CommonModule, RouterLink],
 })
 export class AgentsContainerComponent implements OnInit {
   private agentsService = inject(AgentsService);

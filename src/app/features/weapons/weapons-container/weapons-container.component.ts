@@ -8,10 +8,10 @@ import { RouterLink } from '@angular/router';
 import { AsyncPipe, NgOptimizedImage } from '@angular/common';
 
 @Component({
-    selector: 'app-weapons-container',
-    templateUrl: './weapons-container.component.html',
-    styleUrls: ['./weapons-container.component.scss'],
-    imports: [RouterLink, LoadingComponent, AsyncPipe, NgOptimizedImage]
+  selector: 'app-weapons-container',
+  templateUrl: './weapons-container.component.html',
+  styleUrls: ['./weapons-container.component.scss'],
+  imports: [RouterLink, LoadingComponent, AsyncPipe, NgOptimizedImage],
 })
 export class WeaponsContainerComponent implements OnInit {
   private weaponsService = inject(WeaponsService);

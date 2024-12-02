@@ -5,22 +5,22 @@ import { DOCUMENT, isPlatformServer } from '@angular/common';
 import { environment } from '@environment/environment';
 
 @Component({
-    selector: 'app-root',
-    imports: [HeaderComponent, FooterComponent, RouterOutlet],
-    template: `
+  selector: 'app-root',
+  imports: [HeaderComponent, FooterComponent, RouterOutlet],
+  template: `
     <app-header />
     <div class="spacer"></div>
     <router-outlet />
     <app-footer />
   `,
-    styles: [
-        `
+  styles: [
+    `
       .spacer {
         height: 91px;
       }
     `,
-    ],
-    changeDetection: ChangeDetectionStrategy.OnPush
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
   private document = inject(DOCUMENT);

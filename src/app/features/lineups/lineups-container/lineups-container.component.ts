@@ -8,10 +8,10 @@ import { LoadingComponent, TitleComponent } from '@shared/components';
 import { BehaviorSubject, Observable, map, switchMap } from 'rxjs';
 
 @Component({
-    selector: 'app-lineups-container',
-    templateUrl: './lineups-container.component.html',
-    styleUrls: ['./lineups-container.component.scss'],
-    imports: [TitleComponent, AgentLineupsPreviewComponent, LoadingComponent, AsyncPipe]
+  selector: 'app-lineups-container',
+  templateUrl: './lineups-container.component.html',
+  styleUrls: ['./lineups-container.component.scss'],
+  imports: [TitleComponent, AgentLineupsPreviewComponent, LoadingComponent, AsyncPipe],
 })
 export class LineupsContainerComponent implements OnInit {
   private agentsService = inject(AgentsService);

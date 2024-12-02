@@ -9,18 +9,18 @@ import { LoadingComponent, TitleComponent } from '@shared/components';
 import { AsyncPipe, NgOptimizedImage } from '@angular/common';
 
 @Component({
-    selector: 'app-agent-lineup-maps',
-    templateUrl: './agent-lineup-maps.component.html',
-    styleUrls: ['./agent-lineup-maps.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [
-        TitleComponent,
-        RouterLink,
-        ToggleSitesDirective,
-        LoadingComponent,
-        AsyncPipe,
-        NgOptimizedImage,
-    ]
+  selector: 'app-agent-lineup-maps',
+  templateUrl: './agent-lineup-maps.component.html',
+  styleUrls: ['./agent-lineup-maps.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    TitleComponent,
+    RouterLink,
+    ToggleSitesDirective,
+    LoadingComponent,
+    AsyncPipe,
+    NgOptimizedImage,
+  ],
 })
 export class AgentLineupMapsComponent implements OnInit {
   private lineupsService = inject(LineupsService);

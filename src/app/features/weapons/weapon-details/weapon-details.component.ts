@@ -7,12 +7,11 @@ import { LoadingComponent, TitleComponent } from '@shared/components';
 import { AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-weapon-details',
-  templateUrl: './weapon-details.component.html',
-  styleUrls: ['./weapon-details.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: true,
-  imports: [TitleComponent, LoadingComponent, AsyncPipe],
+    selector: 'app-weapon-details',
+    templateUrl: './weapon-details.component.html',
+    styleUrls: ['./weapon-details.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [TitleComponent, LoadingComponent, AsyncPipe]
 })
 export class WeaponDetailsComponent implements OnInit {
   private weaponsService = inject(WeaponsService);

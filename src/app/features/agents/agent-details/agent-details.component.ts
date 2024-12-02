@@ -7,12 +7,11 @@ import { MetaService } from '@services/meta.service';
 import { LoadingComponent, TitleComponent } from '@shared/components';
 
 @Component({
-  selector: 'app-agent-details',
-  templateUrl: './agent-details.component.html',
-  styleUrls: ['./agent-details.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: true,
-  imports: [NgStyle, TitleComponent, LoadingComponent, AsyncPipe],
+    selector: 'app-agent-details',
+    templateUrl: './agent-details.component.html',
+    styleUrls: ['./agent-details.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [NgStyle, TitleComponent, LoadingComponent, AsyncPipe]
 })
 export class AgentDetailsComponent implements OnInit {
   private agentsService = inject(AgentsService);

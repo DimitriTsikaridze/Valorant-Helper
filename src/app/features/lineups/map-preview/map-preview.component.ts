@@ -5,12 +5,11 @@ import { UpperCasePipe } from '@angular/common';
 import { TitleComponent } from '@shared/components';
 
 @Component({
-  selector: 'app-map-preview',
-  templateUrl: './map-preview.component.html',
-  styleUrls: ['./map-preview.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: true,
-  imports: [RouterLink, TitleComponent, UpperCasePipe],
+    selector: 'app-map-preview',
+    templateUrl: './map-preview.component.html',
+    styleUrls: ['./map-preview.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [RouterLink, TitleComponent, UpperCasePipe]
 })
 export class MapPreviewComponent implements OnInit {
   private lineupsService = inject(LineupsService);

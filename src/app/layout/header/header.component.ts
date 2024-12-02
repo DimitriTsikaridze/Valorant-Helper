@@ -5,12 +5,11 @@ import { HEADER_ROUTES } from '@shared/constants';
 import { ClickOutside } from 'ngxtension/click-outside';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: true,
-  imports: [RouterLink, RouterLinkActive, NgTemplateOutlet, ClickOutside],
+    selector: 'app-header',
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [RouterLink, RouterLinkActive, NgTemplateOutlet, ClickOutside]
 })
 export class HeaderComponent implements OnInit {
   private menuIcon = 'https://i.ibb.co/HrfVRcx/menu.png';

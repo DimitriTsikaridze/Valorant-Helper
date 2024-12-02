@@ -11,20 +11,19 @@ import { AsyncPipe } from '@angular/common';
 import { IntroductionComponent } from '../introduction/introduction.component';
 
 @Component({
-  selector: 'app-home-container',
-  templateUrl: './home-container.component.html',
-  styleUrls: ['./home-container.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: true,
-  imports: [
-    IntroductionComponent,
-    AgentPreviewComponent,
-    FeaturePreviewComponent,
-    TitleComponent,
-    ButtonComponent,
-    RouterLink,
-    AsyncPipe,
-  ],
+    selector: 'app-home-container',
+    templateUrl: './home-container.component.html',
+    styleUrls: ['./home-container.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        IntroductionComponent,
+        AgentPreviewComponent,
+        FeaturePreviewComponent,
+        TitleComponent,
+        ButtonComponent,
+        RouterLink,
+        AsyncPipe,
+    ]
 })
 export class HomeContainerComponent implements OnInit {
   private agentsService = inject(AgentsService);

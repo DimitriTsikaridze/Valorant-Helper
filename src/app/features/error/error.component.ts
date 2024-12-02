@@ -3,13 +3,13 @@ import { RouterModule } from '@angular/router';
 import { ButtonComponent } from '@shared/components';
 
 @Component({
-  selector: 'app-error',
-  template: `
+    selector: 'app-error',
+    template: `
     <h1>Page Not Found</h1>
     <app-button routerLink="/">Home</app-button>
   `,
-  styles: [
-    `
+    styles: [
+        `
       :host {
         display: block;
         min-height: 100%;
@@ -24,9 +24,8 @@ import { ButtonComponent } from '@shared/components';
         padding-block: 2rem;
       }
     `,
-  ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: true,
-  imports: [ButtonComponent, RouterModule],
+    ],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [ButtonComponent, RouterModule]
 })
 export class ErrorComponent {}

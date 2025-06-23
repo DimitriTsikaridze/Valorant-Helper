@@ -1,7 +1,14 @@
-import { ChangeDetectionStrategy, Component, PLATFORM_ID, Renderer2, inject } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  PLATFORM_ID,
+  Renderer2,
+  inject,
+  DOCUMENT,
+} from '@angular/core';
 import { FooterComponent, HeaderComponent } from './layout';
 import { RouterOutlet } from '@angular/router';
-import { DOCUMENT, isPlatformServer } from '@angular/common';
+import { isPlatformServer } from '@angular/common';
 import { environment } from '@environment/environment';
 
 @Component({

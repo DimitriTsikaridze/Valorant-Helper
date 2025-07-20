@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { delay, Observable, of, tap } from 'rxjs';
+import { Observable, of, tap } from 'rxjs';
 import { Agent, NewAgent } from '@models/agent';
 import { environment } from '@environment/environment';
 
@@ -25,9 +25,8 @@ export class AgentsService {
 
   getNewAgent(): Observable<NewAgent> {
     if (this.newAgent?.displayName) return of(this.newAgent);
-    return this.http.get<NewAgent>(`${SINGLE_AGENT_URL}new-agent.json`).pipe(
-      tap((agent) => (this.newAgent = agent)),
-      delay(2000)
-    );
+    return this.http
+      .get<NewAgent>(`${SINGLE_AGENT_URL}new-agent.json`)
+      .pipe(tap((agent) => (this.newAgent = agent)));
   }
 }
